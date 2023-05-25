@@ -47,7 +47,24 @@
         }
         .red-paragraph {
             color: red;
-        }        
+        }
+        
+        .blink {
+            animation: blinkAnimation 1s infinite;
+        }
+        
+        @keyframes blinkAnimation {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
     </style>
 </head>
 <body>
@@ -70,10 +87,16 @@
     
     
     <main>
-   
+
+<h1><span class="blink">NEW</span> Product</h1>
+        
+        
     <div class="container">
         <p class="red-paragraph" class="center-align">Looking for highly motivated research students (PhD and Master by Research) to work in cybersecurity and/or IoT domain.</p>
-    </div>
+        <p class="center-align">Looking for highly motivated research students (PhD and Master by Research) to work in cybersecurity and/or IoT domain.</p>
+        <p class="center-align">Looking for highly motivated research students (PhD and Master by Research) to work in cybersecurity and/or IoT domain.</p>
+        <p class="center-align">Looking for highly motivated research students (PhD and Master by Research) to work in cybersecurity and/or IoT domain.</p>        
+        </div>
         
         
 
