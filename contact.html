@@ -87,6 +87,18 @@
             font-weight: 500;
         }
 
+        /* Mission Statement Box */
+        .mission-box {
+            background: #e0f7fa;
+            border-left: 6px solid var(--secondary-blue);
+            padding: 2rem;
+            margin: 3rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
         /* Layout */
         .container {
             width: 80%;
@@ -97,7 +109,6 @@
 
         section {
             padding: 4rem 0 2rem 0;
-            border-bottom: 1px solid var(--border-color);
         }
 
         h2 {
@@ -140,13 +151,11 @@
         /* Members Section */
         .member-card {
             background: white;
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 12px;
             border: 1px solid var(--border-color);
             margin-bottom: 2rem;
-            display: flex;
-            gap: 2rem;
-            align-items: flex-start;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
 
         .member-info h3 {
@@ -165,18 +174,37 @@
             margin-bottom: 1rem;
         }
 
-        .student-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
         .student-category h4 {
             color: var(--secondary-blue);
             border-bottom: 2px solid var(--border-color);
             padding-bottom: 10px;
-            margin-top: 2rem;
+            margin: 2.5rem 0 1.5rem 0;
+        }
+
+        .student-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Collaboration Grid Styles */
+        .collab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .collab-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-top: 4px solid var(--secondary-blue);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .collab-card h4 {
+            margin-top: 0;
+            color: var(--primary-blue);
         }
 
         footer {
@@ -187,8 +215,8 @@
         }
 
         @media (max-width: 768px) {
-            .member-card { flex-direction: column; text-align: center; }
             .container { width: 90%; }
+            .hero h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -198,7 +226,7 @@
         <div class="logo">MAYA RESEARCH GROUP</div>
         <ul>
             <li><a href="#about">Overview</a></li>
-            <li><a href="#pillars">Research Pillars</a></li>
+            <li><a href="#pillars">Pillars</a></li>
             <li><a href="#members">Members</a></li>
             <li><a href="#impact">Impact</a></li>
         </ul>
@@ -207,14 +235,18 @@
     <header class="hero">
         <h1>MAYA Research Group</h1>
         <p class="tagline">Machine Intelligence for Adaptive and Secure sYstems</p>
-        <p style="margin-top: 20px; opacity: 0.8;">Led by Dr. Deepak Puthal | United Arab Emirates University (UAEU)</p>
+        <p style="margin-top: 20px; opacity: 0.8;">United Arab Emirates University (UAEU)</p>
     </header>
 
     <div class="container">
         
         <section id="about">
             <h2>Technical Overview</h2>
-            <p>The MAYA Research Group is a specialized laboratory dedicated to solving the "Resilience Gap" in modern computing. It focuses on the engineering of systems that are capable of <strong>dynamic adaptation</strong>—altering their own configurations and security protocols in real-time to survive sophisticated, multi-stage cyberattacks.</p>
+            <p>The MAYA Research Group is a specialized laboratory dedicated to solving the "Resilience Gap" in modern computing. It focuses on the engineering of systems that are not only secure at rest but are capable of <strong>dynamic adaptation</strong>—altering their own configurations and security protocols in real-time to survive sophisticated attacks.</p>
+            
+            <div class="mission-box">
+                "To engineer autonomous, intelligence-driven systems that integrate security into the foundational layers of distributed computing, ensuring mission continuity and data integrity through adaptive resilience."
+            </div>
         </section>
 
         <section id="pillars">
@@ -239,12 +271,9 @@
             <h2>Group Members</h2>
             
             <div class="member-card">
-                <div class="member-info">
-                    <span class="role-tag">Director / Group Lead</span>
-                    <h3>Dr. Deepak Puthal</h3>
-                    <p>Dr. Deepak Puthal’s research methodology emphasizes <strong>Computational Scalability</strong>. His work ensures that security measures do not become a bottleneck for system performance. By bridging the gap between high-level AI algorithms and low-level network protocols, he leads the MAYA group in producing "Systems-Aware AI."</p>
-                    <p><em>Expertise: Distributed Systems, Cybersecurity, Internet of Things (IoT).</em></p>
-                </div>
+                <span class="role-tag">Director / Group Lead</span>
+                <h3>Dr. Deepak Puthal</h3>
+                <p>Dr. Deepak Puthal’s research methodology emphasizes <strong>Computational Scalability</strong>. His work ensures that security measures do not become a bottleneck for system performance. By bridging the gap between high-level AI algorithms and low-level network protocols, he leads the MAYA group in producing "Systems-Aware AI."</p>
             </div>
 
             <div class="student-category">
@@ -282,8 +311,7 @@
             </div>
         </section>
 
-
-<section id="impact">
+        <section id="impact">
             <h2>Collaboration & Industry Impact</h2>
             <p style="margin-bottom: 2rem;">The MAYA Research Group targets high-impact applications by bridging the gap between hardware layers and high-level AI algorithms.</p>
             <div class="collab-grid">
@@ -300,7 +328,8 @@
                     <p>Protecting patient data processed at the network edge via secure AI.</p>
                 </div>
             </div>
-        </section>        
+        </section>
+
     </div>
 
     <footer>
