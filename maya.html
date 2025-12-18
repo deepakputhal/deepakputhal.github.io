@@ -1,319 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MAYA Research Group | Dr. Deepak Puthal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAYA Research Group | Dr. Deepak Puthal</title>
+    <style>
+        :root {
+            --primary-blue: #002b5c;
+            --secondary-blue: #00509d;
+            --tech-accent: #00d4ff;
+            --light-bg: #f8fafc;
+            --text-dark: #1e293b;
+            --border-color: #e2e8f0;
+        }
 
-<style>
-:root {
-    --primary-blue: #002b5c;
-    --secondary-blue: #00509d;
-    --tech-accent: #00d4ff;
-    --light-bg: #f8fafc;
-    --text-dark: #1e293b;
-    --border-color: #e2e8f0;
-}
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            margin: 0;
+            background-color: var(--light-bg);
+            scroll-behavior: smooth;
+        }
 
-body {
-    font-family: 'Inter', system-ui, sans-serif;
-    margin: 0;
-    background: var(--light-bg);
-    color: var(--text-dark);
-    line-height: 1.7;
-    scroll-behavior: smooth;
-}
+        /* Navigation */
+        nav {
+            background: white;
+            color: var(--primary-blue);
+            padding: 1rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
 
-/* ---------------- NAVIGATION ---------------- */
-nav {
-    position: sticky;
-    top: 0;
-    background: white;
-    padding: 1rem 10%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-    z-index: 1000;
-}
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
 
-.logo {
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    color: var(--primary-blue);
-}
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-}
+        nav ul li {
+            margin-left: 25px;
+        }
 
-nav a {
-    text-decoration: none;
-    font-weight: 600;
-    color: var(--text-dark);
-}
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
 
-nav a:hover {
-    color: var(--secondary-blue);
-}
+        nav a:hover {
+            color: var(--secondary-blue);
+        }
 
-/* ---------------- HERO ---------------- */
-.hero {
-    background: linear-gradient(135deg, var(--primary-blue), #001a35);
-    color: white;
-    padding: 5rem 10%;
-    text-align: center;
-}
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #001a35 100%);
+            color: white;
+            padding: 5rem 10%;
+            text-align: center;
+        }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            letter-spacing: -1px;
+        }
 
-.hero .tagline {
-    color: var(--tech-accent);
-    font-size: 1.3rem;
-    font-weight: 500;
-}
+        .hero p.tagline {
+            font-size: 1.25rem;
+            margin-top: 10px;
+            color: var(--tech-accent);
+            font-weight: 500;
+        }
 
-/* ---------------- GENERAL LAYOUT ---------------- */
-.container {
-    width: 80%;
-    max-width: 1100px;
-    margin: auto;
-}
+        /* Mission Statement Box */
+        .mission-box {
+            background: #e0f7fa;
+            border-left: 6px solid var(--secondary-blue);
+            padding: 2rem;
+            margin: 3rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
 
-section {
-    padding: 4rem 0;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-}
+        /* Layout */
+        .container {
+            width: 80%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-bottom: 5rem;
+        }
 
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+        section {
+            padding: 4rem 0 2rem 0;
+        }
 
-h2 {
-    color: var(--primary-blue);
-    font-size: 2rem;
-}
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            position: relative;
+        }
 
-h2::after {
-    content: '';
-    width: 60px;
-    height: 4px;
-    background: var(--tech-accent);
-    display: block;
-    margin-top: 10px;
-}
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--tech-accent);
+            margin-top: 10px;
+        }
 
-/* ---------------- MISSION ---------------- */
-.mission-box {
-    background: #e0f7fa;
-    border-left: 6px solid var(--secondary-blue);
-    padding: 2rem;
-    margin-top: 2rem;
-    border-radius: 0 8px 8px 0;
-    font-style: italic;
-}
+        /* Pillars Card Styles */
+        .pillar-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
 
-/* ---------------- ACCORDION ---------------- */
-.accordion {
-    background: white;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    margin-bottom: 1.5rem;
-    cursor: pointer;
-    padding: 1.5rem;
-    transition: all 0.3s;
-}
+        .pillar-item {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
 
-.accordion:hover {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
+        .pillar-item h3 {
+            margin-top: 0;
+            color: var(--secondary-blue);
+            font-size: 1.4rem;
+        }
 
-.accordion h3 {
-    margin: 0;
-    color: var(--secondary-blue);
-}
+        /* Members Section */
+        .member-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
 
-.panel {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-}
+        .member-info h3 {
+            margin-top: 0;
+            color: var(--primary-blue);
+            font-size: 1.6rem;
+        }
 
-/* ---------------- CARDS ---------------- */
-.card {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
+        .role-tag {
+            display: inline-block;
+            background: var(--secondary-blue);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-}
+        .student-category h4 {
+            color: var(--secondary-blue);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin: 2.5rem 0 1.5rem 0;
+        }
 
-/* ---------------- GRID ---------------- */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
+        .student-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
 
-/* ---------------- FOOTER ---------------- */
-footer {
-    background: #0f172a;
-    color: #94a3b8;
-    text-align: center;
-    padding: 3rem 10%;
-}
+        /* Collaboration Grid Styles */
+        .collab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
 
-/* ---------------- BACK TO TOP ---------------- */
-#topBtn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: var(--secondary-blue);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 14px 18px;
-    cursor: pointer;
-    display: none;
-}
+        .collab-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-top: 4px solid var(--secondary-blue);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
 
-#topBtn:hover {
-    background: var(--primary-blue);
-}
+        .collab-card h4 {
+            margin-top: 0;
+            color: var(--primary-blue);
+        }
 
-/* ---------------- RESPONSIVE ---------------- */
-@media (max-width: 768px) {
-    .container { width: 90%; }
-    .hero h1 { font-size: 2.2rem; }
-}
-</style>
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 3rem 10%;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .container { width: 90%; }
+            .hero h1 { font-size: 2.2rem; }
+        }
+    </style>
 </head>
-
 <body>
 
-<nav>
-    <div class="logo">MAYA Research Group</div>
-    <ul>
-        <li><a href="#about">Overview</a></li>
-        <li><a href="#pillars">Pillars</a></li>
-        <li><a href="#members">Members</a></li>
-        <li><a href="#impact">Impact</a></li>
-    </ul>
-</nav>
+    <nav>
+        <div class="logo">MAYA RESEARCH GROUP</div>
+        <ul>
+            <li><a href="#about">Overview</a></li>
+            <li><a href="#pillars">Pillars</a></li>
+            <li><a href="#members">Members</a></li>
+            <li><a href="#impact">Impact</a></li>
+        </ul>
+    </nav>
 
-<header class="hero">
-    <h1>MAYA Research Group</h1>
-    <p class="tagline">Machine Intelligence for Adaptive and Secure sYstems</p>
-    <p style="opacity:0.85">Led by Dr. Deepak Puthal | United Arab Emirates University</p>
-</header>
+    <header class="hero">
+        <h1>MAYA Research Group</h1>
+        <p class="tagline">Machine Intelligence for Adaptive and Secure sYstems</p>
+        <p style="margin-top: 20px; opacity: 0.8;">Led by Dr. Deepak Puthal | United Arab Emirates University (UAEU)</p>
+    </header>
 
-<div class="container">
+    <div class="container">
+        
+        <section id="about">
+            <h2>Technical Overview</h2>
+            <p>The MAYA Research Group conducts research at the intersection of artificial intelligence, cybersecurity, and resilient system engineering, with a focus on protecting complex, large-scale digital ecosystems operating in adversarial environments. The group develops AI-driven security mechanisms for adaptive threat detection, autonomous response, and system self-healing across distributed, edge, and cyber-physical systems. Its research emphasizes robust and trustworthy AI, adversarial resilience, privacy-aware intelligence, and security-by-design architectures that enable systems to operate reliably under uncertainty, scale, and continuous attack.</p>
+            
+            <div class="mission-box">
+                "To engineer autonomous, intelligence-driven computing systems that embed security at the core of distributed architectures, ensuring adaptive resilience, mission continuity, and data integrity in dynamic and adversarial environments."
+            </div>
+        </section>
 
-<section id="about">
-<h2>Technical Overview</h2>
-<p>
-The MAYA Research Group focuses on AI-driven cybersecurity and resilient system design,
-addressing the challenges of dynamic, adversarial, and large-scale digital ecosystems.
-</p>
-<div class="mission-box">
-“To engineer autonomous, intelligence-driven systems that embed security into the
-foundations of distributed computing.”
-</div>
-</section>
+        <section id="pillars">
+            <h2>Core Research Pillars</h2>
+            <div class="pillar-list">
+                <div class="pillar-item">
+                    <h3>Machine Intelligence for Adaptive Defense</h3>
+                    <p>Transitioning from static signatures to behavioral-based AI monitoring for autonomous self-healing and reinforcement-learning based defense optimization.</p>
+                </div>
+                <div class="pillar-item">
+                    <h3>Secure Distributed Systems & Edge Computing</h3>
+                    <p>Solving security challenges in decentralized networks through Blockchain integration and optimized Edge-AI models for trillion-node IoT ecosystems.</p>
+                </div>
+                <div class="pillar-item">
+                    <h3>Adversarial AI & Cyber-Deception</h3>
+                    <p>Focusing on active defense via simulated high-fidelity decoy environments and protecting neural networks from data poisoning attacks.</p>
+                </div>
+            </div>
+        </section>
 
-<section id="pillars">
-<h2>Core Research Pillars</h2>
+        <section id="members">
+            <h2>Group Members</h2>
+            
+            <div class="member-card">
+                <span class="role-tag">Director / Group Lead</span>
+                <h3>Dr. Deepak Puthal</h3>
+                <p>Dr. Deepak Puthal’s research methodology emphasizes <strong>Computational Scalability</strong>. His work ensures that security measures do not become a bottleneck for system performance. By bridging the gap between high-level AI algorithms and low-level network protocols, he leads the MAYA group in producing "Systems-Aware AI."</p>
+            </div>
 
-<div class="accordion">
-<h3>Machine Intelligence for Adaptive Defense</h3>
-<div class="panel">
-<p>Autonomous detection, reinforcement learning–based defense, and self-healing systems.</p>
-</div>
-</div>
+            <div class="student-category">
+                <h4>Post-Doctoral Fellows</h4>
+                <div class="student-grid">
+                    <div class="pillar-item" style="padding: 1.5rem;">
+                        <strong>[Name Placeholder]</strong><br>
+                        <small>Research Focus: Adversarial Machine Learning</small>
+                    </div>
+                </div>
+            </div>
 
-<div class="accordion">
-<h3>Secure Distributed Systems & Edge Computing</h3>
-<div class="panel">
-<p>Blockchain-enabled trust, secure IoT, and scalable Edge-AI architectures.</p>
-</div>
-</div>
+            <div class="student-category">
+                <h4>PhD Students</h4>
+                <div class="student-grid">
+                    <div class="pillar-item" style="padding: 1.5rem;">
+                        <strong>[Name Placeholder]</strong><br>
+                        <small>Topic: Autonomous Remediation in IoT</small>
+                    </div>
+                    <div class="pillar-item" style="padding: 1.5rem;">
+                        <strong>[Name Placeholder]</strong><br>
+                        <small>Topic: Blockchain-based Identity Management</small>
+                    </div>
+                </div>
+            </div>
 
-<div class="accordion">
-<h3>Adversarial AI & Cyber-Deception</h3>
-<div class="panel">
-<p>Adversarial learning defense, deception technologies, and robust AI pipelines.</p>
-</div>
-</div>
+            <div class="student-category">
+                <h4>Undergraduate Researchers</h4>
+                <div class="student-grid">
+                    <div class="pillar-item" style="padding: 1.5rem;">
+                        <strong>[Name Placeholder]</strong><br>
+                        <small>Project: Edge Computing Security Simulation</small>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-</section>
+        <section id="impact">
+            <h2>Collaboration & Industry Impact</h2>
+            <p style="margin-bottom: 2rem;">The MAYA Research Group targets high-impact applications by bridging the gap between hardware layers and high-level AI algorithms.</p>
+            <div class="collab-grid">
+                <div class="collab-card">
+                    <h4>Critical Infrastructure</h4>
+                    <p>Securing Smart Grids and Industry 4.0 automation systems.</p>
+                </div>
+                <div class="collab-card">
+                    <h4>Autonomous Mobility</h4>
+                    <p>Ensuring the integrity of V2X (Vehicle-to-Everything) communications.</p>
+                </div>
+                <div class="collab-card">
+                    <h4>Digital Health</h4>
+                    <p>Protecting patient data processed at the network edge via secure AI.</p>
+                </div>
+            </div>
+        </section>
 
-<section id="members">
-<h2>Group Leadership</h2>
-<div class="card">
-<h3>Dr. Deepak Puthal</h3>
-<p>
-Director and Founder of MAYA. His research bridges AI algorithms with system-level
-security, enabling scalable and deployable intelligent defense mechanisms.
-</p>
-</div>
-</section>
+    </div>
 
-<section id="impact">
-<h2>Collaboration & Impact</h2>
-<div class="grid">
-<div class="card"><strong>Critical Infrastructure</strong><p>Smart grids, Industry 4.0</p></div>
-<div class="card"><strong>Autonomous Systems</strong><p>V2X and CPS security</p></div>
-<div class="card"><strong>Digital Health</strong><p>Secure Edge-AI for healthcare</p></div>
-</div>
-</section>
-
-</div>
-
-<footer>
-<p><strong>MAYA Research Group</strong></p>
-<p>College of Information Technology, United Arab Emirates University</p>
-<p style="font-size:0.8rem;">© 2025</p>
-</footer>
-
-<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-
-<script>
-/* Reveal sections on scroll */
-const sections = document.querySelectorAll("section");
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
-    });
-});
-sections.forEach(section => observer.observe(section));
-
-/* Accordion */
-document.querySelectorAll(".accordion").forEach(acc => {
-    acc.addEventListener("click", () => {
-        const panel = acc.querySelector(".panel");
-        panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + "px";
-    });
-});
-
-/* Back to top */
-window.onscroll = () => {
-    document.getElementById("topBtn").style.display =
-        window.scrollY > 300 ? "block" : "none";
-};
-</script>
+    <footer>
+<p>&copy; 2025 MAYA Research Group | College of Information Technology | UAEU</p>    
+    </footer>
 
 </body>
 </html>
