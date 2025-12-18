@@ -5,6 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAYA Research Group | Dr. Deepak Puthal</title>
     <style>
+        /* Flashy News Ticker Styles */
+        .news-ticker-container {
+            background: #000;
+            color: white;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            position: relative;
+            z-index: 1100;
+            border-bottom: 2px solid var(--tech-accent);
+        }
+
+        .news-label {
+            background: linear-gradient(90deg, #ff0055, #ff5500);
+            padding: 0 20px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 10px 0 20px rgba(0,0,0,0.5);
+        }
+
+        .live-dot {
+            height: 8px;
+            width: 8px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.9); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+            100% { transform: scale(0.9); opacity: 1; }
+        }
+
+        .ticker-wrapper {
+            flex-grow: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ticker-content {
+            display: inline-block;
+            padding-left: 100%;
+            animation: ticker 25s linear infinite;
+        }
+
+        .ticker-item {
+            display: inline-block;
+            padding: 0 40px;
+            color: var(--tech-accent);
+            font-weight: 500;
+        }
+
+        .ticker-item span {
+            color: #fff;
+            margin-right: 10px;
+            font-weight: 300;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .news-ticker-container:hover .ticker-content {
+            animation-play-state: paused;
+        }
+
         :root {
             --primary-blue: #002b5c;
             --secondary-blue: #00509d;
@@ -221,6 +301,18 @@
     </style>
 </head>
 <body>
+
+    <div class="news-ticker-container">
+        <div class="news-label"><span class="live-dot"></span>Updates</div>
+        <div class="ticker-wrapper">
+            <div class="ticker-content">
+                <div class="ticker-item"><span>NEW:</span> Dr. Deepak Puthal receives formal approval for the MAYA Research Group at UAEU.</div>
+                <div class="ticker-item"><span>ANNOUNCEMENT:</span> Open positions for PhD and Post-Doc researchers in Cognitive Cyber-Resilience.</div>
+                <div class="ticker-item"><span>RESEARCH:</span> New paper on Adaptive Defense for Edge Computing accepted in Top-tier Journal.</div>
+                <div class="ticker-item"><span>EVENT:</span> Upcoming seminar on Machine Intelligence for Secure Systems - Jan 2026.</div>
+            </div>
+        </div>
+    </div>
 
     <nav>
         <div class="logo">MAYA RESEARCH GROUP</div>
