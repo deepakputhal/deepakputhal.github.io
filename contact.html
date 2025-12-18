@@ -6,16 +6,17 @@
     <title>MAYA Research Group | Dr. Deepak Puthal</title>
     <style>
         :root {
-            --primary-blue: #003366;
+            --primary-blue: #002b5c;
             --secondary-blue: #00509d;
             --tech-accent: #00d4ff;
-            --light-bg: #f4f7f9;
-            --text-dark: #333;
+            --light-bg: #f8fafc;
+            --text-dark: #1e293b;
+            --border-color: #e2e8f0;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
             color: var(--text-dark);
             margin: 0;
             background-color: var(--light-bg);
@@ -23,212 +24,314 @@
 
         /* Navigation */
         nav {
-            background: var(--primary-blue);
-            color: white;
-            padding: 1rem 5%;
+            background: white;
+            color: var(--primary-blue);
+            padding: 1rem 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 2px;
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         nav ul {
             list-style: none;
             display: flex;
             margin: 0;
+            padding: 0;
         }
 
         nav ul li {
-            margin-left: 20px;
+            margin-left: 25px;
         }
 
         nav a {
-            color: white;
+            color: var(--text-dark);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-blue);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #001a35 100%);
             color: white;
-            padding: 4rem 10%;
+            padding: 5rem 10%;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 3rem;
+            margin: 0;
+            letter-spacing: -1px;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+        .hero p.tagline {
+            font-size: 1.25rem;
+            margin-top: 10px;
+            color: var(--tech-accent);
+            font-weight: 500;
         }
 
-        /* Main Content */
-        .container {
-            width: 85%;
-            max-width: 1200px;
-            margin: 2rem auto;
-        }
-
-        .section {
-            background: white;
+        /* Mission Statement Box */
+        .mission-box {
+            background: #e0f7fa;
+            border-left: 6px solid var(--secondary-blue);
             padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            margin-bottom: 2rem;
+            margin: 3rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Layout */
+        .container {
+            width: 80%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-bottom: 5rem;
+        }
+
+        section {
+            padding: 4rem 0 2rem 0;
         }
 
         h2 {
+            font-size: 2rem;
             color: var(--primary-blue);
-            border-left: 5px solid var(--tech-accent);
-            padding-left: 15px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
         }
 
-        /* Grid for Research Pillars */
-        .pillar-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--tech-accent);
+            margin-top: 10px;
         }
 
-        .card {
-            border: 1px solid #eee;
-            padding: 1.5rem;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
+        /* Pillars Card Styles */
+        .pillar-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--tech-accent);
+        .pillar-item {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
 
-        .card h3 {
+        .pillar-item h3 {
             margin-top: 0;
             color: var(--secondary-blue);
+            font-size: 1.4rem;
         }
 
-        /* Table Style */
+        .pillar-item ul {
+            padding-left: 20px;
+        }
+
+        /* Table Design */
+        .table-wrapper {
+            overflow-x: auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 1rem;
         }
 
         th, td {
+            padding: 1.2rem;
             text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--border-color);
         }
 
         th {
-            background-color: #f8f9fa;
-            color: var(--primary-blue);
+            background-color: #f1f5f9;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            color: #475569;
+        }
+
+        /* Collaboration List */
+        .collab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .collab-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-top: 4px solid var(--secondary-blue);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 3rem 10%;
             text-align: center;
-            padding: 2rem;
-            background: #222;
-            color: #ccc;
-            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container { width: 90%; }
+            .hero h1 { font-size: 2.2rem; }
+            nav ul { display: none; } /* Simplified for mobile */
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">MAYA GROUP</div>
+        <div class="logo">MAYA RESEARCH GROUP</div>
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#pillars">Research</a></li>
+            <li><a href="#about">Overview</a></li>
+            <li><a href="#mission">Mission</a></li>
+            <li><a href="#pillars">Pillars</a></li>
             <li><a href="#roadmap">Roadmap</a></li>
-            <li><a href="#director">Director</a></li>
+            <li><a href="#impact">Impact</a></li>
         </ul>
     </nav>
 
     <header class="hero">
         <h1>MAYA Research Group</h1>
-        <p>Machine Intelligence for Adaptive and Secure sYstems</p>
-        <p style="font-size: 1rem; margin-top: 10px;">Led by Dr. Deepak Puthal | United Arab Emirates University (UAEU)</p>
+        <p class="tagline">Machine Intelligence for Adaptive and Secure sYstems</p>
+        <p style="margin-top: 20px; opacity: 0.8;">Director: Dr. Deepak Puthal | United Arab Emirates University</p>
     </header>
 
     <div class="container">
         
-        <section id="about" class="section">
+        <section id="about">
             <h2>Technical Overview</h2>
-            <p>The <strong>MAYA Research Group</strong> is a specialized laboratory dedicated to solving the "Resilience Gap" in modern computing. It focuses on the engineering of systems that are not only secure at rest but are capable of <strong>dynamic adaptation</strong>—altering their own configurations and security protocols in real-time to survive sophisticated, multi-stage cyberattacks.</p>
+            <p>The MAYA Research Group is a specialized laboratory dedicated to solving the "Resilience Gap" in modern computing. It focuses on the engineering of systems that are not only secure at rest but are capable of <strong>dynamic adaptation</strong>—altering their own configurations and security protocols in real-time to survive sophisticated, multi-stage cyberattacks.</p>
         </section>
 
-        <section id="pillars" class="section">
+        <section id="mission">
+            <div class="mission-box">
+                "To engineer autonomous, intelligence-driven systems that integrate security into the foundational layers of distributed computing, ensuring mission continuity and data integrity through adaptive resilience."
+            </div>
+        </section>
+
+        <section id="pillars">
             <h2>Core Research Pillars</h2>
-            <div class="pillar-grid">
-                <div class="card">
-                    <h3>Adaptive Defense</h3>
-                    <p>Developing Behavioral AI that monitors system telemetry to identify anomalies and trigger autonomous self-healing protocols.</p>
+            <div class="pillar-list">
+                <div class="pillar-item">
+                    <h3>1. Machine Intelligence for Adaptive Defense</h3>
+                    <p>Transitioning from static signatures to behavioral-based AI monitoring.</p>
+                    <ul>
+                        <li><strong>Self-Healing Architectures:</strong> AI agents that hot-patch vulnerabilities and reroute traffic autonomously during breaches.</li>
+                        <li><strong>Reinforcement Learning:</strong> Training models to optimize defense strategies against evolving adversarial tactics.</li>
+                    </ul>
                 </div>
-                <div class="card">
-                    <h3>Distributed Systems</h3>
-                    <p>Addressing security in decentralized networks through Blockchain integration and optimized Edge-AI models for IoT.</p>
+
+                <div class="pillar-item">
+                    <h3>2. Secure Distributed Systems & Edge Computing</h3>
+                    <p>Solving security challenges in decentralized and resource-constrained networks.</p>
+                    <ul>
+                        <li><strong>Blockchain Integration:</strong> Using distributed ledgers for immutable audit trails and decentralized identity.</li>
+                        <li><strong>Edge-AI Security:</strong> Optimizing security models for IoT devices to maintain low latency and power efficiency.</li>
+                    </ul>
                 </div>
-                <div class="card">
-                    <h3>Cyber-Deception</h3>
-                    <p>Engineering high-fidelity decoy environments using Generative AI to divert and analyze adversarial behavior.</p>
+
+                <div class="pillar-item">
+                    <h3>3. Adversarial AI & Cyber-Deception</h3>
+                    <p>Focusing on active defense via simulated environments and model robustness.</p>
+                    <ul>
+                        <li><strong>High-Fidelity Decoy Systems:</strong> Using Generative AI to create synthetic network nodes to divert and analyze attackers.</li>
+                        <li><strong>Robustness Training:</strong> Protecting neural networks from data poisoning and evasion attacks.</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section id="roadmap" class="section">
-            <h2>Strategic Research Roadmap</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Research Vertical</th>
-                        <th>Technology Stack</th>
-                        <th>Core Objective</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Cognitive Resilience</td>
-                        <td>Transformers & GNNs</td>
-                        <td>Predict attacker intent via pattern recognition.</td>
-                    </tr>
-                    <tr>
-                        <td>Trusted Infrastructure</td>
-                        <td>TEEs & Hardware isolation</td>
-                        <td>Isolate sensitive AI computations at the chip level.</td>
-                    </tr>
-                    <tr>
-                        <td>Scalable Security</td>
-                        <td>Lightweight Cryptography</td>
-                        <td>Secure trillion-node IoT ecosystems efficiently.</td>
-                    </tr>
-                </tbody>
-            </table>
+        <section id="roadmap">
+            <h2>Strategic Research Roadmap (2025-2026)</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Research Vertical</th>
+                            <th>Technology Stack</th>
+                            <th>Core Objective</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cognitive Resilience</strong></td>
+                            <td>Transformers & GNNs</td>
+                            <td>Predict attacker intent via pattern recognition in logs.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Trusted Infrastructure</strong></td>
+                            <td>TEEs (Trusted Execution)</td>
+                            <td>Hardware-level isolation for sensitive AI computations.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Scalable Security</strong></td>
+                            <td>Lightweight Cryptography</td>
+                            <td>Securing trillion-node IoT ecosystems with minimal overhead.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Federated Learning</strong></td>
+                            <td>Privacy-Preserving ML</td>
+                            <td>Training global models without sharing local raw data.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
-        <section id="director" class="section">
-            <h2>Director: Dr. Deepak Puthal</h2>
-            <p>Dr. Deepak Puthal's research methodology emphasizes <strong>Computational Scalability</strong>. The lab’s work ensures that security measures do not become a bottleneck for system performance. By bridging the gap between high-level AI algorithms and low-level network protocols, the MAYA group produces "Systems-Aware AI."</p>
+        <section id="impact">
+            <h2>Collaboration & Industry Impact</h2>
+            <p style="margin-bottom: 2rem;">The MAYA Research Group targets high-impact applications by bridging the gap between hardware layers and high-level AI algorithms.</p>
+            <div class="collab-grid">
+                <div class="collab-card">
+                    <h4>Critical Infrastructure</h4>
+                    <p>Securing Smart Grids and Industry 4.0 automation systems.</p>
+                </div>
+                <div class="collab-card">
+                    <h4>Autonomous Mobility</h4>
+                    <p>Ensuring the integrity of V2X (Vehicle-to-Everything) communications.</p>
+                </div>
+                <div class="collab-card">
+                    <h4>Digital Health</h4>
+                    <p>Protecting patient data processed at the network edge via secure AI.</p>
+                </div>
+            </div>
         </section>
 
     </div>
 
     <footer>
-        <p>&copy; 2025 MAYA Research Group | College of Information Technology | UAEU</p>
+        <p><strong>MAYA Research Group</strong></p>
+        <p>College of Information Technology, United Arab Emirates University</p>
+        <p style="font-size: 0.8rem; margin-top: 20px;">&copy; 2025 | All Rights Reserved</p>
     </footer>
 
 </body>
