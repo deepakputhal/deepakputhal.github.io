@@ -220,46 +220,23 @@
             border-radius: 12px;
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .pillar-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.05);
         }
 
         .pillar-item h3 {
-            margin: 0;
+            margin-top: 0;
             color: var(--secondary-blue);
             font-size: 1.4rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
-        .pillar-item h3::after {
-            content: '+';
-            font-size: 1.2rem;
-            color: var(--tech-accent);
-            transition: transform 0.3s;
+        /* Summary Tag Styling for Pillars */
+        .pillar-item summary {
+            cursor: pointer;
+            list-style: none;
+            outline: none;
         }
-
-        .pillar-item.active h3::after {
-            transform: rotate(45deg);
-        }
-
-        .pillar-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out, margin-top 0.3s;
-            opacity: 0;
-        }
-
-        .pillar-item.active .pillar-details {
-            max-height: 500px;
-            margin-top: 1.5rem;
-            opacity: 1;
+        
+        .pillar-item summary::-webkit-details-marker {
+            display: none;
         }
 
         /* Members Section */
@@ -299,6 +276,14 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
+        }
+
+        /* Alumni Specific Style */
+        .alumni-section {
+            background: #f1f5f9;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 3rem;
         }
 
         /* Collaboration Grid Styles */
@@ -376,23 +361,23 @@
         <section id="pillars">
             <h2>Core Research Pillars</h2>
             <div class="pillar-list">
-                <div class="pillar-item" onclick="togglePillar(this)">
-                    <h3>Machine Intelligence for Adaptive Defense</h3>
-                    <div class="pillar-details">
+                <div class="pillar-item">
+                    <details>
+                        <summary><h3>Machine Intelligence for Adaptive Defense</h3></summary>
                         <p>Transitioning from static signatures to behavioral-based AI monitoring for autonomous self-healing and reinforcement-learning based defense optimization.</p>
-                    </div>
+                    </details>
                 </div>
-                <div class="pillar-item" onclick="togglePillar(this)">
-                    <h3>Secure Distributed Systems & Edge Computing</h3>
-                    <div class="pillar-details">
+                <div class="pillar-item">
+                    <details>
+                        <summary><h3>Secure Distributed Systems & Edge Computing</h3></summary>
                         <p>Solving security challenges in decentralized networks through Blockchain integration and optimized Edge-AI models for trillion-node IoT ecosystems.</p>
-                    </div>
+                    </details>
                 </div>
-                <div class="pillar-item" onclick="togglePillar(this)">
-                    <h3>Adversarial AI & Cyber-Deception</h3>
-                    <div class="pillar-details">
+                <div class="pillar-item">
+                    <details>
+                        <summary><h3>Adversarial AI & Cyber-Deception</h3></summary>
                         <p>Focusing on active defense via simulated high-fidelity decoy environments and protecting neural networks from data poisoning attacks.</p>
-                    </div>
+                    </details>
                 </div>
             </div>
         </section>
@@ -403,13 +388,13 @@
             <div class="member-card">
                 <span class="role-tag">Director / Group Lead</span>
                 <h3>Dr. Deepak Puthal</h3>
-                <p>Dr. Deepak Puthal is an Associate Professor at United Arab Emirates University and a globally recognized expert specializing in cybersecurity, applied AI, blockchain, and edge computing. With over 150 scientific publications and numerous international accolades, his research focuses on engineering autonomous, intelligence-driven computing systems that ensure adaptive resilience and data integrity in adversarial environments.</p>
+                <p>Dr. Deepak Puthal’s research methodology emphasizes <strong>Computational Scalability</strong>. His work ensures that security measures do not become a bottleneck for system performance. By bridging the gap between high-level AI algorithms and low-level network protocols, he leads the MAYA group in producing "Systems-Aware AI."</p>
             </div>
 
             <div class="student-category">
                 <h4>Post-Doctoral Fellows</h4>
                 <div class="student-grid">
-                    <div class="pillar-item" style="padding: 1.5rem; cursor: default;">
+                    <div class="pillar-item" style="padding: 1.5rem;">
                         <strong>[Name Placeholder]</strong><br>
                         <small>Research Focus: Adversarial Machine Learning</small>
                     </div>
@@ -419,11 +404,11 @@
             <div class="student-category">
                 <h4>PhD Students</h4>
                 <div class="student-grid">
-                    <div class="pillar-item" style="padding: 1.5rem; cursor: default;">
+                    <div class="pillar-item" style="padding: 1.5rem;">
                         <strong>[Name Placeholder]</strong><br>
                         <small>Topic: Autonomous Remediation in IoT</small>
                     </div>
-                    <div class="pillar-item" style="padding: 1.5rem; cursor: default;">
+                    <div class="pillar-item" style="padding: 1.5rem;">
                         <strong>[Name Placeholder]</strong><br>
                         <small>Topic: Blockchain-based Identity Management</small>
                     </div>
@@ -433,9 +418,66 @@
             <div class="student-category">
                 <h4>Undergraduate Researchers</h4>
                 <div class="student-grid">
-                    <div class="pillar-item" style="padding: 1.5rem; cursor: default;">
+                    <div class="pillar-item" style="padding: 1.5rem;">
                         <strong>[Name Placeholder]</strong><br>
                         <small>Project: Edge Computing Security Simulation</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alumni-section">
+                <h3 style="color: var(--primary-blue); border-bottom: 2px solid var(--secondary-blue); padding-bottom: 10px;">Alumni</h3>
+                
+                <div class="student-category">
+                    <h4>Post-Doctoral Fellows</h4>
+                    <div class="student-grid">
+                        <div class="pillar-item" style="padding: 1.2rem;">
+                            <strong>Joy Dutta</strong><br>
+                            <small>Khalifa University</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="student-category">
+                    <h4>PhD</h4>
+                    <div class="student-grid">
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Yuhang Guo</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Xiaochen Fan</strong><br><small>University of Technology Sydney</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Ahmad Alsharidah</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Wise Ponsly Selvaraj</strong><br><small>University of Technology Sydney</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Rayan Soqati</strong><br><small>University of Technology Sydney</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Ashish Virendra Chandak</strong><br><small>KIIT University, India</small></div>
+                    </div>
+                </div>
+
+                <div class="student-category">
+                    <h4>MSc</h4>
+                    <div class="student-grid">
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Mansour Saif Alkaabi</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Shamma Alshebli</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Shouq Alabdouli</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Saeed Alqubaisi</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Darwish AlNeyadi</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Tan Chee Shuan Tan</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Abdullah Alhoshan</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Jeff Kung</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Ashok Stephen Sampath Kumar</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Airavati Subramonia</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Stanly Palathingal</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Yulun Wu</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Zhao Liangkun</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Jing Gou Tingtao</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Mo Dino</strong><br><small>Newcastle University</small></div>
+                    </div>
+                </div>
+
+                <div class="student-category">
+                    <h4>Research Assistants / Other</h4>
+                    <div class="student-grid">
+                        <div class="pillar-item" style="padding: 1.2rem;">
+                            <strong>Syed Khawaja Raziuddin</strong><br>
+                            <small>University of Technology Sydney, Australia</small>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -465,18 +507,6 @@
     <footer>
         <p>&copy; 2025 MAYA Research Group | College of Information Technology | UAEU</p>    
     </footer>
-
-    <script>
-        function togglePillar(element) {
-            // Close other open pillars (optional - comment out if you want multiple open)
-            document.querySelectorAll('.pillar-item').forEach(item => {
-                if (item !== element) item.classList.remove('active');
-            });
-            
-            // Toggle current pillar
-            element.classList.toggle('active');
-        }
-    </script>
 
 </body>
 </html>
