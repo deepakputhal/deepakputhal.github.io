@@ -230,4 +230,90 @@ addressing the challenges of dynamic, adversarial, and large-scale digital ecosy
 </p>
 <div class="mission-box">
 “To engineer autonomous, intelligence-driven systems that embed security into the
-foundation
+foundations of distributed computing.”
+</div>
+</section>
+
+<section id="pillars">
+<h2>Core Research Pillars</h2>
+
+<div class="accordion">
+<h3>Machine Intelligence for Adaptive Defense</h3>
+<div class="panel">
+<p>Autonomous detection, reinforcement learning–based defense, and self-healing systems.</p>
+</div>
+</div>
+
+<div class="accordion">
+<h3>Secure Distributed Systems & Edge Computing</h3>
+<div class="panel">
+<p>Blockchain-enabled trust, secure IoT, and scalable Edge-AI architectures.</p>
+</div>
+</div>
+
+<div class="accordion">
+<h3>Adversarial AI & Cyber-Deception</h3>
+<div class="panel">
+<p>Adversarial learning defense, deception technologies, and robust AI pipelines.</p>
+</div>
+</div>
+
+</section>
+
+<section id="members">
+<h2>Group Leadership</h2>
+<div class="card">
+<h3>Dr. Deepak Puthal</h3>
+<p>
+Director and Founder of MAYA. His research bridges AI algorithms with system-level
+security, enabling scalable and deployable intelligent defense mechanisms.
+</p>
+</div>
+</section>
+
+<section id="impact">
+<h2>Collaboration & Impact</h2>
+<div class="grid">
+<div class="card"><strong>Critical Infrastructure</strong><p>Smart grids, Industry 4.0</p></div>
+<div class="card"><strong>Autonomous Systems</strong><p>V2X and CPS security</p></div>
+<div class="card"><strong>Digital Health</strong><p>Secure Edge-AI for healthcare</p></div>
+</div>
+</section>
+
+</div>
+
+<footer>
+<p><strong>MAYA Research Group</strong></p>
+<p>College of Information Technology, United Arab Emirates University</p>
+<p style="font-size:0.8rem;">© 2025</p>
+</footer>
+
+<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* Reveal sections on scroll */
+const sections = document.querySelectorAll("section");
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+    });
+});
+sections.forEach(section => observer.observe(section));
+
+/* Accordion */
+document.querySelectorAll(".accordion").forEach(acc => {
+    acc.addEventListener("click", () => {
+        const panel = acc.querySelector(".panel");
+        panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + "px";
+    });
+});
+
+/* Back to top */
+window.onscroll = () => {
+    document.getElementById("topBtn").style.display =
+        window.scrollY > 300 ? "block" : "none";
+};
+</script>
+
+</body>
+</html>
