@@ -228,6 +228,17 @@
             font-size: 1.4rem;
         }
 
+        /* Summary Tag Styling for Pillars */
+        .pillar-item summary {
+            cursor: pointer;
+            list-style: none;
+            outline: none;
+        }
+        
+        .pillar-item summary::-webkit-details-marker {
+            display: none;
+        }
+
         /* Members Section */
         .member-card {
             background: white;
@@ -325,8 +336,8 @@
         <ul>
             <li><a href="#about">Overview</a></li>
             <li><a href="#pillars">Pillars</a></li>
-            <li><a href="#members">Members</a></li>
             <li><a href="#impact">Impact</a></li>
+            <li><a href="#members">Members</a></li>
         </ul>
     </nav>
 
@@ -351,16 +362,41 @@
             <h2>Core Research Pillars</h2>
             <div class="pillar-list">
                 <div class="pillar-item">
-                    <h3>Machine Intelligence for Adaptive Defense</h3>
-                    <p>Transitioning from static signatures to behavioral-based AI monitoring for autonomous self-healing and reinforcement-learning based defense optimization.</p>
+                    <details>
+                        <summary><h3>Machine Intelligence for Adaptive Defense</h3></summary>
+                        <p>Transitioning from static signatures to behavioral-based AI monitoring for autonomous self-healing and reinforcement-learning based defense optimization.</p>
+                    </details>
                 </div>
                 <div class="pillar-item">
-                    <h3>Secure Distributed Systems & Edge Computing</h3>
-                    <p>Solving security challenges in decentralized networks through Blockchain integration and optimized Edge-AI models for trillion-node IoT ecosystems.</p>
+                    <details>
+                        <summary><h3>Secure Distributed Systems & Edge Computing</h3></summary>
+                        <p>Solving security challenges in decentralized networks through Blockchain integration and optimized Edge-AI models for trillion-node IoT ecosystems.</p>
+                    </details>
                 </div>
                 <div class="pillar-item">
-                    <h3>Adversarial AI & Cyber-Deception</h3>
-                    <p>Focusing on active defense via simulated high-fidelity decoy environments and protecting neural networks from data poisoning attacks.</p>
+                    <details>
+                        <summary><h3>Adversarial AI & Cyber-Deception</h3></summary>
+                        <p>Focusing on active defense via simulated high-fidelity decoy environments and protecting neural networks from data poisoning attacks.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact">
+            <h2>Collaboration & Industry Impact</h2>
+            <p style="margin-bottom: 2rem;">The MAYA Research Group targets high-impact applications by bridging the gap between hardware layers and high-level AI algorithms.</p>
+            <div class="collab-grid">
+                <div class="collab-card">
+                    <h4>Critical Infrastructure</h4>
+                    <p>Securing Smart Grids and Industry 4.0 automation systems.</p>
+                </div>
+                <div class="collab-card">
+                    <h4>Autonomous Mobility</h4>
+                    <p>Ensuring the integrity of V2X (Vehicle-to-Everything) communications.</p>
+                </div>
+                <div class="collab-card">
+                    <h4>Digital Health</h4>
+                    <p>Protecting patient data processed at the network edge via secure AI.</p>
                 </div>
             </div>
         </section>
@@ -371,7 +407,7 @@
             <div class="member-card">
                 <span class="role-tag">Director / Group Lead</span>
                 <h3>Dr. Deepak Puthal</h3>
-                <p>Dr. Deepak Puthal’s research methodology emphasizes <strong>Computational Scalability</strong>. His work ensures that security measures do not become a bottleneck for system performance. By bridging the gap between high-level AI algorithms and low-level network protocols, he leads the MAYA group in producing "Systems-Aware AI."</p>
+                <p>Dr. Puthal is an Associate Professor at United Arab Emirates University and a globally recognized expert specializing in cybersecurity, applied AI, blockchain, and edge computing. With over 150 scientific publications and numerous international accolades, his research focuses on engineering autonomous, intelligence-driven computing systems that ensure adaptive resilience and data integrity in adversarial environments.</p>
             </div>
 
             <div class="student-category">
@@ -462,25 +498,6 @@
                             <small>University of Technology Sydney, Australia</small>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="impact">
-            <h2>Collaboration & Industry Impact</h2>
-            <p style="margin-bottom: 2rem;">The MAYA Research Group targets high-impact applications by bridging the gap between hardware layers and high-level AI algorithms.</p>
-            <div class="collab-grid">
-                <div class="collab-card">
-                    <h4>Critical Infrastructure</h4>
-                    <p>Securing Smart Grids and Industry 4.0 automation systems.</p>
-                </div>
-                <div class="collab-card">
-                    <h4>Autonomous Mobility</h4>
-                    <p>Ensuring the integrity of V2X (Vehicle-to-Everything) communications.</p>
-                </div>
-                <div class="collab-card">
-                    <h4>Digital Health</h4>
-                    <p>Protecting patient data processed at the network edge via secure AI.</p>
                 </div>
             </div>
         </section>
