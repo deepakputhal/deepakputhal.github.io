@@ -189,6 +189,8 @@
 
         section {
             padding: 4rem 0 2rem 0;
+            /* Smooth Scroll Padding Fix */
+            scroll-margin-top: 100px;
         }
 
         h2 {
@@ -220,6 +222,14 @@
             border-radius: 12px;
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            /* Hover Effect Styles */
+            transition: all 0.3s ease;
+        }
+
+        .pillar-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: var(--secondary-blue);
         }
 
         .pillar-item h3 {
@@ -306,6 +316,32 @@
             color: var(--primary-blue);
         }
 
+        /* Back to Top Button Styles */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 2000;
+            transition: background 0.3s;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        #backToTop:hover {
+            background: var(--tech-accent);
+        }
+
         footer {
             background: #0f172a;
             color: #94a3b8;
@@ -338,8 +374,8 @@
             <li><a href="#pillars">Pillars</a></li>
             <li><a href="#impact">Impact</a></li>
             <li><a href="#recognitions">Recognitions</a></li>
-            <li><a href="#collaborators">Collaborators</a></li>
             <li><a href="#members">Members</a></li>
+            <li><a href="#collaborators">Collaborators</a></li>          
         </ul>
     </nav>
 
@@ -436,6 +472,140 @@
             </div>
         </section>
 
+        <section id="members">
+            <h2>Group Members</h2>
+            
+            <div class="member-card">
+                <span class="role-tag">Director / Group Lead</span>
+                <h3>Dr. Deepak Puthal, FHEA</h3>
+                <p>Dr. Puthal is an Associate Professor at United Arab Emirates University and a globally recognized expert specializing in cybersecurity, applied AI, blockchain, and edge computing. With over 150 scientific publications and numerous international accolades, his research focuses on engineering autonomous, intelligence-driven computing systems that ensure adaptive resilience and data integrity in adversarial environments.</p>
+            </div>
+
+            <div class="student-category">
+                <h4>Post-Doctoral Fellows</h4>
+                <div class="student-grid">
+                    <div class="pillar-item" style="padding: 1.5rem;">
+                        <strong>[Name Placeholder]</strong><br>
+                        <small>Research Focus: Adversarial Machine Learning</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="student-category">
+                <h4>PhD Students</h4>
+                <div class="student-grid">
+                    <div class="pillar-item" style="padding: 1.5rem;">
+                        <strong>[Name Placeholder]</strong><br>
+                        <small>Topic: Autonomous Remediation in IoT</small>
+                    </div>
+                    <div class="pillar-item" style="padding: 1.5rem;">
+                        <strong>[Name Placeholder]</strong><br>
+                        <small>Topic: Blockchain-based Identity Management</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="student-category">
+                <h4>Undergraduate Students</h4>
+                <div class="student-grid">
+                    <div class="pillar-item" style="padding: 1.5rem;">
+                        <strong>Hussa Alamire</strong><br>
+                        <small>Project: Privacy Preserving Explainable Edge AI</small>
+                    </div>
+                    <div class="pillar-item" style="padding: 1.5rem;">
+                        <strong>Fatima Alhammami</strong><br>
+                        <small>Project: Privacy Preserving Explainable Edge AI</small>
+                    </div>
+                    <div class="pillar-item" style="padding: 1.5rem;">
+                        <strong>Shouq Alkatheeri</strong><br>
+                        <small>Project: Privacy Preserving Explainable Edge AI</small>
+                    </div>
+                    <div class="pillar-item" style="padding: 1.5rem;">
+                        <strong>Hind Alneyadi</strong><br>
+                        <small>Project: Privacy Preserving Explainable Edge AI</small>
+                    </div>
+                    <div class="pillar-item" style="padding: 1.5rem;">
+                        <strong>Rawdha Alhosani</strong><br>
+                        <small>Project: Privacy Preserving Explainable Edge AI</small>
+                    </div>                    
+                </div>
+            </div>
+
+            <div class="alumni-section">
+                <h3 style="color: var(--primary-blue); border-bottom: 2px solid var(--secondary-blue); padding-bottom: 10px;">Alumni</h3>
+                
+                <div class="student-category">
+                    <h4>Post-Doctoral Fellows</h4>
+                    <div class="student-grid">
+                        <div class="pillar-item" style="padding: 1.2rem;">
+                            <strong>Joy Dutta</strong><br>
+                            <small>Khalifa University</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="student-category">
+                    <h4>PhD</h4>
+                    <div class="student-grid">
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Yuhang Guo</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Xiaochen Fan</strong><br><small>University of Technology Sydney</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Ahmad Alsharidah</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Wise Ponsly Selvaraj</strong><br><small>University of Technology Sydney</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Rayan Soqati</strong><br><small>University of Technology Sydney</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Ashish Virendra Chandak</strong><br><small>KIIT University, India</small></div>
+                    </div>
+                </div>
+
+                <div class="student-category">
+                    <h4>Masters</h4>
+                    <div class="student-grid">
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Mansour Saif Alkaabi</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Shamma Alshebli</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Shouq Alabdouli</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Saeed Alqubaisi</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Darwish AlNeyadi</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Tan Chee Shuan Tan</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Abdullah Alhoshan</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Jeff Kung</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Ashok Stephen Sampath Kumar</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Airavati Subramonia</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Stanly Palathingal</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Yulun Wu</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Zhao Liangkun</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Jing Gou Tingtao</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Mo Dino</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Syed Khawaja Raziuddin</strong><br><small>University of Technology Sydney</small></div>
+                    </div>
+                </div>
+
+
+                <div class="student-category">
+                    <h4>Undergraduate </h4>
+                    <div class="student-grid">
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Sultan Abdulla Hasan AlmullaAlmansoori</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Mohamed Saqer Mohamed SaifAlzaabi</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Mohamed Ali Mohamed Almulla AlRayssi</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Aaron Aina</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Ben Farmer</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Ethan Lewis</strong><br><small>Newcastle University</small></div>
+                    </div>
+                </div>
+
+                
+                <div class="student-category">
+                    <h4>Research Assistants / Other</h4>
+                    <div class="student-grid">
+                        <div class="pillar-item" style="padding: 1.2rem;">
+                            <strong>Syed Khawaja Raziuddin</strong><br>
+                            <small>University of Technology Sydney, Australia</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
         <section id="collaborators">
             <h2>Collaborators</h2>
             <div class="student-grid">
@@ -475,115 +645,51 @@
                     <strong>Amit Kumar Mishra</strong><br>
                     <small>University West, Sweden & AGH University, Poland</small>
                 </div>
+                <div class="pillar-item" style="padding: 1.5rem;">
+                    <strong>Antonella Longo</strong><br>
+                    <small>University of Salento</small>
+                </div> 
+                <div class="pillar-item" style="padding: 1.5rem;">
+                    <strong>Kumar Yelamarthi</strong><br>
+                    <small>University of Tennessee at Chattanooga</small>
+                </div>                   
+                <div class="pillar-item" style="padding: 1.5rem;">
+                    <strong>Ernesto Damiani</strong><br>
+                    <small>University of Milan</small>
+                </div>                                 
+                <div class="pillar-item" style="padding: 1.5rem;">
+                    <strong>Chan Yeun</strong><br>
+                    <small>Khalifa University</small>
+                </div>                                 
+
             </div>
         </section>
 
-        <section id="members">
-            <h2>Group Members</h2>
-            
-            <div class="member-card">
-                <span class="role-tag">Director / Group Lead</span>
-                <h3>Dr. Deepak Puthal</h3>
-                <p>Dr. Puthal is an Associate Professor at United Arab Emirates University and a globally recognized expert specializing in cybersecurity, applied AI, blockchain, and edge computing. With over 150 scientific publications and numerous international accolades, his research focuses on engineering autonomous, intelligence-driven computing systems that ensure adaptive resilience and data integrity in adversarial environments.</p>
-            </div>
-
-            <div class="student-category">
-                <h4>Post-Doctoral Fellows</h4>
-                <div class="student-grid">
-                    <div class="pillar-item" style="padding: 1.5rem;">
-                        <strong>[Name Placeholder]</strong><br>
-                        <small>Research Focus: Adversarial Machine Learning</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="student-category">
-                <h4>PhD Students</h4>
-                <div class="student-grid">
-                    <div class="pillar-item" style="padding: 1.5rem;">
-                        <strong>[Name Placeholder]</strong><br>
-                        <small>Topic: Autonomous Remediation in IoT</small>
-                    </div>
-                    <div class="pillar-item" style="padding: 1.5rem;">
-                        <strong>[Name Placeholder]</strong><br>
-                        <small>Topic: Blockchain-based Identity Management</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="student-category">
-                <h4>Undergraduate Researchers</h4>
-                <div class="student-grid">
-                    <div class="pillar-item" style="padding: 1.5rem;">
-                        <strong>[Name Placeholder]</strong><br>
-                        <small>Project: Edge Computing Security Simulation</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="alumni-section">
-                <h3 style="color: var(--primary-blue); border-bottom: 2px solid var(--secondary-blue); padding-bottom: 10px;">Alumni</h3>
-                
-                <div class="student-category">
-                    <h4>Post-Doctoral Fellows</h4>
-                    <div class="student-grid">
-                        <div class="pillar-item" style="padding: 1.2rem;">
-                            <strong>Joy Dutta</strong><br>
-                            <small>Khalifa University</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="student-category">
-                    <h4>PhD</h4>
-                    <div class="student-grid">
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Yuhang Guo</strong><br><small>Khalifa University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Xiaochen Fan</strong><br><small>University of Technology Sydney</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Ahmad Alsharidah</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Wise Ponsly Selvaraj</strong><br><small>University of Technology Sydney</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Rayan Soqati</strong><br><small>University of Technology Sydney</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Ashish Virendra Chandak</strong><br><small>KIIT University, India</small></div>
-                    </div>
-                </div>
-
-                <div class="student-category">
-                    <h4>MSc</h4>
-                    <div class="student-grid">
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Mansour Saif Alkaabi</strong><br><small>Khalifa University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Shamma Alshebli</strong><br><small>Khalifa University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Shouq Alabdouli</strong><br><small>Khalifa University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Saeed Alqubaisi</strong><br><small>Khalifa University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Darwish AlNeyadi</strong><br><small>Khalifa University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Tan Chee Shuan Tan</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Abdullah Alhoshan</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Jeff Kung</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Ashok Stephen Sampath Kumar</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Airavati Subramonia</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Stanly Palathingal</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Yulun Wu</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Zhao Liangkun</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Jing Gou Tingtao</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Mo Dino</strong><br><small>Newcastle University</small></div>
-                    </div>
-                </div>
-
-                <div class="student-category">
-                    <h4>Research Assistants / Other</h4>
-                    <div class="student-grid">
-                        <div class="pillar-item" style="padding: 1.2rem;">
-                            <strong>Syed Khawaja Raziuddin</strong><br>
-                            <small>University of Technology Sydney, Australia</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        
     </div>
+
+    <a href="#" id="backToTop" title="Go to top">↑</a>
 
     <footer>
         <p>&copy; 2025 MAYA Research Group | College of Information Technology | UAEU</p>    
     </footer>
+
+    <script>
+        const backToTopButton = document.getElementById("backToTop");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopButton.style.display = "flex";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        backToTopButton.onclick = function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        };
+    </script>
 
 </body>
 </html>
