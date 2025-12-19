@@ -3,304 +3,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DACS 2025 | 8th International Conference</title>
+    <title>DACS 2025 | 8th International Conference on Data Analytics & Cyber Security</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #00d4ff;
-            --secondary: #00509d;
-            --dark: #0a192f;
-            --glass: rgba(255, 255, 255, 0.05);
             --accent: #ff0055;
+            --dark-bg: #050a14;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --text-main: #e2e8f0;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
+        * { margin:0; padding:0; box-sizing:border-box; }
         body {
-            background-color: var(--dark);
-            color: white;
-            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
             overflow-x: hidden;
-            line-height: 1.6;
         }
 
-        /* Particles Background Simulation */
-        #bg-canvas {
+        /* Interactive Grid Background */
+        body::before {
+            content: "";
             position: fixed;
             top: 0; left: 0;
-            z-index: -1;
             width: 100%; height: 100%;
-            background: radial-gradient(circle at center, #112240 0%, #0a192f 100%);
+            background-image: radial-gradient(var(--primary) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.05;
+            z-index: -1;
         }
 
-        /* Navbar */
+        /* Navigation */
         nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 10%;
-            background: rgba(10, 25, 47, 0.8);
-            backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
-            top: 0; z-index: 1000;
-            border-bottom: 1px solid var(--glass);
-        }
-
-        .logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.5rem; color: var(--primary); }
-        .nav-links a { color: #ccd6f6; text-decoration: none; margin-left: 2rem; font-size: 0.9rem; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
-
-        /* Hero Section */
-        header {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 5%;
-        }
-
-        .event-badge {
-            background: var(--glass);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            line-height: 1.1;
-            margin-bottom: 1rem;
-        }
-
-        .highlight { color: var(--primary); }
-
-        .venue-info {
-            font-size: 1.2rem;
-            color: #8892b0;
-            margin-bottom: 2rem;
-        }
-
-        /* Countdown */
-        .countdown {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .time-block { text-align: center; }
-        .time-block span { display: block; font-size: 2.5rem; font-weight: 700; color: white; }
-        .time-block small { color: var(--primary); text-transform: uppercase; font-size: 0.7rem; }
-
-        /* Floating Action Button */
-        .btn-main {
-            padding: 1rem 2.5rem;
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .btn-main:hover { background: rgba(0, 212, 255, 0.1); transform: translateY(-3px); }
-
-        /* Sections */
-        section { padding: 6rem 10%; }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .card {
-            background: var(--glass);
-            padding: 2rem;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: 0.3s;
-        }
-
-        .card:hover { border-color: var(--primary); transform: translateY(-10px); }
-
-        .card i { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; }
-
-        .date-item {
+            padding: 1rem 5%;
+            background: rgba(5, 10, 20, 0.8);
+            backdrop-filter: blur(15px);
             display: flex;
             justify-content: space-between;
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--glass);
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
         }
 
-        .date-item strong { color: var(--primary); }
+        .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary); letter-spacing: 1px; }
 
-        footer {
+        /* Hero */
+        .hero {
+            padding: 180px 10% 100px;
             text-align: center;
-            padding: 3rem;
-            background: #020c1b;
-            color: #8892b0;
-            border-top: 1px solid var(--glass);
+            background: radial-gradient(circle at 50% 30%, rgba(0, 212, 255, 0.1), transparent);
         }
 
-        /* Animations */
-        [data-aos] { opacity: 0; transform: translateY(30px); transition: 1s; }
-        .visible { opacity: 1 !important; transform: translateY(0) !important; }
+        .badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border: 1px solid var(--primary);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
 
+        h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 20px; font-weight: 800; }
+        .hero p { font-size: 1.2rem; color: var(--text-dim); max-width: 800px; margin: 0 auto 40px; }
+
+        /* Tabs System */
+        .tabs-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .tab-nav {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            scrollbar-width: none;
+        }
+        .tab-btn {
+            padding: 12px 25px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text-dim);
+            cursor: pointer;
+            white-space: nowrap;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .tab-btn.active {
+            background: var(--primary);
+            color: var(--dark-bg);
+            border-color: var(--primary);
+        }
+
+        .tab-content { display: none; animation: fadeIn 0.5s ease; }
+        .tab-content.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Info Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 25px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+        .card:hover { border-color: var(--primary); background: rgba(255,255,255,0.05); }
+        .card h3 { color: var(--primary); margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th { text-align: left; color: var(--primary); padding: 10px; border-bottom: 2px solid var(--border); font-size: 0.9rem; }
+        td { padding: 10px; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+
+        /* Dates List */
+        .date-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .date-row span:last-child { color: var(--accent); font-weight: 600; font-family: 'JetBrains Mono'; }
+
+        /* Bank Info Box */
+        .bank-box {
+            background: linear-gradient(135deg, #0a192f, #050a14);
+            border: 1px dashed var(--primary);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        footer { text-align: center; padding: 50px; margin-top: 100px; background: rgba(0,0,0,0.3); border-top: 1px solid var(--border); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero { padding-top: 120px; }
+            h1 { font-size: 2.2rem; }
+        }
     </style>
 </head>
 <body>
 
-    <canvas id="bg-canvas"></canvas>
-
     <nav>
         <div class="logo">DACS 2025</div>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#dates">Important Dates</a>
-            <a href="#committee">Committee</a>
-            <a href="https://icdacs.github.io/Registration.html" class="btn-main" style="padding: 0.5rem 1.2rem; margin-left: 2rem;">Register</a>
+        <div style="display:flex; gap:15px">
+            <a href="https://forms.gle/m8bcVtBTbHmBx9pr9" target="_blank" style="background:var(--primary); color:black; padding:8px 15px; border-radius:5px; text-decoration:none; font-weight:700; font-size:0.8rem">REGISTER NOW</a>
         </div>
     </nav>
 
-    <header>
-        <div class="event-badge">8th International Conference</div>
-        <h1>Data Analytics & <br><span class="highlight">Cyber Security</span></h1>
-        <p class="venue-info"><i class="fas fa-map-marker-alt"></i> SRM University-AP, Amaravati, India | Dec 21-23, 2025</p>
-        
-        <div class="countdown" id="timer">
-            <div class="time-block"><span id="days">00</span><small>Days</small></div>
-            <div class="time-block"><span id="hours">00</span><small>Hours</small></div>
-            <div class="time-block"><span id="minutes">00</span><small>Mins</small></div>
-            <div class="time-block"><span id="seconds">00</span><small>Secs</small></div>
+    <header class="hero">
+        <div class="badge">8th International Conference</div>
+        <h1>Data Analytics and <br><span style="color:var(--primary)">Cyber Security</span></h1>
+        <p>A global platform for researchers and industry experts to explore advancements in interconnected digital defense and intelligence.</p>
+        <div style="display:flex; justify-content:center; gap:30px; color:var(--text-main)">
+            <div><i class="fas fa-calendar-alt"></i> Dec 21-23, 2025</div>
+            <div><i class="fas fa-map-marker-alt"></i> SRM University-AP, India</div>
         </div>
-
-        <a href="https://icdacs.github.io/index.html" class="btn-main">Submit Your Paper</a>
     </header>
 
-    <section id="about" data-aos>
-        <h2 style="font-size: 2.5rem; text-align: center;">Harnessing <span class="highlight">Intelligence</span> & <span class="highlight">Defense</span></h2>
-        <div class="grid">
-            <div class="card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Data Analytics</h3>
-                <p>Extracting insights from complex datasets to drive informed decisions and optimize operations in a data-driven world.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-shield-halved"></i>
-                <h3>Cyber Security</h3>
-                <p>Protecting critical infrastructure and sensitive data through advanced AI, encryption, and proactive threat detection.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-microchip"></i>
-                <h3>Publication</h3>
-                <p>Accepted papers will be published in <strong>Springer LNEE</strong> (Scopus Indexed) and selected for Q1/Q2 journals.</p>
-            </div>
+    <div class="tabs-container">
+        <div class="tab-nav">
+            <button class="tab-btn active" onclick="openTab(event, 'overview')">Overview</button>
+            <button class="tab-btn" onclick="openTab(event, 'committee')">Organizing Committee</button>
+            <button class="tab-btn" onclick="openTab(event, 'dates')">Important Dates</button>
+            <button class="tab-btn" onclick="openTab(event, 'registration')">Registration & Fees</button>
+            <button class="tab-btn" onclick="openTab(event, 'publication')">Publications</button>
         </div>
-    </section>
 
-    <section id="dates" style="background: rgba(2, 12, 27, 0.5);" data-aos>
-        <h2 style="text-align: center;">Deadlines & <span class="highlight">Schedule</span></h2>
-        <div style="max-width: 700px; margin: 3rem auto;">
-            <div class="date-item"><span>Regular Paper Submission</span> <strong>Sept 25, 2025</strong></div>
-            <div class="date-item"><span>Fast Track Notification</span> <strong>Nov 05, 2025</strong></div>
-            <div class="date-item"><span>Registration Deadline</span> <strong>Oct 31, 2025</strong></div>
-            <div class="date-item"><span>Camera Ready Copy</span> <strong>Nov 05, 2025</strong></div>
-            <div class="date-item" style="border:none"><span>Conference Event</span> <strong>Dec 21-23, 2025</strong></div>
+        <div id="overview" class="tab-content active">
+            <div class="grid">
+                <div class="card">
+                    <h3>About DACS</h3>
+                    <p>DACS 2025 is the 8th edition and the 2nd as an independent conference. It aims to bridge researchers from across the globe to share cutting-edge research in extracting insights from complex datasets while protecting critical infrastructure from evolving cyber threats.</p>
+                </div>
+                <div class="card">
+                    <h3>Venue Details</h3>
+                    <p><strong>Department of Computer Science and Engineering</strong><br>SRM University-AP, Andhra Pradesh, India.</p>
+                    <p style="margin-top:10px"><strong>Convenor:</strong> Dr. Sambit Kumar Mishra<br>Email: sambitkumar.m@srmap.edu.in</p>
+                </div>
+            </div>
         </div>
-    </section>
+
+        <div id="committee" class="tab-content">
+            <div class="grid">
+                <div class="card">
+                    <h3>Patrons</h3>
+                    <ul style="list-style:none; line-height:2">
+                        <li>Prof. T. R. Paarivendhar (Chancellor, SRMIST)</li>
+                        <li>Prof. P. Sathyanarayanan (Pro-Chancellor, SRM-AP)</li>
+                        <li>Prof. Manoj K. Arora (Vice Chancellor, SRM-AP)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>General Chairs</h3>
+                    <ul style="list-style:none; line-height:2">
+                        <li>Saraju P. Mohanty (Univ. of North Texas, USA)</li>
+                        <li>Amit Kumar Mishra (University West, Sweden)</li>
+                        <li>Flavia Delicato (Fluminense Federal Univ., Brazil)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Program Chairs</h3>
+                    <ul style="list-style:none; line-height:2">
+                        <li>Antonella Longo (Univ. of Salento, Italy)</li>
+                        <li>Deepak Puthal (Khalifa University, UAE)</li>
+                        <li>Xuyun Zhang (Macquarie Univ., Australia)</li>
+                        <li>Pradip Kumar Sharma (Univ. of Aberdeen, UK)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="dates" class="tab-content">
+            <div class="card" style="max-width:600px; margin:0 auto;">
+                <h3>Submission Deadlines</h3>
+                <div class="date-row"><span>Fast Track Submission</span> <span>Oct 10, 2025</span></div>
+                <div class="date-row"><span>Fast Track Notification</span> <span>Nov 05, 2025</span></div>
+                <div class="date-row"><span>Regular Submission (Extended)</span> <span>Sept 25, 2025</span></div>
+                <div class="date-row"><span>Regular Author Notification</span> <span>Oct 25, 2025</span></div>
+                <div class="date-row"><span>Registration Due</span> <span>Oct 31, 2025</span></div>
+                <div class="date-row" style="border:none"><span>Camera Ready Copy</span> <span>Nov 05, 2025</span></div>
+            </div>
+        </div>
+
+        <div id="registration" class="tab-content">
+            <div class="grid">
+                <div class="card">
+                    <h3>Indian Author Registration</h3>
+                    <table>
+                        <thead><tr><th>Category</th><th>Author</th><th>Co-author</th></tr></thead>
+                        <tbody>
+                            <tr><td>Academic/Prof.</td><td>₹8000</td><td>₹2000</td></tr>
+                            <tr><td>Students</td><td>₹8000</td><td>₹2000</td></tr>
+                            <tr><td>Industry</td><td>₹10000</td><td>₹3000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card">
+                    <h3>Non-Indian Author Registration</h3>
+                    <table>
+                        <thead><tr><th>Category</th><th>Author</th><th>Co-author</th></tr></thead>
+                        <tbody>
+                            <tr><td>Academic/Prof.</td><td>$250</td><td>$100</td></tr>
+                            <tr><td>Students</td><td>$200</td><td>$100</td></tr>
+                            <tr><td>Industry</td><td>$300</td><td>$100</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="bank-box">
+                <h3 style="color:var(--primary); margin-bottom:15px">Bank Account Details</h3>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; font-size:0.85rem; gap:10px">
+                    <div>Account: <strong>SRM UNIVERSITY AP -AMARAVATI</strong></div>
+                    <div>Bank: <strong>HDFC BANK</strong></div>
+                    <div>A/C No: <strong>50100624163309</strong></div>
+                    <div>IFSC: <strong>HDFC0002704</strong></div>
+                    <div>Swift: <strong>HDFCINBB</strong></div>
+                    <div>Branch: <strong>MANGALAGIRI</strong></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="publication" class="tab-content">
+            <div class="grid">
+                <div class="card">
+                    <h3>Main Proceedings</h3>
+                    <p>Accepted and presented papers will be published in <strong>Lecture Notes in Electrical Engineering (LNEE)</strong>, which is <strong>SCOPUS Indexed</strong>.</p>
+                </div>
+                <div class="card">
+                    <h3>Journal Extensions (Q1/Q2)</h3>
+                    <p>Selected high-quality papers will be invited for extended versions in:</p>
+                    <ul style="margin-top:10px; padding-left:20px; font-size:0.9rem">
+                        <li>Springer Nature Computer Science Journal (Q1)</li>
+                        <li>Elsevier Alexandria Engineering Journal (IF: 6.2)</li>
+                        <li>Wiley Security and Privacy Journal (IF: 1.5)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer>
-        <p>&copy; 2025 DACS Conference Organizers. All Rights Reserved.</p>
-        <p style="margin-top: 10px; font-size: 0.8rem;">Technical Partner: SRM University-AP | Indexing: Scopus, Springer</p>
+        <p>&copy; 2025 DACS Conference. Organized by SRM University-AP.</p>
+        <p style="font-size:0.7rem; color:var(--text-dim); margin-top:10px">All information sourced from the official DACS 2025 portal.</p>
     </footer>
 
     <script>
-        // Countdown Logic
-        const targetDate = new Date("Dec 21, 2025 09:00:00").getTime();
-
-        function updateTimer() {
-            const now = new Date().getTime();
-            const diff = targetDate - now;
-
-            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((diff % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = d < 10 ? "0"+d : d;
-            document.getElementById("hours").innerText = h < 10 ? "0"+h : h;
-            document.getElementById("minutes").innerText = m < 10 ? "0"+m : m;
-            document.getElementById("seconds").innerText = s < 10 ? "0"+s : s;
-        }
-        setInterval(updateTimer, 1000);
-
-        // Canvas Background Animation
-        const canvas = document.getElementById('bg-canvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-
-        function initCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2;
-                this.speedX = Math.random() * 0.5 - 0.25;
-                this.speedY = Math.random() * 0.5 - 0.25;
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
             }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                if (this.x > canvas.width) this.x = 0;
-                if (this.x < 0) this.x = canvas.width;
-                if (this.y > canvas.height) this.y = 0;
-                if (this.y < 0) this.y = canvas.height;
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
             }
-            draw() {
-                ctx.fillStyle = 'rgba(0, 212, 255, 0.3)';
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
         }
-
-        for (let i = 0; i < 100; i++) particles.push(new Particle());
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => { p.update(); p.draw(); });
-            requestAnimationFrame(animate);
-        }
-
-        initCanvas();
-        animate();
-        window.onresize = initCanvas;
-
-        // Simple Scroll Animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('[data-aos]').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
