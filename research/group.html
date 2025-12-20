@@ -167,6 +167,20 @@
             font-weight: 500;
         }
 
+        /* Department Building Image */
+        .building-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .building-img {
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
         /* Mission Statement Box */
         .mission-box {
             background: #e0f7fa;
@@ -189,7 +203,6 @@
 
         section {
             padding: 4rem 0 2rem 0;
-            /* Smooth Scroll Padding Fix */
             scroll-margin-top: 100px;
         }
 
@@ -222,7 +235,6 @@
             border-radius: 12px;
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            /* Hover Effect Styles */
             transition: all 0.3s ease;
         }
 
@@ -238,7 +250,6 @@
             font-size: 1.4rem;
         }
 
-        /* Summary Tag Styling for Pillars */
         .pillar-item summary {
             cursor: pointer;
             list-style: none;
@@ -349,9 +360,51 @@
             text-align: center;
         }
 
+        /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 768px) {
-            .container { width: 90%; }
-            .hero h1 { font-size: 2.2rem; }
+            nav {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 5px 10px;
+            }
+
+            .container { 
+                width: 92%; 
+            }
+
+            .hero {
+                padding: 3rem 5%;
+            }
+
+            .hero h1 { 
+                font-size: 2rem; 
+            }
+
+            .hero p.tagline {
+                font-size: 1rem;
+            }
+
+            .pillar-item, .member-card {
+                padding: 1.5rem;
+            }
+
+            .student-grid {
+                grid-template-columns: 1fr; /* Stack items on mobile */
+            }
+
+            .news-label {
+                padding: 0 10px;
+                font-size: 0.7rem;
+            }
         }
     </style>
 </head>
@@ -361,6 +414,7 @@
         <div class="news-label"><span class="live-dot"></span>Updates</div>
         <div class="ticker-wrapper">
             <div class="ticker-content">
+                <div class="ticker-item"><span>AWARD:</span> Dr. Puthal received the IEEE CTSoc Best Researcher Award (2025).</div>
                 <div class="ticker-item"><span>RESEARCH:</span> New paper on Intent-Driven VM Allocation Strategy for Optimizing Cloudlet is accepted in IEEE IoT Journal.</div>
                 <div class="ticker-item"><span>RESEARCH:</span> New paper on Privacy-Preserving Federated Learning for the Edge-AI is accepted in IEEE Communications Standards Magazine.</div>
             </div>
@@ -386,6 +440,9 @@
     <div class="container">
         
         <section id="about">
+            <div class="building-container">
+                <img src="department-building.jpg" alt="Department Building" class="building-img">
+            </div>
             <h2>Technical Overview</h2>
             <p>The MAYA Research Group conducts research at the intersection of artificial intelligence, cybersecurity, and resilient system engineering, with a focus on protecting complex, large-scale digital ecosystems operating in adversarial environments. The group develops AI-driven security mechanisms for adaptive threat detection, autonomous response, and system self-healing across distributed, edge, and cyber-physical systems. Its research emphasizes robust and trustworthy AI, adversarial resilience, privacy-aware intelligence, and security-by-design architectures that enable systems to operate reliably under uncertainty, scale, and continuous attack.</p>
             <p>MAYA is a Sanskrit term that denotes the intricate nature of reality and perception. For our research group, it carries a parallel significance: the intelligence required to understand, navigate, and secure the hidden complexities of modern computing infrastructures while designing resilient systems.</p>            
@@ -441,8 +498,7 @@
         <section id="honors">
             <h2>Resources & Honors</h2>
 
-
-                        <h3 style="color: var(--secondary-blue); margin-top: 3rem;">Journal Special Sections & Conference</h3>
+            <h3 style="color: var(--secondary-blue); margin-top: 3rem;">Journal Special Sections & Conference</h3>
             <div class="student-grid">
                 <div class="pillar-item" style="padding: 1.5rem;">
                     <a href="https://deepakputhal.github.io/sncs-ccdt" target="_blank" style="text-decoration: none; color: inherit;">
@@ -464,7 +520,6 @@
                 </div>
             </div>
 
-            
             <h3 style="color: var(--secondary-blue); margin-top: 2rem;">Best Paper Awards</h3>
             <div style="display: flex; flex-direction: column; gap: 1rem;">
                 <div class="pillar-item" style="padding: 1.5rem;">
