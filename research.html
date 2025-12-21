@@ -3,46 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deepak Puthal - Personal Website</title>
+    <title>Deepak Puthal - Research</title>
     <style>
-        /* Add your custom CSS styles here */
+        /* MODERN ACADEMIC DESIGN SYSTEM - RESEARCH PAGE */
+        :root {
+            --primary-navy: #0f172a;   
+            --accent-azure: #0ea5e9;   
+            --bg-light: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --gold: #ca8a04;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.7;
         }
+
         header {
-            background-color: #333;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
             color: #fff;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
+            border-bottom: 4px solid var(--accent-azure);
         }
-        h1 {
+
+        header h1 {
+            font-size: 2.2rem;
             margin: 0;
+            font-weight: 800;
+            letter-spacing: -0.025em;
         }
+
+        nav {
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-bottom: 1px solid var(--border);
+        }
+
         nav ul {
             list-style: none;
-            padding: 0;
-            margin: 0;
             display: flex;
             justify-content: center;
-            background-color: #f4f4f4;
-            padding: 10px;
+            margin: 0;
+            padding: 15px;
+            gap: 25px;
+            flex-wrap: wrap;
         }
-        nav ul li {
-            margin-right: 10px;
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--primary-navy);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
         }
+
+        nav ul li a:hover { color: var(--accent-azure); }
+
         main {
-            padding: 20px;
+            max-width: 1000px;
+            margin: 40px auto;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
+
+        main > header {
+            background: transparent;
+            color: var(--primary-navy);
+            border-bottom: 2px solid var(--accent-azure);
+            padding: 0 0 15px 0;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        main > header h1 { font-size: 1.8rem; color: var(--primary-navy); }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--primary-navy);
+            margin-top: 50px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-azure);
+            margin-right: 15px;
+            border-radius: 2px;
+        }
+
+        /* UPDATED RESEARCH INTEREST LIST */
+        .interest-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .interest-list li {
+            position: relative;
+            padding: 12px 15px 12px 40px;
+            margin-bottom: 10px;
+            background: var(--bg-light);
+            border-radius: 8px;
+            font-weight: 600;
+            color: var(--primary-navy);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .interest-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            background: #fff;
+        }
+
+        .interest-list li::before {
+            content: "•";
+            position: absolute;
+            left: 15px;
+            color: var(--accent-azure);
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        /* Publication Links */
+        .pub-grid {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .pub-btn {
+            padding: 10px 20px;
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--primary-navy);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .pub-btn:hover {
+            background: var(--accent-azure);
+            color: white;
+            border-color: var(--accent-azure);
+        }
+
+        /* Best Paper Awards Styling */
+        .award-item {
+            background: #fffdf5;
+            border-left: 4px solid var(--gold);
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .award-tag {
+            color: var(--gold);
+            font-weight: 800;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            display: block;
+            margin-top: 5px;
+        }
+
+        ul { padding-left: 20px; }
+        li { margin-bottom: 0.8rem; }
+        b { color: var(--primary-navy); }
+
         footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
+            background: var(--primary-navy);
+            color: #94a3b8;
+            padding: 40px;
             text-align: center;
+            font-size: 0.9rem;
+            margin-top: 60px;
         }
-              li {
-            margin-bottom: 1em;
+
+        @media (max-width: 768px) {
+            main { padding: 25px; margin: 20px; }
+            header h1 { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -56,26 +215,19 @@
             <li><a href="professional.html">Professional</a></li>
             <li><a href="research.html">Research</a></li>
             <li><a href="recognitions.html">Recognitions</a></li>
-            <!--<li><a href="projects.html">Project Profile</a></li> --!> 
             <li><a href="supervision.html">Supervision</a></li>
             <li><a href="teaching.html">Teaching</a></li> 
         </ul>
     </nav>
     
-    
-
-    
     <main>
-        
-        
-    <header> 
-        <h1>Research Interest and Outcomes</h1>
-    </header>
- 
-        
-         <section id="Research Interest">
+        <header>
+            <h1>Research Interest and Outcomes</h1>
+        </header>
+
+        <section id="Research Interest">
             <h2>Research Interest</h2>
-            <ul>
+            <ul class="interest-list">
                 <li>Cyber Security</li>
                 <li>Blockchain</li>
                 <li>Federated Adversarial Learning</li>
@@ -85,8 +237,7 @@
             </ul>
         </section>
 
-        
-         <section id="Notable Contributions">
+        <section id="Notable Contributions">
             <h2>Notable Contributions</h2>
             <ul>
                 <li><b>Software Defined Perimeter:</b> AI based security model with user demands and device specifications</li>
@@ -96,61 +247,77 @@
             </ul>
         </section>        
   
-        
-        
-        
-         <section id="Open Source Simulator">
+        <section id="Open Source Simulator">
             <h2>Open Source Simulator</h2>
             <ul>
                 <li><b>IoTSim-Edge:</b> Simulator to simulate the IoT and edge environment.</li>
                 <li><b>IoTSim-SDWAN:</b> Simulator to simulate Distributed Datacenters over Software-Defined Wide Area Network</li>
             </ul>
-        </section>       
+        </section>        
         
+        <section id="Publications">
+            <h2>Publications (h-index: 52+)</h2>
+            <p>To access a complete list of my publications, please refer to the following scholarly platforms:</p>
+            <div class="pub-grid">
+                <a href="https://scholar.google.com/citations?hl=en&user=-USAlD8AAAAJ" class="pub-btn" target="_blank">Google Scholar</a>
+                <a href="https://www.scopus.com/authid/detail.uri?authorId=56151401500" class="pub-btn" target="_blank">Scopus</a>
+                <a href="https://dblp.org/pid/154/0895.html" class="pub-btn" target="_blank">DBLP</a>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">These platforms provide comprehensive records of my publications and research impact.</p>
+        </section>        
         
-        
-        
-         <section id="Publications">
-            <h2>Publications  (h-index: 52+)</h2>
-             <p>To access a complete list of my publications, please refer to Google Scholar and/or Scopus and/or DBLP.</p>
-            <ul>
-                <li><a href="https://scholar.google.com/citations?hl=en&user=-USAlD8AAAAJ">Google Scholar</a></li>
-                <li><a href="https://www.scopus.com/authid/detail.uri?authorId=56151401500">Scopus</a></li> 
-                <li><a href="https://dblp.org/pid/154/0895.html">DBLP</a></li>                
-            </ul>
-             <p>These platforms provide comprehensive records of my publications and research works.</p>
-
-        </section>       
-        
-        
-         <section id="patents">
+        <section id="patents">
             <h2>Patents</h2>
-            <ul>
-                <li>P. Panda, A. Mishra and D. Puthal, "Military Operation Inspired Integrated Graph Traversal Algorithm." Indian Patent, Filling Date: 29/06/2022, Application Number: 202231037328.</li>
+            <ul style="list-style: none; padding-left: 0;">
+                <li><i style="color: var(--accent-azure);">■</i> P. Panda, A. Mishra and D. Puthal, "Military Operation Inspired Integrated Graph Traversal Algorithm." Indian Patent, Filling Date: 29/06/2022, Application Number: 202231037328.</li>
             </ul>
-        </section>       
-        
+        </section>        
                
-         <section id="Best Paper Awards">
+        <section id="Best Paper Awards">
             <h2>Best Paper Award List</h2>
-            <ul>
-                <li>D. Al Neyadi, D. Puthal, J. Dutta, and E. Damiani. 'Role-Based Access Control in Private Blockchain for IoT Integrated Smart Contract' 6th IFIP International Internet of Things Conference (IFIP-IoT 2023), 2023. <b>[Best Paper Award]</b> </li>      
-                <li>D. Puthal, S. Wilson, A. Nanda, M. Liu, S. Swain, B. Sahoo, K. Yelamarthi, P. Pillai, H. El-Sayed, and M. Prasad. 'Decision tree based user-centric security solution for critical IoT infrastructure.' Computers and Electrical Engineering, Volume 99, 2022. <b>[IEEE Bio-Inspired Computing STC Best Paper Award]</b></li>
-                <li>S. P. Mohanty, V. P. Yanambaka, E. Kougianos, and D. Puthal. 'PUFchain: Hardware-Assisted Blockchain for Sustainable Simultaneous Device and Data Security in Internet of Everything (IoE).' IEEE Consumer Electronics Magazine, Volume 9, Issue 2, 2020. <b>[IEEE CTSoc Best Paper Award]</b></li>
-                <li>D. Puthal, N. Malik, S. P. Mohanty, E. Kougianos, and G. Das, 'Everything you wanted to Know about Blockchain.' IEEE Consumer Electronics Magazine, Volume 7, Issue 4, Pages 6-14, 2018. <b>[IEEE CTSoc Best Paper Award]</b></li>
-                <li>D. Puthal, N. Malik, S. Mohanty, P. Nanda, and E. Kougianos, 'The Blockchain a Decentralized Security Framework.' IEEE Consumer Electronics Magazine, Volume 7, Issue 2, Pages 18-21, 2018. <b>[IEEE CTSoc Best Paper Award]</b> </li>           
-                <li>J. Dutta, D. Puthal and E. Damiani, ‘AI-based Block Identification and Classification in the Blockchain Integrated IoT’ IEEE/ OITS International Conference on Information Technology (OCIT 2022), 2022. <b>[Best Paper Award]</b> </li>                   
-                <li>A. Bapatla, S. Mohanty, E. Kougianos, D. Puthal. ‘PharmaChain 3.0: Blockchain Integrated Efficient QR Code Mechanism for Pharmaceutical Supply Chain’ IEEE/ OITS International Conference on Information Technology (OCIT 2022), 2022. <b>[Best Paper Award]</b> </li>      
-                <li>A. V. Chandak, N. K. Ray, and D. Puthal, ‘Performanceanalysis of classifier techniques at the edge node.’ IEEE International Symposium on Smart Electronic Systems (IEEE iSES), 2021. <b>[Best Paper Award]</b> </li>      
-                <li>S. Mishra, D. Puthal, B. Sahoo, S. Jena, and M. S. Obaidat, 'An Adaptive Task Allocation Technique for Green Cloud Computing.' Journal of Supercomputing, Volume 74, Issue 1, Pages 370-385, 2018. <b>[2018 IETE Best Research Award]</b> </li>
-             </ul>
-        </section>       
-        
-        
-        
-        
-        
-    
+            <div style="list-style: none; padding-left: 0;">
+                <div class="award-item">
+                    D. Al Neyadi, D. Puthal, J. Dutta, and E. Damiani. 'Role-Based Access Control in Private Blockchain for IoT Integrated Smart Contract' 6th IFIP International Internet of Things Conference (IFIP-IoT 2023), 2023.
+                    <span class="award-tag">Best Paper Award</span>
+                </div>
+                <div class="award-item">
+                    D. Puthal, S. Wilson, A. Nanda, M. Liu, S. Swain, B. Sahoo, K. Yelamarthi, P. Pillai, H. El-Sayed, and M. Prasad. 'Decision tree based user-centric security solution for critical IoT infrastructure.' Computers and Electrical Engineering, 2022.
+                    <span class="award-tag">IEEE Bio-Inspired Computing STC Best Paper Award</span>
+                </div>
+                <div class="award-item">
+                    S. P. Mohanty, V. P. Yanambaka, E. Kougianos, and D. Puthal. 'PUFchain: Hardware-Assisted Blockchain for Sustainable Simultaneous Device and Data Security.' IEEE Consumer Electronics Magazine, 2020.
+                    <span class="award-tag">IEEE CTSoc Best Paper Award</span>
+                </div>
+                <div class="award-item">
+                    D. Puthal, N. Malik, S. P. Mohanty, E. Kougianos, and G. Das, 'Everything you wanted to Know about Blockchain.' IEEE Consumer Electronics Magazine, 2018.
+                    <span class="award-tag">IEEE CTSoc Best Paper Award</span>
+                </div>
+                <div class="award-item">
+                    D. Puthal, N. Malik, S. Mohanty, P. Nanda, and E. Kougianos, 'The Blockchain a Decentralized Security Framework.' IEEE Consumer Electronics Magazine, 2018.
+                    <span class="award-tag">IEEE CTSoc Best Paper Award</span>
+                </div>
+                <div class="award-item">
+                    J. Dutta, D. Puthal and E. Damiani, ‘AI-based Block Identification and Classification in the Blockchain Integrated IoT’ IEEE/ OITS International Conference on Information Technology (OCIT 2022), 2022.
+                    <span class="award-tag">Best Paper Award</span>
+                </div>
+                <div class="award-item">
+                    A. Bapatla, S. Mohanty, E. Kougianos, D. Puthal. ‘PharmaChain 3.0: Blockchain Integrated Efficient QR Code Mechanism for Pharmaceutical Supply Chain’ IEEE/ OITS (OCIT 2022), 2022.
+                    <span class="award-tag">Best Paper Award</span>
+                </div>
+                <div class="award-item">
+                    A. V. Chandak, N. K. Ray, and D. Puthal, ‘Performance analysis of classifier techniques at the edge node.’ IEEE International Symposium on Smart Electronic Systems (IEEE iSES), 2021.
+                    <span class="award-tag">Best Paper Award</span>
+                </div>
+                <div class="award-item">
+                    S. Mishra, D. Puthal, B. Sahoo, S. Jena, and M. S. Obaidat, 'An Adaptive Task Allocation Technique for Green Cloud Computing.' Journal of Supercomputing, 2018.
+                    <span class="award-tag">2018 IETE Best Research Award</span>
+                </div>
+            </div>
+        </section>        
+    </main>
+
+    <footer>
+        &copy; 2025 Dr. Deepak Puthal. | United Arab Emirates University
+    </footer>
 </body>
 </html>
-
