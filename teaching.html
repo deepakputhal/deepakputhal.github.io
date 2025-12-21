@@ -1,9 +1,9 @@
-]<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deepak Puthal - Supervision</title>
+    <title>Deepak Puthal - Teaching</title>
     <style>
         /* UNIFORM DESIGN SYSTEM - SHARED ACROSS ALL PAGES */
         :root {
@@ -119,12 +119,12 @@
             border-radius: 2px;
         }
 
-        .supervision-list {
+        .teaching-list {
             list-style: none;
             padding: 0;
         }
 
-        .supervision-list li {
+        .teaching-list li {
             padding: 12px 18px;
             margin-bottom: 10px;
             background: var(--bg-light);
@@ -136,21 +136,22 @@
             justify-content: space-between;
         }
 
-        .supervision-list li:hover {
+        .teaching-list li:hover {
             transform: translateX(5px);
             border-left-color: var(--accent-azure);
             background: #f1f5f9;
         }
 
-        .student-name {
+        .course-name {
             color: var(--primary-navy);
             font-weight: 700;
         }
 
-        .year-tag {
+        .location-tag {
             color: var(--text-muted);
             font-size: 0.9rem;
             font-weight: 400;
+            font-style: italic;
         }
 
         /* UNIFORM FOOTER */
@@ -166,7 +167,7 @@
         @media (max-width: 768px) {
             main { padding: 25px; margin: 20px; }
             header.site-header h1 { font-size: 1.6rem; }
-            .supervision-list li { flex-direction: column; gap: 5px; }
+            .teaching-list li { flex-direction: column; gap: 5px; }
         }
     </style>
 </head>
@@ -189,56 +190,43 @@
     
     <main>
         <div class="page-title">
-            <h1>Research and Graduate Scholar Supervision</h1>
+            <h1>Teaching Experiences</h1>
         </div>
 
-        <section id="PostDoc">
-            <h2>PostDoc Supervision</h2>
-            <ul class="supervision-list">
-                <li>
-                    <span class="student-name">Joy Dutta, Khalifa University</span>
-                    <span class="year-tag">2022 - 2024</span>
-                </li>
+        <section id="Teaching-Experience">
+            <h2>Courses Taught</h2>
+            <ul class="teaching-list">
+                <li><span class="course-name">Network Security</span> <span class="location-tag">@ UAEU, UAE</span></li>
+                <li><span class="course-name">Cryptography</span> <span class="location-tag">@ UAEU, UAE</span></li>
+                <li><span class="course-name">Secure Software Systems Engineering</span> <span class="location-tag">@ KU, UAE</span></li>
+                <li><span class="course-name">Automata, Computability, and Complexity</span> <span class="location-tag">@ KU, UAE</span></li>
+                <li><span class="course-name">Design & Analysis of Algorithm</span> <span class="location-tag">@ KU, UAE</span></li>
+                <li><span class="course-name">Intro. to Computing Using C++</span> <span class="location-tag">@ KU, UAE</span></li>
+                <li><span class="course-name">Data Structures and Algorithms</span> <span class="location-tag">@ KU, UAE</span></li>
+                <li><span class="course-name">Internet of Things</span> <span class="location-tag">@ Newcastle University, UK</span></li>
+                <li><span class="course-name">Research Methods in Cloud Computing</span> <span class="location-tag">@ Newcastle University, UK</span></li>
+                <li><span class="course-name">IoT and Cloud Computing</span> <span class="location-tag">@ Newcastle University, UK</span></li>
+                <li><span class="course-name">Security Fundamentals</span> <span class="location-tag">@ UTS, Australia</span></li>
+                <li><span class="course-name">Cyber Security</span> <span class="location-tag">@ UTS, Australia</span></li>
+                <li><span class="course-name">Network Security</span> <span class="location-tag">@ UTS, Australia</span></li>
             </ul>
         </section>
 
-        <section id="PhD">
-            <h2>PhD Supervision</h2>
-            <ul class="supervision-list">
-                <li><span class="student-name">Yuhang Guo, Khalifa University</span> <span class="year-tag">2023 - Present</span></li>
-                <li><span class="student-name">Xiaochen Fan, University of Technology Sydney</span> <span class="year-tag">2017 - 2021</span></li>
-                <li><span class="student-name">Ahmad Alsharidah, Newcastle University</span> <span class="year-tag">2019 - 2021</span></li>
-                <li><span class="student-name">Wise Ponsly Selvaraj, University of Technology Sydney</span> <span class="year-tag">2018 - 2022</span></li>
-                <li><span class="student-name">Rayan Soqati, University of Technology Sydney</span> <span class="year-tag">2019 - 2022</span></li>
-                <li><span class="student-name">Ashish Virendra Chandak, KIIT University India</span> <span class="year-tag">2019 - 2023</span></li>
-            </ul>
-        </section>
-
-        <section id="MSc">
-            <h2>MSc Supervision</h2>
-            <ul class="supervision-list">
-                <li><span class="student-name">Mansour Saif Alkaabi, Khalifa University, UAE</span> <span class="year-tag">2023 - 2025</span></li>
-                <li><span class="student-name">Shamma Alshebli, Khalifa University, UAE</span> <span class="year-tag">2023 - 2024</span></li>
-                <li><span class="student-name">Shouq Alabdouli, Khalifa University, UAE</span> <span class="year-tag">2023 - 2024</span></li>
-                <li><span class="student-name">Saeed Alqubaisi, Khalifa University, UAE</span> <span class="year-tag">2022 - 2023</span></li>
-                <li><span class="student-name">Darwish AlNeyadi, Khalifa University, UAE</span> <span class="year-tag">2022 - 2023</span></li>
-                <li><span class="student-name">Tan Chee Shuan Tan, Newcastle University, UK</span> <span class="year-tag">2019 - 2020</span></li>
-                <li><span class="student-name">Abdullah Alhoshan, Newcastle University, UK</span> <span class="year-tag">2019 - 2020</span></li>
-                <li><span class="student-name">Jeff Kung, Newcastle University, UK</span> <span class="year-tag">2019 - 2020</span></li>
-                <li><span class="student-name">Ashok Stephen Sampath Kumar, Newcastle University, UK</span> <span class="year-tag">2019 - 2020</span></li>
-                <li><span class="student-name">Airavati Subramonia, Newcastle University, UK</span> <span class="year-tag">2019 - 2020</span></li>
-                <li><span class="student-name">Stanly Palathingal, Newcastle University, UK</span> <span class="year-tag">2019 - 2020</span></li>
-                <li><span class="student-name">Yulun Wu, Newcastle University, UK</span> <span class="year-tag">2019 - 2020</span></li>
-                <li><span class="student-name">Zhao Liangkun, Newcastle University, UK</span> <span class="year-tag">2018 - 2020</span></li>
-                <li><span class="student-name">Jing Gou Tingtao, Newcastle University, UK</span> <span class="year-tag">2019 - 2020</span></li>
-                <li><span class="student-name">Mo Dino, Newcastle University, UK</span> <span class="year-tag">2019 - 2020</span></li>
-                <li><span class="student-name">Syed Khawaja Raziuddin, UTS, Australia</span> <span class="year-tag">2018 - 2020</span></li>
+        <section id="Subject-Development">
+            <h2>Subject/Lab Developed</h2>
+            <ul class="teaching-list">
+                <li><span class="course-name">Automata, Computability, and Complexity (Labs & Projects)</span> <span class="location-tag">@ KU, UAE</span></li>
+                <li><span class="course-name">Design & Analysis of Algorithm (Labs & Projects)</span> <span class="location-tag">@ KU, UAE</span></li>
+                <li><span class="course-name">Internet of Things (Lecture & Projects)</span> <span class="location-tag">@ Newcastle University, UK</span></li>
+                <li><span class="course-name">Network Security (Virtual Security Labs)</span> <span class="location-tag">@ UTS, Australia</span></li>
+                <li><span class="course-name">Fundamentals of Security (Lecture)</span> <span class="location-tag">@ UTS, Australia</span></li>
+                <li><span class="course-name">Fundamentals of Security (Crypto Labs)</span> <span class="location-tag">@ UTS, Australia</span></li>
             </ul>
         </section>
     </main>
 
     <footer>
-        &copy; 2025 Dr. Deepak Puthal
+        &copy; 2025 Dr. Deepak Puthal. | United Arab Emirates University
     </footer>
 
 </body>
