@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deepak Puthal - Teaching</title>
+    <title>SN Computer Science - Section: CCDT</title>
     <style>
         /* UNIFORM DESIGN SYSTEM - SHARED ACROSS ALL PAGES */
         :root {
@@ -14,6 +14,8 @@
             --text-muted: #475569;
             --white: #ffffff;
             --border: #e2e8f0;
+            --springer-green: #046307;
+            --warning-red: #ef4444;
         }
 
         body {
@@ -69,13 +71,11 @@
             transition: color 0.2s ease;
         }
 
-        nav ul li a:hover {
-            color: var(--accent-azure);
-        }
+        nav ul li a:hover { color: var(--accent-azure); }
 
-        /* UNIFORM MAIN CONTAINER */
+        /* JOURNAL UNIQUE LAYOUT */
         main {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 40px auto;
             background: var(--white);
             padding: 50px;
@@ -83,76 +83,90 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
-        /* UNIFORM PAGE SECTION HEADERS */
-        .page-title {
-            background: transparent;
-            color: var(--primary-navy);
-            border-bottom: 2px solid var(--accent-azure);
-            padding: 0 0 15px 0;
-            text-align: left;
-            margin-bottom: 40px;
-        }
-
-        .page-title h1 {
-            font-size: 1.8rem;
-            margin: 0;
-            color: var(--primary-navy);
-        }
-
-        /* CONTENT SPECIFIC STYLING */
-        h2 {
-            font-size: 1.4rem;
-            color: var(--primary-navy);
-            margin-top: 40px;
-            margin-bottom: 20px;
+        .journal-hero {
             display: flex;
+            gap: 40px;
             align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 40px;
         }
 
-        h2::before {
-            content: "";
+        .journal-logo-box { flex: 1; text-align: center; }
+        .journal-logo-box img { max-width: 100%; height: auto; border-radius: 8px; }
+
+        .journal-info-box { flex: 1.5; }
+
+        .journal-info-box h1 { color: var(--warning-red); margin: 0 0 10px 0; font-size: 1.8rem; }
+        .journal-info-box h2 { color: var(--accent-azure); font-size: 1.3rem; margin-bottom: 20px; }
+
+        .editor-tag {
+            background: var(--bg-light);
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            border-left: 3px solid var(--accent-azure);
+        }
+
+        .deadline-badge {
             display: inline-block;
-            width: 10px;
-            height: 10px;
-            background: var(--accent-azure);
-            margin-right: 12px;
-            border-radius: 2px;
+            background: var(--springer-green);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 15px;
         }
 
-        .teaching-list {
+        .q1-badge {
+            display: inline-block;
+            background: #f59e0b;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        /* TOPICS SECTION */
+        .topics-grid {
+            columns: 2;
+            column-gap: 30px;
             list-style: none;
             padding: 0;
+            margin-top: 20px;
         }
 
-        .teaching-list li {
-            padding: 12px 18px;
-            margin-bottom: 10px;
+        .topics-grid li {
+            break-inside: avoid;
             background: var(--bg-light);
-            border-radius: 8px;
-            border-left: 4px solid var(--border);
-            font-weight: 500;
-            transition: all 0.2s ease;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .teaching-list li:hover {
-            transform: translateX(5px);
-            border-left-color: var(--accent-azure);
-            background: #f1f5f9;
-        }
-
-        .course-name {
-            color: var(--primary-navy);
-            font-weight: 700;
-        }
-
-        .location-tag {
-            color: var(--text-muted);
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            border-radius: 6px;
             font-size: 0.9rem;
-            font-weight: 400;
-            font-style: italic;
+            border-left: 2px solid var(--border);
         }
+
+        .topics-grid li::before {
+            content: "•";
+            color: var(--accent-azure);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* INSTRUCTIONS SECTION */
+        .instructions-card {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .instructions-card h2 { margin-top: 0; color: var(--primary-navy); }
+        .instructions-card a { color: var(--accent-azure); font-weight: 600; text-decoration: none; }
+        .instructions-card a:hover { text-decoration: underline; }
 
         /* UNIFORM FOOTER */
         footer {
@@ -164,17 +178,16 @@
             margin-top: 60px;
         }
 
-        @media (max-width: 768px) {
-            main { padding: 25px; margin: 20px; }
-            header.site-header h1 { font-size: 1.6rem; }
-            .teaching-list li { flex-direction: column; gap: 5px; }
+        @media (max-width: 850px) {
+            .journal-hero { flex-direction: column; text-align: center; }
+            .topics-grid { columns: 1; }
         }
     </style>
 </head>
 <body>
 
     <header class="site-header">
-        <h1>Dr. Deepak Puthal (Ph.D.)</h1>
+        <h1>Springer Nature Computer Science</h1>
     </header>
 
     <nav>
@@ -189,44 +202,63 @@
     </nav>
     
     <main>
-        <div class="page-title">
-            <h1>Teaching Experiences</h1>
+        <div class="journal-hero">
+            <div class="journal-logo-box">
+                <img src="sncs_logo_2.png" alt="SNCS Logo">
+            </div>
+            <div class="journal-info-box">
+                <h1>Springer Nature Computer Science</h1>
+                <h2>Section: Cognitive Computing and Digital Twin</h2>
+                
+                <div class="editor-tag"><b>Deepak Puthal</b>, UAE University (deepak.puthal@ieee.org)</div>
+                <div class="editor-tag"><b>Amit Kumar Mishra</b>, University West (akmishra@ieee.org)</div>
+                <div class="editor-tag"><b>Antonella Longo</b>, University of Salento (antonella.longo@unisalento.it)</div>
+                <div class="editor-tag"><b>Chin-Teng Lin</b>, UTS (Chin-Teng.Lin@uts.edu.au)</div>
+
+                <div class="deadline-badge">Deadline: OPEN</div>
+                <div class="q1-badge">Q1 - Scopus</div>
+            </div>
         </div>
 
-        <section id="Teaching-Experience">
-            <h2>Courses Taught</h2>
-            <ul class="teaching-list">
-                <li><span class="course-name">Network Security</span> <span class="location-tag">@ UAEU, UAE</span></li>
-                <li><span class="course-name">Cryptography</span> <span class="location-tag">@ UAEU, UAE</span></li>
-                <li><span class="course-name">Secure Software Systems Engineering</span> <span class="location-tag">@ KU, UAE</span></li>
-                <li><span class="course-name">Automata, Computability, and Complexity</span> <span class="location-tag">@ KU, UAE</span></li>
-                <li><span class="course-name">Design & Analysis of Algorithm</span> <span class="location-tag">@ KU, UAE</span></li>
-                <li><span class="course-name">Intro. to Computing Using C++</span> <span class="location-tag">@ KU, UAE</span></li>
-                <li><span class="course-name">Data Structures and Algorithms</span> <span class="location-tag">@ KU, UAE</span></li>
-                <li><span class="course-name">Internet of Things</span> <span class="location-tag">@ Newcastle University, UK</span></li>
-                <li><span class="course-name">Research Methods in Cloud Computing</span> <span class="location-tag">@ Newcastle University, UK</span></li>
-                <li><span class="course-name">IoT and Cloud Computing</span> <span class="location-tag">@ Newcastle University, UK</span></li>
-                <li><span class="course-name">Security Fundamentals</span> <span class="location-tag">@ UTS, Australia</span></li>
-                <li><span class="course-name">Cyber Security</span> <span class="location-tag">@ UTS, Australia</span></li>
-                <li><span class="course-name">Network Security</span> <span class="location-tag">@ UTS, Australia</span></li>
+        <section id="description">
+            <p>Cognitive Computing simulates human thought, enabling systems to learn, reason, and self-correct from unstructured data using AI. Digital Twins are real-time virtual replicas of physical systems, providing monitoring, simulation, and optimization. The powerful convergence creates <b>"Cognitive Digital Twins,"</b> where virtual models gain intelligence to autonomously learn, predict failures, and self-optimize their physical counterparts. This synergy is crucial for next-generation infrastructures, driving innovation in Smart Cities, digital health (Digital Human Twins), Industrial IoT, and agriculture.</p>
+        </section>
+
+        <section id="topics">
+            <h3>Topics of Interest</h3>
+            <ul class="topics-grid">
+                <li>Architectures and frameworks for cognitive digital twins.</li>
+                <li>AI/ML for predictive modeling and optimization in digital twins.</li>
+                <li>Real-time data integration and sensor fusion for digital twin updates.</li>
+                <li>Edge AI for localized cognitive processing in digital twins.</li>
+                <li>Security, privacy, and trust in cognitive digital twin ecosystems.</li>
+                <li>Smart city digital twins for urban planning and resource management.</li>
+                <li>Performance evaluation and metrics for cognitive digital twin systems.</li>
+                <li>Ethical considerations and explainable AI (XAI) in digital twin deployment.</li>
+                <li>ML and DL for advanced pattern recognition.</li>
+                <li>Reinforcement learning for autonomous learning and control.</li>
+                <li>NLP and speech recognition for human-like interaction.</li>
+                <li>Knowledge representation, reasoning, and semantic technologies.</li>
+                <li>Cognitive robotics and autonomous systems.</li>
+                <li>Digital twin architectures, platforms, and interoperability.</li>
+                <li>Data management, storage, and security for digital twin ecosystems.</li>
+                <li>Lifecycle management (design, deployment, operation).</li>
             </ul>
         </section>
 
-        <section id="Subject-Development">
-            <h2>Subject/Lab Developed</h2>
-            <ul class="teaching-list">
-                <li><span class="course-name">Automata, Computability, and Complexity (Labs & Projects)</span> <span class="location-tag">@ KU, UAE</span></li>
-                <li><span class="course-name">Design & Analysis of Algorithm (Labs & Projects)</span> <span class="location-tag">@ KU, UAE</span></li>
-                <li><span class="course-name">Internet of Things (Lecture & Projects)</span> <span class="location-tag">@ Newcastle University, UK</span></li>
-                <li><span class="course-name">Network Security (Virtual Security Labs)</span> <span class="location-tag">@ UTS, Australia</span></li>
-                <li><span class="course-name">Fundamentals of Security (Lecture)</span> <span class="location-tag">@ UTS, Australia</span></li>
-                <li><span class="course-name">Fundamentals of Security (Crypto Labs)</span> <span class="location-tag">@ UTS, Australia</span></li>
-            </ul>
+        <section class="instructions-card">
+            <h2>Important Submission Instructions</h2>
+            <p><b>Journal Homepage:</b> <a href="https://link.springer.com/journal/42979">link.springer.com/journal/42979</a></p>
+            <p><b>Submission Link:</b> <a href="https://www.editorialmanager.com/sncs/default2.aspx">editorialmanager.com/sncs/default2.aspx</a></p>
+            <p><b>Submission Guidelines:</b> <a href="https://www.springer.com/journal/42979/submission-guidelines">springer.com/journal/42979/submission-guidelines</a></p>
+            <p style="background: #fff; padding: 10px; border-radius: 5px; border: 1px dashed var(--accent-azure);">
+                <b>Note:</b> Please ensure you select the <b>"Cognitive Computing and Digital Twin"</b> section under General Information during your submission.
+            </p>
         </section>
     </main>
 
     <footer>
-        &copy; 2025 Dr. Deepak Puthal. | United Arab Emirates University
+...    
     </footer>
 
 </body>
