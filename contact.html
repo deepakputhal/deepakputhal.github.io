@@ -14,7 +14,8 @@
             --text-muted: #475569;
             --white: #ffffff;
             --border: #e2e8f0;
-            --springer-green: #046307;
+            --success-green: #10b981; /* For Scopus Q1 */
+            --deadline-indigo: #6366f1; /* For Deadline: OPEN */
             --warning-red: #ef4444;
         }
 
@@ -27,7 +28,7 @@
             line-height: 1.7;
         }
 
-        /* HEADER WITHOUT NAVIGATION */
+        /* HEADER */
         header.site-header {
             background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
             color: #fff;
@@ -80,30 +81,36 @@
         }
 
         .status-container {
-            margin-top: 20px;
+            margin-top: 25px;
             display: flex;
-            gap: 10px;
+            gap: 12px;
         }
 
         .deadline-badge {
-            background: var(--springer-green);
+            background: var(--deadline-indigo);
             color: white;
-            padding: 6px 18px;
-            border-radius: 4px;
-            font-weight: bold;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 700;
             font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2);
         }
 
         .q1-badge {
-            background: #f59e0b;
+            background: var(--success-green);
             color: white;
-            padding: 6px 18px;
-            border-radius: 4px;
-            font-weight: bold;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 700;
             font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
         }
 
-        /* CONTENT SECTIONS */
+        /* SCOPE SECTION */
         section h3 {
             color: var(--primary-navy);
             font-size: 1.4rem;
@@ -112,7 +119,6 @@
             margin-bottom: 20px;
         }
 
-        /* TOPICS LISTING */
         .topics-grid {
             columns: 2;
             column-gap: 30px;
@@ -128,14 +134,7 @@
             padding: 12px 15px;
             border-radius: 8px;
             font-size: 0.9rem;
-            color: var(--text-main);
             border: 1px solid var(--border);
-            transition: transform 0.2s ease;
-        }
-
-        .topics-grid li:hover {
-            transform: scale(1.02);
-            border-color: var(--accent-azure);
         }
 
         /* INSTRUCTIONS CARD */
@@ -149,8 +148,7 @@
 
         .instructions-card h2 { margin-top: 0; color: var(--primary-navy); font-size: 1.5rem; }
         .instructions-card a { color: var(--accent-azure); font-weight: 600; text-decoration: none; }
-        .instructions-card a:hover { text-decoration: underline; }
-
+        
         .submission-note {
             background: var(--white);
             padding: 15px;
@@ -173,7 +171,7 @@
         @media (max-width: 850px) {
             .journal-hero { flex-direction: column; text-align: center; }
             .topics-grid { columns: 1; }
-            main { padding: 30px; margin: 20px; }
+            .status-container { justify-content: center; flex-wrap: wrap; }
         }
     </style>
 </head>
@@ -195,17 +193,17 @@
                 <div class="editor-tag"><b>Deepak Puthal</b>, UAE University (deepak.puthal@ieee.org)</div>
                 <div class="editor-tag"><b>Amit Kumar Mishra</b>, University West (akmishra@ieee.org)</div>
                 <div class="editor-tag"><b>Antonella Longo</b>, University of Salento (antonella.longo@unisalento.it)</div>
-                <div class="editor-tag"><b>Chin-Teng Lin</b>, University of Technology Sydney (Chin-Teng.Lin@uts.edu.au)</div>
+                <div class="editor-tag"><b>Chin-Teng Lin</b>, UTS (Chin-Teng.Lin@uts.edu.au)</div>
 
                 <div class="status-container">
-                    <span class="deadline-badge">Submission Deadline: OPEN</span>
                     <span class="q1-badge">Scopus: Q1</span>
+                    <span class="deadline-badge">Submission Deadline: OPEN</span>
                 </div>
             </div>
         </div>
 
         <section id="description">
-            <p>Cognitive Computing simulates human thought, enabling systems to learn, reason, and self-correct from unstructured data using AI. Digital Twins are real-time virtual replicas of physical systems, providing monitoring, simulation, and optimization. The powerful convergence creates <b>"Cognitive Digital Twins,"</b> where virtual models gain intelligence to autonomously learn, predict failures, and self-optimize their physical counterparts. This synergy is crucial for next-generation infrastructures, driving innovation in Smart Cities, digital health (Digital Human Twins), Industrial IoT, and agriculture.</p>
+            <p>Cognitive Computing simulates human thought, enabling systems to learn, reason, and self-correct from unstructured data using AI. Digital Twins are real-time virtual replicas of physical systems, providing monitoring, simulation, and optimization. The powerful convergence creates <b>"Cognitive Digital Twins,"</b> where virtual models gain intelligence to autonomously learn, predict failures, and self-optimize their physical counterparts.</p>
         </section>
 
         <section id="topics">
@@ -243,7 +241,7 @@
     </main>
 
     <footer>
-...
+        &copy; 2025 Dr. Deepak Puthal. | SN Computer Science Editorial Section
     </footer>
 
 </body>
