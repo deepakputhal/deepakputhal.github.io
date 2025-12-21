@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deepak Puthal - Professional Services</title>
+    <title>Deepak Puthal - Research</title>
     <style>
-        /* MODERN ACADEMIC DESIGN SYSTEM - PROFESSIONAL PAGE */
+        /* MODERN ACADEMIC DESIGN SYSTEM - RESEARCH PAGE */
         :root {
-            --primary-navy: #0f172a;   /* Professional Deep Navy */
-            --accent-azure: #0ea5e9;   /* Technical Blue */
+            --primary-navy: #0f172a;   
+            --accent-azure: #0ea5e9;   
             --bg-light: #f8fafc;
             --text-main: #1e293b;
             --text-muted: #475569;
             --white: #ffffff;
             --border: #e2e8f0;
+            --gold: #ca8a04;
         }
 
         body {
@@ -40,7 +41,6 @@
             letter-spacing: -0.025em;
         }
 
-        /* Nav Consistency */
         nav {
             background: var(--white);
             position: sticky;
@@ -68,9 +68,7 @@
             transition: color 0.2s ease;
         }
 
-        nav ul li a:hover {
-            color: var(--accent-azure);
-        }
+        nav ul li a:hover { color: var(--accent-azure); }
 
         main {
             max-width: 1000px;
@@ -81,7 +79,6 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
-        /* Secondary Header for Content Section */
         main > header {
             background: transparent;
             color: var(--primary-navy);
@@ -91,10 +88,7 @@
             margin-bottom: 40px;
         }
 
-        main > header h1 {
-            font-size: 1.8rem;
-            color: var(--primary-navy);
-        }
+        main > header h1 { font-size: 1.8rem; color: var(--primary-navy); }
 
         h2 {
             font-size: 1.5rem;
@@ -115,71 +109,71 @@
             border-radius: 2px;
         }
 
-        h3 {
-            font-size: 1.1rem;
-            color: var(--accent-azure);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-top: 30px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 5px;
+        /* Publication Links */
+        .pub-grid {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 20px 0;
         }
 
-        /* List Styling */
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        li {
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        .sublist {
-            margin-top: 8px;
-            padding-left: 20px;
-            border-left: 2px solid var(--border);
-        }
-
-        .sublist li {
-            margin-bottom: 0.4rem;
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
-
-        strong {
-            color: var(--primary-navy);
-            font-size: 1.05rem;
-        }
-
-        a {
-            color: var(--accent-azure);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Invited Talks Specific Style */
-        #Invited\ Talks li {
-            padding-left: 70px;
-            position: relative;
-        }
-
-        #Invited\ Talks li::before {
-            content: "EVENT";
-            position: absolute;
-            left: 0;
-            font-size: 0.7rem;
-            font-weight: 800;
-            color: var(--accent-azure);
+        .pub-btn {
+            padding: 10px 20px;
             background: var(--bg-light);
-            padding: 2px 6px;
-            border-radius: 4px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--primary-navy);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
         }
+
+        .pub-btn:hover {
+            background: var(--accent-azure);
+            color: white;
+            border-color: var(--accent-azure);
+        }
+
+        /* Best Paper Awards Styling */
+        .award-item {
+            background: #fffdf5;
+            border-left: 4px solid var(--gold);
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .award-tag {
+            color: var(--gold);
+            font-weight: 800;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* Interest Tags */
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .tag-list li {
+            background: var(--primary-navy);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        ul { padding-left: 20px; }
+        li { margin-bottom: 0.8rem; }
+        b { color: var(--primary-navy); }
 
         footer {
             background: var(--primary-navy);
@@ -213,213 +207,98 @@
     
     <main>
         <header>
-            <h1>Professional Services and Leadership</h1>
+            <h1>Research Interest and Outcomes</h1>
         </header>
 
-        <section id="Educations">
-            <h2>Educations</h2>
-            <ul>  
-                <li>
-                    <strong>Doctor of Philosophy (PhD) 2017</strong>
-                    <ul class="sublist">
-                        <li>Faculty of Engineering and Information Technology </li>
-                        <li>University of Technology Sydney, Australia </li>
-                        <li>Advisors: Professor Jinjun Chen (IEEE Fellow) and Professor Rajiv Ranjan (IEEE Fellow)</li>                 
-                        <li>Thesis - Towards Efficient and Lightweight Security Architecture for Big Sensing Data Streams </li>                 
-                    </ul>
-                </li>
-                     
-                <li>
-                    <strong>Master of Technologoy (M.Tech) 2012</strong>
-                    <ul class="sublist">
-                        <li>Computer Science and Engineering (Specialization- Information Security) </li>
-                        <li>National Institute of Technology(NIT) Rourkela, India</li>
-                        <li>Thesis - Secure Data Collection and Critical Data Transmission Technique in Mobile Sink WSNs </li>                 
-                    </ul>
-                </li>              
-            </ul>
-        </section>              
-                     
-        <section id="Professional Experiances">
-            <h2>Professional Experiences / Appointments</h2>
-            <ul>     
-                <li>
-                    <strong> Associate Professor – IIM Bodh Gaya, India</strong>
-                    <ul class="sublist">
-                        <li>Department of IT Systems and Analytics </li>
-                        <li>May 2024 -  </li>
-                    </ul>
-                </li>
-
-                <li>
-                    <strong> Visiting Associate Professor – Aberystwyth University, UK</strong>
-                    <ul class="sublist">
-                        <li>Department of Computer Science </li>
-                        <li>May 2024 -  </li>
-                    </ul>
-                </li>
-                 
-                <li>
-                    <strong> Affiliate Professor – University West, Sweden</strong>
-                    <ul class="sublist">
-                        <li>Department of Engineering Science </li>
-                        <li>June 2023 - Dec 2024 </li>
-                    </ul>
-                </li>
-
-                <li>
-                    <strong> Assistant Professor – Khalifa University, UAE</strong>
-                    <ul class="sublist">
-                        <li>Department of Electrical Engineering and Computer Science </li>
-                        <li>Aug 2021 - May 2024 </li>
-                    </ul>
-                </li>
-            
-                <li>
-                    <strong>Visiting Professor – Central Michigan University, Michigan, USA</strong>
-                    <ul class="sublist">
-                        <li>School of Engineering and Technology </li>
-                        <li>July 2021 - Dec 2021 </li>
-                    </ul>
-                </li>
-                     
-                <li>
-                    <strong>Visiting Professor – Shanghai Jiao Tong University, China</strong>
-                    <ul class="sublist">
-                        <li>School of Cyber Science and Engineering</li>
-                        <li>June 2021 - Present</li>
-                    </ul>
-                </li>     
-            
-                <li>
-                    <strong>Honorary Fellow – University of Technology Sydney (UTS), NSW, Australia</strong>
-                    <ul class="sublist">
-                        <li>Faculty of Engineering and Information Technology </li>
-                        <li>May 2019 - Present </li>
-                    </ul>
-                </li>
-                     
-                <li>
-                    <strong>Lecturer (Level G)/ Assistant Professor – Newcastle University, United Kingdom </strong>
-                    <ul class="sublist">
-                        <li>School of Computing</li>
-                        <li>May 2019 - June 2021</li>
-                    </ul>
-                </li>        
-            
-                <li>
-                    <strong>Lecturer/ Assistant Professor – University of Technology Sydney (UTS), NSW, Australia</strong>
-                    <ul class="sublist">
-                        <li>Faculty of Engineering and Information Technology</li>
-                        <li>Feb 2017 - May 2019</li>
-                    </ul>
-                </li>     
-            
-                <li>
-                    <strong>Graduate Research Assistant – CSIRO, Australia</strong>
-                    <ul class="sublist">
-                        <li>Data 61 </li>
-                        <li>April 2014 - March 2017 </li>
-                    </ul>
-                </li>
-                     
-                <li>
-                    <strong>Research Associate – Qatar Mobility Innovations Center (QMIC), Doha, Qatar</strong>
-                    <ul class="sublist">
-                        <li>Intelligent Transport and Mobility Group</li>
-                        <li>March 2013 - March 2014</li>
-                    </ul>
-                </li>        
-            </ul>    
-        </section>  
-        
-        <section id="Editor Services">
-            <h2>Editor Services</h2>
-            <h3>Section Editor</h3>
-            <ul class="sublist" style="border:none; padding-left:0; color: var(--text-main);">
-                <li>Springer Nature Computer Science Journal
-                    <ul class="sublist">
-                        <li><a href="https://deepakputhal.github.io/sncs-ccdt">Section: Cloud Computing and Data Technologies</a></li>
-                        <li><a href="https://deepakputhal.github.io/sncs-dcpscs">Section: Distributed Computing and Parallel Systems for Cyber Security</a></li>
-                    </ul>
-                </li>
-            </ul>
-    
-            <h3>Associate Editor</h3>
-            <ul class="sublist" style="border:none; padding-left:0; color: var(--text-main);">
-                <li>IEEE Transactions on Computational Social Systems (2021 - )</li>
-                <li>IEEE Transactions on Big Data  (2018 - )</li>
-                <li>IEEE Transactions on Network and Service Management (2022 - )</li>
-                <li>International Journal of Communication Systems, (John Wiley & Sons) (2018 - )</li>
-                <li>Internet Technology Letters, (John Wiley & Sons) (2017 - )</li>
-                <li>IEEE Consumer Electronics Magazine (2017 - 2023)</li>
-                <li>IEEE Systems Journal (2020 - 2022)</li>
-                <li>Computers & Electrical Engineering (Elsevier) (2019 - 2021)</li>
-                <li>KSII Transactions on Internet and Information Systems (TIIS) (2017 - 2021)</li>
-            </ul>
-    
-            <h3>Invited Guest Editor</h3>
-            <ul class="sublist" style="border:none; padding-left:0; color: var(--text-main);">
-                <li>IEEE Transactions on Network and Service Management </li>
-                <li>IEEE Transactions on Emerging Topics in Computational Intelligence</li>
-                <li>IEEE Consumer Electronics Magazine</li>
-                <li>Concurrency and Computation: Practice and Experience</li>
-                <li>Wireless Communications and Mobile Computing journal</li>
-                <li>Computers & Electrical Engineering (Elsevier)</li>
-                <li>Information Systems Frontier</li>
-                <li>Computational Intelligence</li>
-            </ul>
-        </section>                
-
-        <section id="Grant Reviewer">
-            <h2>Grant Reviewer</h2>
-            <ul class="sublist" style="border:none; padding-left:0; color: var(--text-main);">
-                <li>Engineering and Physical Sciences Research Council (EPSRC), UK</li>
-                <li>Swiss National Science Foundation (SNSF), Switzerland</li>
-                <li>Chilean National Science and Technology Commission (FONDECYT), Chile </li>
-                <li>Qatar National Research Fund (QNRF), Qatar</li>
-                <li>University of Jeddah, KSA</li>
+        <section id="Research Interest">
+            <h2>Research Interest</h2>
+            <ul class="tag-list">
+                <li>Cyber Security</li>
+                <li>Blockchain</li>
+                <li>Federated Adversarial Learning</li>
+                <li>Generative Adversarial Networks</li>
+                <li>Internet of Things (IoT)</li>
+                <li>Distributed Computing</li>
             </ul>
         </section>
-        
-        <section id="Thesis Examiner ">
-            <h2>Thesis Examiner </h2>
-            <ul class="sublist" style="border:none; padding-left:0; color: var(--text-main);">
-                <li>Doctor of Philosophy (Ph.D.) thesis: University of Bradford, UK</li>
-                <li>Doctor of Philosophy (Ph.D.) thesis: University of Tasmania, Australia</li>
-                <li>Doctor of Philosophy (Ph.D.) thesis: IIT Roorkee, India</li>
-                <li>Doctor of Philosophy (Ph.D.) thesis: NIT Rourkela, India</li>
-                <li>Doctor of Philosophy (Ph.D.) thesis: Khalifa University, UAE</li>  
-                <li>Doctor of Philosophy (Ph.D.) thesis: Abdul Wali Khan University Mardan, Pakistan</li>
-            </ul>
-        </section>
-        
-        <section id="Invited Talks">
-            <h2>Invited Talks/ Keynotes </h2>
+
+        <section id="Notable Contributions">
+            <h2>Notable Contributions</h2>
             <ul>
-                <li>2023 'Is private Blockchain dead?', Pannel talk, IEEE ICBC, Dubai, UAE.</li>
-                <li>2023 'Software-Defined Perimeter: AI-driven Solution', University Level Talk, NIT Warangal, India.</li>
-                <li>2022 '6G Security and Privacy', Pannel talk, 6G Summit Abu Dhabi, UAE.</li>
-                <li>2022 'Adaptive and sclably Blockchain Consensus', Invited talk, IEEE UK & Ireland Blockchain, UK.</li>
-                <li>2022 'Software-Defined Perimeter', Invited talk, TII, Abu Dhabi, UAE.</li>
-                <li>2022 'A future aspect of the user centric security solution', Keynote, IEEE ASSIC, India.</li>  
-                <li>2021 'User-centric Data Security in an IoMT Workflow', Invited talk, IEEE WF-5G, Canada.</li>
-                <li>2021 'Next-Generation Solution to Securing the Systems', Keynote, ICICC 2021, India.</li>
-                <li>2021 'Decision Tree for the Adaptive Authentication', Invited talk, Central Michigan University, USA.</li>
-                <li>2020 'User-centric Security in IoT-Edge Environment', Invited talk, NIT Meghalaya, India.</li>              
-                <li>2020 'Blockchain Portability for the Consumer Devices', Invited talk, University of Wolverhampton, USA.</li>
-                <li>2019 'IoT Workflow Orchestration Application', Keynote, ICCAN 2019, Bhubaneswar, India.</li>
-                <li>2019 'IoT Workflow Orchestration Application', Keynote, ICICC 2019, Bhubaneswar, India.</li>
-                <li>2019 'AI for Security and its Future', Invited talk, IIIT Bhubaneswar, India.</li>  
-                <li>2018 'Blockchain for the Edge Computing', Invited talk, La Trobe University, Australia.</li>
-                <li>2018 'Blockchain for IoT', Invited talk, TCS R&D, India.</li>
-                <li>2018 'Integration of Distributed Computing', Keynote, ICIT 2018, Bhubaneswar, India.</li>
-                <li>2018 'IoT Systems and its Future in Cyber Security', Invited talk, Newcastle University, UK.</li>    
-                <li>2018 'Blockchain for resource constraints', Invited talk, University of Leeds, UK.</li>                    
-                <li>2018 'Advances in Cyber Security', University Level Talk, NIT Rourkela, India.</li>    
-                <li>2017 'Advances in Computing Research', Panel Keynote, IEEE SmartCloud 2017, New York, USA.</li>                                                                                                    
+                <li><b>Software Defined Perimeter:</b> AI based security model with user demands and device specifications</li>
+                <li><b>CryptoCliqIn:</b> Graph-theoretic Cryptography using Clique Injection (A paradigm shift research)</li>
+                <li><b>Proof of Authentication (PoAh):</b> Blockchain consensus for IoT</li>
+                <li><b>PUFChain:</b> Hardware assisted Blockchain</li>
             </ul>
-        </section>
+        </section>        
+  
+        <section id="Open Source Simulator">
+            <h2>Open Source Simulator</h2>
+            <ul>
+                <li><b>IoTSim-Edge:</b> Simulator to simulate the IoT and edge environment.</li>
+                <li><b>IoTSim-SDWAN:</b> Simulator to simulate Distributed Datacenters over Software-Defined Wide Area Network</li>
+            </ul>
+        </section>        
+        
+        <section id="Publications">
+            <h2>Publications (h-index: 52+)</h2>
+            <p>To access a complete list of my publications, please refer to the following scholarly platforms:</p>
+            <div class="pub-grid">
+                <a href="https://scholar.google.com/citations?hl=en&user=-USAlD8AAAAJ" class="pub-btn" target="_blank">Google Scholar</a>
+                <a href="https://www.scopus.com/authid/detail.uri?authorId=56151401500" class="pub-btn" target="_blank">Scopus</a>
+                <a href="https://dblp.org/pid/154/0895.html" class="pub-btn" target="_blank">DBLP</a>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">These platforms provide comprehensive records of my publications and research impact.</p>
+        </section>        
+        
+        <section id="patents">
+            <h2>Patents</h2>
+            <ul style="list-style: none; padding-left: 0;">
+                <li><i style="color: var(--accent-azure);">■</i> P. Panda, A. Mishra and D. Puthal, "Military Operation Inspired Integrated Graph Traversal Algorithm." Indian Patent, Filling Date: 29/06/2022, Application Number: 202231037328.</li>
+            </ul>
+        </section>        
+               
+        <section id="Best Paper Awards">
+            <h2>Best Paper Award List</h2>
+            <div style="list-style: none; padding-left: 0;">
+                <div class="award-item">
+                    D. Al Neyadi, D. Puthal, J. Dutta, and E. Damiani. 'Role-Based Access Control in Private Blockchain for IoT Integrated Smart Contract' 6th IFIP International Internet of Things Conference (IFIP-IoT 2023), 2023.
+                    <span class="award-tag">Best Paper Award</span>
+                </div>
+                <div class="award-item">
+                    D. Puthal, S. Wilson, A. Nanda, M. Liu, S. Swain, B. Sahoo, K. Yelamarthi, P. Pillai, H. El-Sayed, and M. Prasad. 'Decision tree based user-centric security solution for critical IoT infrastructure.' Computers and Electrical Engineering, 2022.
+                    <span class="award-tag">IEEE Bio-Inspired Computing STC Best Paper Award</span>
+                </div>
+                <div class="award-item">
+                    S. P. Mohanty, V. P. Yanambaka, E. Kougianos, and D. Puthal. 'PUFchain: Hardware-Assisted Blockchain for Sustainable Simultaneous Device and Data Security.' IEEE Consumer Electronics Magazine, 2020.
+                    <span class="award-tag">IEEE CTSoc Best Paper Award</span>
+                </div>
+                <div class="award-item">
+                    D. Puthal, N. Malik, S. P. Mohanty, E. Kougianos, and G. Das, 'Everything you wanted to Know about Blockchain.' IEEE Consumer Electronics Magazine, 2018.
+                    <span class="award-tag">IEEE CTSoc Best Paper Award</span>
+                </div>
+                <div class="award-item">
+                    D. Puthal, N. Malik, S. Mohanty, P. Nanda, and E. Kougianos, 'The Blockchain a Decentralized Security Framework.' IEEE Consumer Electronics Magazine, 2018.
+                    <span class="award-tag">IEEE CTSoc Best Paper Award</span>
+                </div>
+                <div class="award-item">
+                    J. Dutta, D. Puthal and E. Damiani, ‘AI-based Block Identification and Classification in the Blockchain Integrated IoT’ IEEE/ OITS International Conference on Information Technology (OCIT 2022), 2022.
+                    <span class="award-tag">Best Paper Award</span>
+                </div>
+                <div class="award-item">
+                    A. Bapatla, S. Mohanty, E. Kougianos, D. Puthal. ‘PharmaChain 3.0: Blockchain Integrated Efficient QR Code Mechanism for Pharmaceutical Supply Chain’ IEEE/ OITS (OCIT 2022), 2022.
+                    <span class="award-tag">Best Paper Award</span>
+                </div>
+                <div class="award-item">
+                    A. V. Chandak, N. K. Ray, and D. Puthal, ‘Performance analysis of classifier techniques at the edge node.’ IEEE International Symposium on Smart Electronic Systems (IEEE iSES), 2021.
+                    <span class="award-tag">Best Paper Award</span>
+                </div>
+                <div class="award-item">
+                    S. Mishra, D. Puthal, B. Sahoo, S. Jena, and M. S. Obaidat, 'An Adaptive Task Allocation Technique for Green Cloud Computing.' Journal of Supercomputing, 2018.
+                    <span class="award-tag">2018 IETE Best Research Award</span>
+                </div>
+            </div>
+        </section>        
     </main>
 
     <footer>
