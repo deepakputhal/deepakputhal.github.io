@@ -3,44 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Deepak Puthal - Personal Website</title>
+    <title>Deepak Puthal - Professional Services</title>
     <style>
-        /* MINIMALIST SCHOLARLY THEME */
+        /* MODERN ACADEMIC DESIGN SYSTEM - PROFESSIONAL PAGE */
         :root {
-            --slate: #2d3748;
-            --link-blue: #2c5282;
-            --paper: #ffffff;
+            --primary-navy: #0f172a;   /* Professional Deep Navy */
+            --accent-azure: #0ea5e9;   /* Technical Blue */
+            --bg-light: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --white: #ffffff;
             --border: #e2e8f0;
         }
 
         body {
-            font-family: 'Georgia', serif; /* Classic academic font */
-            background-color: #f7fafc;
-            color: var(--slate);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             margin: 0;
-            line-height: 1.8;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.7;
         }
 
         header {
-            background: var(--paper);
-            border-bottom: 1px solid var(--border);
-            padding: 3rem 1rem;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
+            color: #fff;
+            padding: 40px 20px;
             text-align: center;
+            border-bottom: 4px solid var(--accent-azure);
         }
 
         header h1 {
             font-size: 2.2rem;
             margin: 0;
-            letter-spacing: 0.5px;
-            color: #000;
+            font-weight: 800;
+            letter-spacing: -0.025em;
         }
 
+        /* Nav Consistency */
         nav {
-            background: var(--paper);
-            border-bottom: 1px solid var(--border);
+            background: var(--white);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-bottom: 1px solid var(--border);
         }
 
         nav ul {
@@ -48,90 +55,144 @@
             display: flex;
             justify-content: center;
             margin: 0;
-            padding: 0.8rem;
-            gap: 2rem;
+            padding: 15px;
+            gap: 25px;
+            flex-wrap: wrap;
         }
 
         nav ul li a {
             text-decoration: none;
-            color: var(--slate);
-            font-family: sans-serif;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-transform: uppercase;
+            color: var(--primary-navy);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-azure);
         }
 
         main {
-            max-width: 900px;
-            margin: 3rem auto;
-            background: var(--paper);
-            padding: 4rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            max-width: 1000px;
+            margin: 40px auto;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
-        .container {
-            display: flex;
-            gap: 3rem;
-            align-items: center;
-            margin-bottom: 3rem;
+        /* Secondary Header for Content Section */
+        main > header {
+            background: transparent;
+            color: var(--primary-navy);
+            border-bottom: 2px solid var(--accent-azure);
+            padding: 0 0 15px 0;
+            text-align: left;
+            margin-bottom: 40px;
         }
 
-        .column-image img {
-            border: 4px solid var(--paper);
-            outline: 1px solid var(--border);
-            filter: grayscale(10%);
+        main > header h1 {
+            font-size: 1.8rem;
+            color: var(--primary-navy);
         }
-
-        .hiring-box {
-            border: 1px solid #fed7d7;
-            background: #fff5f5;
-            padding: 1.5rem;
-            margin: 1rem 0;
-        }
-
-        .blink { animation: blinker 2s linear infinite; color: #c53030; font-weight: bold; }
-        @keyframes blinker { 50% { opacity: 0; } }
 
         h2 {
-            font-family: sans-serif;
             font-size: 1.5rem;
+            color: var(--primary-navy);
+            margin-top: 50px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-azure);
+            margin-right: 15px;
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: var(--accent-azure);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.05em;
+            margin-top: 30px;
             border-bottom: 1px solid var(--border);
-            padding-bottom: 0.5rem;
-            margin-top: 3rem;
+            padding-bottom: 5px;
         }
 
-        p { text-align: justify; margin-bottom: 1.5rem; }
+        /* List Styling */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
 
-        /* Professional Contact Grid */
-        #contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 2rem;
-            font-family: sans-serif;
+        li {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .sublist {
+            margin-top: 8px;
+            padding-left: 20px;
+            border-left: 2px solid var(--border);
+        }
+
+        .sublist li {
+            margin-bottom: 0.4rem;
             font-size: 0.95rem;
+            color: var(--text-muted);
         }
 
-        .map-container {
-            width: 180px;
-            margin: 3rem auto;
-            opacity: 0.8;
+        strong {
+            color: var(--primary-navy);
+            font-size: 1.05rem;
+        }
+
+        a {
+            color: var(--accent-azure);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Invited Talks Specific Style */
+        #Invited\ Talks li {
+            padding-left: 70px;
+            position: relative;
+        }
+
+        #Invited\ Talks li::before {
+            content: "EVENT";
+            position: absolute;
+            left: 0;
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--accent-azure);
+            background: var(--bg-light);
+            padding: 2px 6px;
+            border-radius: 4px;
         }
 
         footer {
+            background: var(--primary-navy);
+            color: #94a3b8;
+            padding: 40px;
             text-align: center;
-            padding: 3rem;
-            font-family: sans-serif;
-            font-size: 0.8rem;
-            color: #718096;
+            font-size: 0.9rem;
+            margin-top: 60px;
         }
 
         @media (max-width: 768px) {
-            .container { flex-direction: column; text-align: center; }
-            #contact-grid { grid-template-columns: 1fr; }
-            main { padding: 1.5rem; }
+            main { padding: 25px; margin: 20px; }
+            header h1 { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -139,10 +200,9 @@
     <header>
         <h1>Dr. Deepak Puthal (Ph.D.)</h1>
     </header>
-
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="https://deepakputhal.github.io/">Home</a></li>
             <li><a href="professional.html">Professional</a></li>
             <li><a href="research.html">Research</a></li>
             <li><a href="recognitions.html">Recognitions</a></li>
@@ -150,66 +210,215 @@
             <li><a href="teaching.html">Teaching</a></li> 
         </ul>
     </nav>
-  
+    
     <main>
-        <div class="container">
-            <div class="column-image">
-                <img src="deepak-3.jpeg" alt="DEEPS" width="220" height="270">
-            </div>
-            <div class="column-info">
-                <div class="hiring-box">
-                    <span class="blink">NEW OPPORTUNITY</span>
-                    <p style="margin-top: 0.5rem; font-family: sans-serif; font-size: 0.95rem; color: #2d3748;">
-                        <b>Looking for highly motivated research students (Postdoc, PhD and Master by Research) to work in cybersecurity, Applied AI and/or IoT domain.</b>
-                    </p>
-                </div>
-                <ul style="font-family: sans-serif; font-size: 0.9rem;">
-                    <li>Fellow of IETE [2025]</li>
-                    <li>Chair of IEEE Bio-inspired Computing STC [2021-2023]</li>
-                    <li>IEEE Distinguished Speaker (Rock Star) [2021-2023]</li>
-                </ul>
-            </div>
-        </div>
+        <header>
+            <h1>Professional Services and Leadership</h1>
+        </header>
 
-        <h4 style="text-align: center; font-style: italic; color: #4a5568;">
-            "AI is the most powerful weapon we have, and the most dangerous threat we face, in cybersecurity."
-        </h4>            
-        
-        <h2>Biography</h2>   
-        <p>Deepak Puthal is a mid-career researcher specializing in the field of Cyber Security, Blockchain, Edge Computing, the Internet of Things, and Generative Adversarial Networks (with over 150 scientific publications (h-index: 50+), including 30 in IEEE/ACM Transactions journals). His groundbreaking contributions in these areas have garnered him numerous prestigious international accolades. These include the 2023 IEEE Computer Society Smart Computing STC Middle-Career Award, the 2022 IEEE HITC Award for Excellence in Hyper-Intelligence Systems (Middle Career Researcher award), the 2021 IEEE Computer Society Smart Computing STC Early-Career Award, the runner-up position in the 2021 IEEE TEMS TC on Blockchain and Distributed Ledger Technologies, the 2019 Best IEEE ComSoc Young Researcher Award for the Europe, Middle East, and Africa Region, the 2018 IEEE TCSC Award for Excellence in Scalable Computing as an Early Career Researcher, and the 2018 IETE Best Research Award. Additionally, he has received nine Best Paper Awards and holds the title of IEEE Distinguished Speaker (IEEE CTSoc). He has secured over $2.5 Million in the form of competitive research grants to support his research from both public and private agencies. </p>
-        
-        <p>Deepak is currently an Associate Professor in the College of Information Technology at the United Arab Emirates University (UAE), and a Visiting Associate Professor at Aberystwyth University, UK. Previously, he served as an Associate Professor at IIM Bodh Gaya, India; an Affiliate Professor in Cybersecurity at University West, Sweden; and an Assistant Professor at Khalifa University in the UAE, Newcastle University in the UK, and the University of Technology Sydney (UTS), Australia. He earned his Ph.D. from the Faculty of Engineering and IT at UTS, Australia, where his exceptional doctoral dissertation was recognized with the prestigious IEEE Distinguished Doctoral Dissertation Award, granted by the IEEE Computer Society Smart Computing Technical Committee. He maintains his association with UTS as an Honorary Fellow.</p>
-        
-        <p>Deepak is actively engaged in various leadership roles within the IEEE community, including serving on the IEEE Computer Society STC ExCom, chairing the IEEE Bio-inspired Computing STC, and contributing to the editorial boards of esteemed publications such as IEEE Transactions on Big Data, IEEE Transactions on Computational Social Systems, IEEE Consumer Electronics Magazine, International Journal of Communication Systems, and Section Editor of Springer Nature Computer Science Journal.</p>
-        
-        <p>Deepak's remarkable achievements and contributions have significantly advanced the fields of research in which he specializes, making him a distinguished figure in academia and beyond.</p>
+        <section id="Educations">
+            <h2>Educations</h2>
+            <ul>  
+                <li>
+                    <strong>Doctor of Philosophy (PhD) 2017</strong>
+                    <ul class="sublist">
+                        <li>Faculty of Engineering and Information Technology </li>
+                        <li>University of Technology Sydney, Australia </li>
+                        <li>Advisors: Professor Jinjun Chen (IEEE Fellow) and Professor Rajiv Ranjan (IEEE Fellow)</li>                 
+                        <li>Thesis - Towards Efficient and Lightweight Security Architecture for Big Sensing Data Streams </li>                 
+                    </ul>
+                </li>
+                     
+                <li>
+                    <strong>Master of Technologoy (M.Tech) 2012</strong>
+                    <ul class="sublist">
+                        <li>Computer Science and Engineering (Specialization- Information Security) </li>
+                        <li>National Institute of Technology(NIT) Rourkela, India</li>
+                        <li>Thesis - Secure Data Collection and Critical Data Transmission Technique in Mobile Sink WSNs </li>                 
+                    </ul>
+                </li>              
+            </ul>
+        </section>              
+                     
+        <section id="Professional Experiances">
+            <h2>Professional Experiences / Appointments</h2>
+            <ul>     
+                <li>
+                    <strong> Associate Professor – IIM Bodh Gaya, India</strong>
+                    <ul class="sublist">
+                        <li>Department of IT Systems and Analytics </li>
+                        <li>May 2024 -  </li>
+                    </ul>
+                </li>
 
-        <section id="contact">
-            <h2>Contact Information</h2>
-            <div id="contact-grid">
-                <div>
-                    <strong>Mailing Address:</strong><br>
-                    Dept. of Information Systems and Security<br>
-                    College of Information Technology (CIT)<br>
-                    United Arab Emirates University<br>
-                    Al Ain, UAE
-                </div>
-                <div>
-                    <strong>Electronic Contact:</strong><br>
-                    Email: deepak.puthal@ieee.org<br>
-                    Phone: +971 (0) 3 713 5554<br>
-                    Location: CIT Building
-                </div>
-            </div>
+                <li>
+                    <strong> Visiting Associate Professor – Aberystwyth University, UK</strong>
+                    <ul class="sublist">
+                        <li>Department of Computer Science </li>
+                        <li>May 2024 -  </li>
+                    </ul>
+                </li>
+                 
+                <li>
+                    <strong> Affiliate Professor – University West, Sweden</strong>
+                    <ul class="sublist">
+                        <li>Department of Engineering Science </li>
+                        <li>June 2023 - Dec 2024 </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong> Assistant Professor – Khalifa University, UAE</strong>
+                    <ul class="sublist">
+                        <li>Department of Electrical Engineering and Computer Science </li>
+                        <li>Aug 2021 - May 2024 </li>
+                    </ul>
+                </li>
+            
+                <li>
+                    <strong>Visiting Professor – Central Michigan University, Michigan, USA</strong>
+                    <ul class="sublist">
+                        <li>School of Engineering and Technology </li>
+                        <li>July 2021 - Dec 2021 </li>
+                    </ul>
+                </li>
+                     
+                <li>
+                    <strong>Visiting Professor – Shanghai Jiao Tong University, China</strong>
+                    <ul class="sublist">
+                        <li>School of Cyber Science and Engineering</li>
+                        <li>June 2021 - Present</li>
+                    </ul>
+                </li>     
+            
+                <li>
+                    <strong>Honorary Fellow – University of Technology Sydney (UTS), NSW, Australia</strong>
+                    <ul class="sublist">
+                        <li>Faculty of Engineering and Information Technology </li>
+                        <li>May 2019 - Present </li>
+                    </ul>
+                </li>
+                     
+                <li>
+                    <strong>Lecturer (Level G)/ Assistant Professor – Newcastle University, United Kingdom </strong>
+                    <ul class="sublist">
+                        <li>School of Computing</li>
+                        <li>May 2019 - June 2021</li>
+                    </ul>
+                </li>        
+            
+                <li>
+                    <strong>Lecturer/ Assistant Professor – University of Technology Sydney (UTS), NSW, Australia</strong>
+                    <ul class="sublist">
+                        <li>Faculty of Engineering and Information Technology</li>
+                        <li>Feb 2017 - May 2019</li>
+                    </ul>
+                </li>     
+            
+                <li>
+                    <strong>Graduate Research Assistant – CSIRO, Australia</strong>
+                    <ul class="sublist">
+                        <li>Data 61 </li>
+                        <li>April 2014 - March 2017 </li>
+                    </ul>
+                </li>
+                     
+                <li>
+                    <strong>Research Associate – Qatar Mobility Innovations Center (QMIC), Doha, Qatar</strong>
+                    <ul class="sublist">
+                        <li>Intelligent Transport and Mobility Group</li>
+                        <li>March 2013 - March 2014</li>
+                    </ul>
+                </li>        
+            </ul>    
+        </section>  
+        
+        <section id="Editor Services">
+            <h2>Editor Services</h2>
+            <h3>Section Editor</h3>
+            <ul>
+                <li> <a href="https://deepakputhal.github.io/sncs.html"> Springer Nature Computer Science Journal</a> </li>
+            </ul>
+    
+            <h3>Associate Editor</h3>
+            <ul class="sublist" style="border:none; padding-left:0; color: var(--text-main);">
+                <li>IEEE Transactions on Computational Social Systems (2021 - )</li>
+                <li>IEEE Transactions on Big Data  (2018 - )</li>
+                <li>IEEE Transactions on Network and Service Management (2022 - )</li>
+                <li>International Journal of Communication Systems, (John Wiley & Sons) (2018 - )</li>
+                <li>Internet Technology Letters, (John Wiley & Sons) (2017 - )</li>
+                <li>IEEE Consumer Electronics Magazine (2017 - 2023)</li>
+                <li>IEEE Systems Journal (2020 - 2022)</li>
+                <li>Computers & Electrical Engineering (Elsevier) (2019 - 2021)</li>
+                <li>KSII Transactions on Internet and Information Systems (TIIS) (2017 - 2021)</li>
+            </ul>
+    
+            <h3>Invited Guest Editor</h3>
+            <ul class="sublist" style="border:none; padding-left:0; color: var(--text-main);">
+                <li>IEEE Transactions on Network and Service Management </li>
+                <li>IEEE Transactions on Emerging Topics in Computational Intelligence</li>
+                <li>IEEE Consumer Electronics Magazine</li>
+                <li>Concurrency and Computation: Practice and Experience</li>
+                <li>Wireless Communications and Mobile Computing journal</li>
+                <li>Computers & Electrical Engineering (Elsevier)</li>
+                <li>Information Systems Frontier</li>
+                <li>Computational Intelligence</li>
+            </ul>
+        </section>                
+
+        <section id="Grant Reviewer">
+            <h2>Grant Reviewer</h2>
+            <ul class="sublist" style="border:none; padding-left:0; color: var(--text-main);">
+                <li>Engineering and Physical Sciences Research Council (EPSRC), UK</li>
+                <li>Swiss National Science Foundation (SNSF), Switzerland</li>
+                <li>Chilean National Science and Technology Commission (FONDECYT), Chile </li>
+                <li>Qatar National Research Fund (QNRF), Qatar</li>
+                <li>University of Jeddah, KSA</li>
+            </ul>
         </section>
-
-        <div class="map-container">
-            <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=OGnGdundYHszl2Dxpj4UKiSUTz2iJ_ShlUvIjCvO97M&cl=ffffff&w=a"></script>                  
-        </div>
+        
+        <section id="Thesis Examiner ">
+            <h2>Thesis Examiner </h2>
+            <ul class="sublist" style="border:none; padding-left:0; color: var(--text-main);">
+                <li>Doctor of Philosophy (Ph.D.) thesis: University of Bradford, UK</li>
+                <li>Doctor of Philosophy (Ph.D.) thesis: University of Tasmania, Australia</li>
+                <li>Doctor of Philosophy (Ph.D.) thesis: IIT Roorkee, India</li>
+                <li>Doctor of Philosophy (Ph.D.) thesis: NIT Rourkela, India</li>
+                <li>Doctor of Philosophy (Ph.D.) thesis: Khalifa University, UAE</li>  
+                <li>Doctor of Philosophy (Ph.D.) thesis: Abdul Wali Khan University Mardan, Pakistan</li>
+            </ul>
+        </section>
+        
+        <section id="Invited Talks">
+            <h2>Invited Talks/ Keynotes </h2>
+            <ul>
+                <li>2023 'Is private Blockchain dead?', Pannel talk, IEEE ICBC, Dubai, UAE.</li>
+                <li>2023 'Software-Defined Perimeter: AI-driven Solution', University Level Talk, NIT Warangal, India.</li>
+                <li>2022 '6G Security and Privacy', Pannel talk, 6G Summit Abu Dhabi, UAE.</li>
+                <li>2022 'Adaptive and sclably Blockchain Consensus', Invited talk, IEEE UK & Ireland Blockchain, UK.</li>
+                <li>2022 'Software-Defined Perimeter', Invited talk, TII, Abu Dhabi, UAE.</li>
+                <li>2022 'A future aspect of the user centric security solution', Keynote, IEEE ASSIC, India.</li>  
+                <li>2021 'User-centric Data Security in an IoMT Workflow', Invited talk, IEEE WF-5G, Canada.</li>
+                <li>2021 'Next-Generation Solution to Securing the Systems', Keynote, ICICC 2021, India.</li>
+                <li>2021 'Decision Tree for the Adaptive Authentication', Invited talk, Central Michigan University, USA.</li>
+                <li>2020 'User-centric Security in IoT-Edge Environment', Invited talk, NIT Meghalaya, India.</li>              
+                <li>2020 'Blockchain Portability for the Consumer Devices', Invited talk, University of Wolverhampton, USA.</li>
+                <li>2019 'IoT Workflow Orchestration Application', Keynote, ICCAN 2019, Bhubaneswar, India.</li>
+                <li>2019 'IoT Workflow Orchestration Application', Keynote, ICICC 2019, Bhubaneswar, India.</li>
+                <li>2019 'AI for Security and its Future', Invited talk, IIIT Bhubaneswar, India.</li>  
+                <li>2018 'Blockchain for the Edge Computing', Invited talk, La Trobe University, Australia.</li>
+                <li>2018 'Blockchain for IoT', Invited talk, TCS R&D, India.</li>
+                <li>2018 'Integration of Distributed Computing', Keynote, ICIT 2018, Bhubaneswar, India.</li>
+                <li>2018 'IoT Systems and its Future in Cyber Security', Invited talk, Newcastle University, UK.</li>    
+                <li>2018 'Blockchain for resource constraints', Invited talk, University of Leeds, UK.</li>                    
+                <li>2018 'Advances in Cyber Security', University Level Talk, NIT Rourkela, India.</li>    
+                <li>2017 'Advances in Computing Research', Panel Keynote, IEEE SmartCloud 2017, New York, USA.</li>                                                                                                    
+            </ul>
+        </section>
     </main>
 
     <footer>
-        &copy; 2025 Dr. Deepak Puthal. All Rights Reserved.
+        &copy; 2025 Dr. Deepak Puthal. | United Arab Emirates University
     </footer>
 </body>
 </html>
