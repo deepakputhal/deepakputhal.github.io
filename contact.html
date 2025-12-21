@@ -3,163 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deepak Puthal - Personal Website</title>
+    <title>Dr. Deepak Puthal - Personal Website</title>
     <style>
+        /* MINIMALIST SCHOLARLY THEME */
         :root {
-            --primary: #1a365d; 
-            --accent: #2b6cb0;
-            --bg-light: #F0F4F8;
-            --text-dark: #2d3748;
-            --white: #ffffff;
+            --slate: #2d3748;
+            --link-blue: #2c5282;
+            --paper: #ffffff;
+            --border: #e2e8f0;
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Georgia', serif; /* Classic academic font */
+            background-color: #f7fafc;
+            color: var(--slate);
             margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: var(--bg-light); 
-            color: var(--text-dark);
+            line-height: 1.8;
         }
 
         header {
-            background-color: var(--primary); 
-            color: #fff;
-            padding: 40px 20px;
+            background: var(--paper);
+            border-bottom: 1px solid var(--border);
+            padding: 3rem 1rem;
             text-align: center;
         }
 
-        h1 { margin: 0; font-weight: 700; }
-        h2 { border-bottom: 2px solid var(--accent); padding-bottom: 10px; color: var(--primary); margin-top: 40px; }
-        
+        header h1 {
+            font-size: 2.2rem;
+            margin: 0;
+            letter-spacing: 0.5px;
+            color: #000;
+        }
+
         nav {
+            background: var(--paper);
+            border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 100;
         }
 
         nav ul {
             list-style: none;
-            padding: 0;
-            margin: 0;
             display: flex;
             justify-content: center;
-            background-color: #f4f4f4;
-            padding: 10px;
-            flex-wrap: wrap;
+            margin: 0;
+            padding: 0.8rem;
+            gap: 2rem;
         }
 
-        nav ul li { margin: 5px 15px; }
-        nav ul li a { 
-            text-decoration: none; 
-            color: var(--primary); 
-            font-weight: 600;
-            transition: color 0.3s;
+        nav ul li a {
+            text-decoration: none;
+            color: var(--slate);
+            font-family: sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
         }
-        nav ul li a:hover { color: var(--accent); }
 
         main {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 30px;
-            background: var(--white);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-radius: 8px;
+            max-width: 900px;
+            margin: 3rem auto;
+            background: var(--paper);
+            padding: 4rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
         .container {
             display: flex;
-            gap: 40px;
-            align-items: flex-start;
-            margin-bottom: 30px;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 3rem;
         }
 
-        .column-image {
-            flex: 0 0 250px;
-            text-align: center;
-        }
-
-        .column-info { flex: 1; }
-
-        .round-image {
-            border-radius: 12px; 
-            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-            object-fit: cover;
-        }
-
-        .blink {
-            animation: blinkAnimation 2s infinite; 
-            color: red;
-            background: #fff5f5;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.8em;
-            vertical-align: middle;
-        }
-
-        .blinkk {
-            animation: blinkAnimation 2.5s infinite; 
-            color: blue;
-            display: block;
-            margin: 20px 0;
-        }
-
-        @keyframes blinkAnimation {
-            0% { opacity: 0; }
-            50% { opacity: 1; }
-            100% { opacity: 0; }
+        .column-image img {
+            border: 4px solid var(--paper);
+            outline: 1px solid var(--border);
+            filter: grayscale(10%);
         }
 
         .hiring-box {
-            background-color: #ebf8ff;
-            border-left: 5px solid #3182ce;
-            padding: 15px 20px;
-            margin: 20px 0;
+            border: 1px solid #fed7d7;
+            background: #fff5f5;
+            padding: 1.5rem;
+            margin: 1rem 0;
         }
 
-        .blue-paragraph {
-            color: var(--accent); 
-            margin: 0;
+        .blink { animation: blinker 2s linear infinite; color: #c53030; font-weight: bold; }
+        @keyframes blinker { 50% { opacity: 0; } }
+
+        h2 {
+            font-family: sans-serif;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-top: 3rem;
         }
 
         p { text-align: justify; margin-bottom: 1.5rem; }
 
-        .center-text, .center-align { text-align: center; }
-
-        /* Updated Contact Section Styling */
+        /* Professional Contact Grid */
         #contact-grid {
-            background: #f8fafc;
-            padding: 25px;
-            border-radius: 8px;
-            display: flex;
-            justify-content: space-between;
-            gap: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+            font-family: sans-serif;
+            font-size: 0.95rem;
         }
-        
-        .contact-col { flex: 1; white-space: nowrap; }
+
+        .map-container {
+            width: 180px;
+            margin: 3rem auto;
+            opacity: 0.8;
+        }
 
         footer {
-            background-color: var(--primary);
-            color: #fff;
-            padding: 30px;
             text-align: center;
-            margin-top: 50px;
+            padding: 3rem;
+            font-family: sans-serif;
+            font-size: 0.8rem;
+            color: #718096;
         }
 
-        /* Resized Map Container */
-        .map-container {
-            width: 200px;
-            margin: 20px auto;
-            border: 1px solid #eee;
-            padding: 10px;
-            border-radius: 8px;
-        }
-
-        @media (max-width: 850px) {
-            .container { flex-direction: column; align-items: center; }
-            #contact-grid { flex-direction: column; gap: 20px; }
-            .contact-col { white-space: normal; }
+        @media (max-width: 768px) {
+            .container { flex-direction: column; text-align: center; }
+            #contact-grid { grid-template-columns: 1fr; }
+            main { padding: 1.5rem; }
         }
     </style>
 </head>
@@ -180,29 +152,30 @@
     </nav>
   
     <main>
-        <h1>About</h1>
-
         <div class="container">
             <div class="column-image">
-                <img class="round-image" src="deepak-3.jpeg" alt="DEEPS" width="250" height="300">
+                <img src="deepak-3.jpeg" alt="DEEPS" width="220" height="270">
             </div>
             <div class="column-info">
                 <div class="hiring-box">
-                    <h1><span class="blink">NEW</span></h1>            
-                    <p class="blue-paragraph"><b>Looking for highly motivated research students (Postdoc, PhD and Master by Research) to work in cybersecurity, Applied AI and/or IoT domain.</b></p>
+                    <span class="blink">NEW OPPORTUNITY</span>
+                    <p style="margin-top: 0.5rem; font-family: sans-serif; font-size: 0.95rem; color: #2d3748;">
+                        <b>Looking for highly motivated research students (Postdoc, PhD and Master by Research) to work in cybersecurity, Applied AI and/or IoT domain.</b>
+                    </p>
                 </div>
-                <ul>
+                <ul style="font-family: sans-serif; font-size: 0.9rem;">
                     <li>Fellow of IETE [2025]</li>
-                    <li>Chair of IEEE Bio-inspired Computing Specal Technial Community [2021-2023]</li>
-                    <li>IEEE Distinguished Speaker of Cyber Security (Rock Star) [2021-2023]</li>
-                    <li>IEEE Computer Society STC Executive Committee Board Member [2022]</li> 
+                    <li>Chair of IEEE Bio-inspired Computing STC [2021-2023]</li>
+                    <li>IEEE Distinguished Speaker (Rock Star) [2021-2023]</li>
                 </ul>
             </div>
         </div>
 
-        <h3><center><span class="blinkk">AI is the most powerful weapon we have, and the most dangerous threat we face, in cybersecurity.</span></center></h3>            
+        <h4 style="text-align: center; font-style: italic; color: #4a5568;">
+            "AI is the most powerful weapon we have, and the most dangerous threat we face, in cybersecurity."
+        </h4>            
         
-        <h2>Biography Summary</h2>   
+        <h2>Biography</h2>   
         <p>Deepak Puthal is a mid-career researcher specializing in the field of Cyber Security, Blockchain, Edge Computing, the Internet of Things, and Generative Adversarial Networks (with over 150 scientific publications (h-index: 50+), including 30 in IEEE/ACM Transactions journals). His groundbreaking contributions in these areas have garnered him numerous prestigious international accolades. These include the 2023 IEEE Computer Society Smart Computing STC Middle-Career Award, the 2022 IEEE HITC Award for Excellence in Hyper-Intelligence Systems (Middle Career Researcher award), the 2021 IEEE Computer Society Smart Computing STC Early-Career Award, the runner-up position in the 2021 IEEE TEMS TC on Blockchain and Distributed Ledger Technologies, the 2019 Best IEEE ComSoc Young Researcher Award for the Europe, Middle East, and Africa Region, the 2018 IEEE TCSC Award for Excellence in Scalable Computing as an Early Career Researcher, and the 2018 IETE Best Research Award. Additionally, he has received nine Best Paper Awards and holds the title of IEEE Distinguished Speaker (IEEE CTSoc). He has secured over $2.5 Million in the form of competitive research grants to support his research from both public and private agencies. </p>
         
         <p>Deepak is currently an Associate Professor in the College of Information Technology at the United Arab Emirates University (UAE), and a Visiting Associate Professor at Aberystwyth University, UK. Previously, he served as an Associate Professor at IIM Bodh Gaya, India; an Affiliate Professor in Cybersecurity at University West, Sweden; and an Assistant Professor at Khalifa University in the UAE, Newcastle University in the UK, and the University of Technology Sydney (UTS), Australia. He earned his Ph.D. from the Faculty of Engineering and IT at UTS, Australia, where his exceptional doctoral dissertation was recognized with the prestigious IEEE Distinguished Doctoral Dissertation Award, granted by the IEEE Computer Society Smart Computing Technical Committee. He maintains his association with UTS as an Honorary Fellow.</p>
@@ -212,32 +185,31 @@
         <p>Deepak's remarkable achievements and contributions have significantly advanced the fields of research in which he specializes, making him a distinguished figure in academia and beyond.</p>
 
         <section id="contact">
-            <h2>Contact</h2>
+            <h2>Contact Information</h2>
             <div id="contact-grid">
-                <div class="contact-col">
-                    <p><strong>Address:</strong><br>
-                    Department of Information Systems and Security<br>
+                <div>
+                    <strong>Mailing Address:</strong><br>
+                    Dept. of Information Systems and Security<br>
                     College of Information Technology (CIT)<br>
-                    United Arab Emirates University, Al Ain, UAE</p>
+                    United Arab Emirates University<br>
+                    Al Ain, UAE
                 </div>
-                <div class="contact-col">
-                    <p><strong>Direct:</strong><br>
+                <div>
+                    <strong>Electronic Contact:</strong><br>
                     Email: deepak.puthal@ieee.org<br>
-                    Phone: +971 (0) 3 713 5554</p>
+                    Phone: +971 (0) 3 713 5554<br>
+                    Location: CIT Building
                 </div>
             </div>
         </section>
 
-        <div class="center-text" style="margin-top: 40px;">
-            <h3>Visitor Map</h3>
-            <div class="map-container">
-                <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=OGnGdundYHszl2Dxpj4UKiSUTz2iJ_ShlUvIjCvO97M&cl=ffffff&w=a"></script>                  
-            </div>
+        <div class="map-container">
+            <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=OGnGdundYHszl2Dxpj4UKiSUTz2iJ_ShlUvIjCvO97M&cl=ffffff&w=a"></script>                  
         </div>
     </main>
 
     <footer>
-        &copy; 2025 Dr. Deepak Puthal | Refined Research Portal
+        &copy; 2025 Dr. Deepak Puthal. All Rights Reserved.
     </footer>
 </body>
 </html>
