@@ -5,21 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deepak Puthal - Personal Website</title>
     <style>
-        /* Add your custom CSS styles here */
+        :root {
+            --primary: #1a365d; 
+            --accent: #2b6cb0;
+            --bg-light: #F0F4F8;
+            --text-dark: #2d3748;
+            --white: #ffffff;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
+            background-color: var(--bg-light); 
+            color: var(--text-dark);
         }
+
         header {
-            background-color: #333;
+            background-color: var(--primary); 
             color: #fff;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
         }
-        h1 {
-            margin: 0;
+
+        h1 { margin: 0; font-weight: 700; }
+        h2 { border-bottom: 2px solid var(--accent); padding-bottom: 10px; color: var(--primary); margin-top: 40px; }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+
         nav ul {
             list-style: none;
             padding: 0;
@@ -28,163 +47,197 @@
             justify-content: center;
             background-color: #f4f4f4;
             padding: 10px;
+            flex-wrap: wrap;
         }
-        nav ul li {
-            margin-right: 10px;
+
+        nav ul li { margin: 5px 15px; }
+        nav ul li a { 
+            text-decoration: none; 
+            color: var(--primary); 
+            font-weight: 600;
+            transition: color 0.3s;
         }
+        nav ul li a:hover { color: var(--accent); }
+
         main {
-            padding: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 30px;
+            background: var(--white);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 8px;
         }
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
+
+        .container {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .column-image {
+            flex: 0 0 250px;
             text-align: center;
         }
-        body {
-            background-color: #F0F4F8; /* Set the background color to a specific color using its hex code */
+
+        .column-info { flex: 1; }
+
+        .round-image {
+            border-radius: 12px; 
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            object-fit: cover;
         }
-        
-       .center-align {
-            text-align: center;
-        }
-        .blue-paragraph {
-            color: blue;
-        }
-        
+
         .blink {
             animation: blinkAnimation 2s infinite; 
             color: red;
+            background: #fff5f5;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            vertical-align: middle;
         }
 
         .blinkk {
             animation: blinkAnimation 2.5s infinite; 
             color: blue;
-        }
-        
-        @keyframes blinkAnimation {
-            0% {
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-       
-        .container {
-            display: flex;
-        }
-        
-        .column {
-            flex: 1;
-            padding: 20px;
-        }
-        .round-image {
-            border-radius: 70%;
+            display: block;
+            margin: 20px 0;
         }
 
-        p {
-  text-align: justify;
-}
+        @keyframes blinkAnimation {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .hiring-box {
+            background-color: #ebf8ff;
+            border-left: 5px solid #3182ce;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+
+        .blue-paragraph {
+            color: var(--accent); 
+            margin: 0;
+        }
+
+        p { text-align: justify; margin-bottom: 1.5rem; }
+
+        .center-text, .center-align { text-align: center; }
+
+        /* Updated Contact Section Styling */
+        #contact-grid {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+        }
         
+        .contact-col { flex: 1; white-space: nowrap; }
+
+        footer {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 30px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* Resized Map Container */
+        .map-container {
+            width: 200px;
+            margin: 20px auto;
+            border: 1px solid #eee;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 850px) {
+            .container { flex-direction: column; align-items: center; }
+            #contact-grid { flex-direction: column; gap: 20px; }
+            .contact-col { white-space: normal; }
+        }
     </style>
-    <style>
-  .center-text {
-    text-align: center;
-  }
-</style>
 </head>
 <body>
     <header>
         <h1>Dr. Deepak Puthal (Ph.D.)</h1>
     </header>
+
     <nav>
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="professional.html">Professional</a></li>
             <li><a href="research.html">Research</a></li>
             <li><a href="recognitions.html">Recognitions</a></li>
-                    <!--<li><a href="projects.html">Project Profile</a></li>--!>
             <li><a href="supervision.html">Supervision</a></li>
             <li><a href="teaching.html">Teaching</a></li> 
         </ul>
     </nav>
   
-    
-    
-    
     <main>
-        
-       
+        <h1>About</h1>
 
-            <h1>About</h1>
-            
-           
-<!--            <div class="image-paragraph">  -->
-<!--         <img src="deepak-1.jpg" alt="DEEPS" width="200" height="200">  -->       
-<!--        <img src="deepak-2.jpg" alt="DEEPS" width="200" height="300">   -->
-<!--        <img src="deepak-3.jpeg" alt="DEEPS" width="200" height="250">  -->                     
-                
-<!--      </div>   -->
-            
-            
-    <div class="container">
-        <div class="column">
-            <img class="round-image" src="deepak-3.jpeg" alt="DEEPS" width="250" height="300">
+        <div class="container">
+            <div class="column-image">
+                <img class="round-image" src="deepak-3.jpeg" alt="DEEPS" width="250" height="300">
+            </div>
+            <div class="column-info">
+                <div class="hiring-box">
+                    <h1><span class="blink">NEW</span></h1>            
+                    <p class="blue-paragraph"><b>Looking for highly motivated research students (Postdoc, PhD and Master by Research) to work in cybersecurity, Applied AI and/or IoT domain.</b></p>
+                </div>
+                <ul>
+                    <li>Fellow of IETE [2025]</li>
+                    <li>Chair of IEEE Bio-inspired Computing Specal Technial Community [2021-2023]</li>
+                    <li>IEEE Distinguished Speaker of Cyber Security (Rock Star) [2021-2023]</li>
+                    <li>IEEE Computer Society STC Executive Committee Board Member [2022]</li> 
+                </ul>
+            </div>
         </div>
-        <div class="column">
-<h1><span class="blink">NEW</span> <!-- &rarr;--> </h1>           
-        <p class="blue-paragraph" class="center-align"><b>Looking for highly motivated research students (Postdoc, PhD and Master by Research) to work in cybersecurity, Applied AI and/or IoT domain.</b></p>
-            <ul>
-                <li>Fellow of IETE [2025]</li>
-                <li>Chair of IEEE Bio-inspired Computing Specal Technial Community [2021-2023]</li>
-                <li>IEEE Distinguished Speaker of Cyber Security (Rock Star) [2021-2023]</li>
-                <li>IEEE Computer Society STC Executive Committee Board Member [2022]</li> 
-            </ul>
-            
-        </div>
-    </div>
-<h3><center><span class="blinkk">AI is the most powerful weapon we have, and the most dangerous threat we face, in cybersecurity.
-</span> </center></h3>            
-<h2>Biography Summary</h2>   
-           <p>Deepak Puthal is a mid-career researcher specializing in the field of Cyber Security, Blockchain, Edge Computing, the Internet of Things, and Generative Adversarial Networks (with over 150 scientific publications (h-index: 50+), including 30 in IEEE/ACM Transactions journals). His groundbreaking contributions in these areas have garnered him numerous prestigious international accolades. These include the 2023 IEEE Computer Society Smart Computing STC Middle-Career Award, the 2022 IEEE HITC Award for Excellence in Hyper-Intelligence Systems (Middle Career Researcher award), the 2021 IEEE Computer Society Smart Computing STC Early-Career Award, the runner-up position in the 2021 IEEE TEMS TC on Blockchain and Distributed Ledger Technologies, the 2019 Best IEEE ComSoc Young Researcher Award for the Europe, Middle East, and Africa Region, the 2018 IEEE TCSC Award for Excellence in Scalable Computing as an Early Career Researcher, and the 2018 IETE Best Research Award. Additionally, he has received nine Best Paper Awards and holds the title of IEEE Distinguished Speaker (IEEE CTSoc). He has secured over $2.5 Million in the form of competitive research grants to support his research from both public and private agencies. </p>
-           <p>Deepak is currently an Associate Professor in the College of Information Technology at the United Arab Emirates University (UAE), and a Visiting Associate Professor at Aberystwyth University, UK. Previously, he served as an Associate Professor at IIM Bodh Gaya, India; an Affiliate Professor in Cybersecurity at University West, Sweden; and an Assistant Professor at Khalifa University in the UAE, Newcastle University in the UK, and the University of Technology Sydney (UTS), Australia. He earned his Ph.D. from the Faculty of Engineering and IT at UTS, Australia, where his exceptional doctoral dissertation was recognized with the prestigious IEEE Distinguished Doctoral Dissertation Award, granted by the IEEE Computer Society Smart Computing Technical Committee. He maintains his association with UTS as an Honorary Fellow.</p>
-           <p>Deepak is actively engaged in various leadership roles within the IEEE community, including serving on the IEEE Computer Society STC ExCom, chairing the IEEE Bio-inspired Computing STC, and contributing to the editorial boards of esteemed publications such as IEEE Transactions on Big Data, IEEE Transactions on Computational Social Systems, IEEE Consumer Electronics Magazine, International Journal of Communication Systems, and Section Editor of Springer Nature Computer Science Journal.</p>
-           <p>Deepak's remarkable achievements and contributions have significantly advanced the fields of research in which he specializes, making him a distinguished figure in academia and beyond.</p>
 
-
+        <h3><center><span class="blinkk">AI is the most powerful weapon we have, and the most dangerous threat we face, in cybersecurity.</span></center></h3>            
         
+        <h2>Biography Summary</h2>   
+        <p>Deepak Puthal is a mid-career researcher specializing in the field of Cyber Security, Blockchain, Edge Computing, the Internet of Things, and Generative Adversarial Networks (with over 150 scientific publications (h-index: 50+), including 30 in IEEE/ACM Transactions journals). His groundbreaking contributions in these areas have garnered him numerous prestigious international accolades. These include the 2023 IEEE Computer Society Smart Computing STC Middle-Career Award, the 2022 IEEE HITC Award for Excellence in Hyper-Intelligence Systems (Middle Career Researcher award), the 2021 IEEE Computer Society Smart Computing STC Early-Career Award, the runner-up position in the 2021 IEEE TEMS TC on Blockchain and Distributed Ledger Technologies, the 2019 Best IEEE ComSoc Young Researcher Award for the Europe, Middle East, and Africa Region, the 2018 IEEE TCSC Award for Excellence in Scalable Computing as an Early Career Researcher, and the 2018 IETE Best Research Award. Additionally, he has received nine Best Paper Awards and holds the title of IEEE Distinguished Speaker (IEEE CTSoc). He has secured over $2.5 Million in the form of competitive research grants to support his research from both public and private agencies. </p>
+        
+        <p>Deepak is currently an Associate Professor in the College of Information Technology at the United Arab Emirates University (UAE), and a Visiting Associate Professor at Aberystwyth University, UK. Previously, he served as an Associate Professor at IIM Bodh Gaya, India; an Affiliate Professor in Cybersecurity at University West, Sweden; and an Assistant Professor at Khalifa University in the UAE, Newcastle University in the UK, and the University of Technology Sydney (UTS), Australia. He earned his Ph.D. from the Faculty of Engineering and IT at UTS, Australia, where his exceptional doctoral dissertation was recognized with the prestigious IEEE Distinguished Doctoral Dissertation Award, granted by the IEEE Computer Society Smart Computing Technical Committee. He maintains his association with UTS as an Honorary Fellow.</p>
+        
+        <p>Deepak is actively engaged in various leadership roles within the IEEE community, including serving on the IEEE Computer Society STC ExCom, chairing the IEEE Bio-inspired Computing STC, and contributing to the editorial boards of esteemed publications such as IEEE Transactions on Big Data, IEEE Transactions on Computational Social Systems, IEEE Consumer Electronics Magazine, International Journal of Communication Systems, and Section Editor of Springer Nature Computer Science Journal.</p>
+        
+        <p>Deepak's remarkable achievements and contributions have significantly advanced the fields of research in which he specializes, making him a distinguished figure in academia and beyond.</p>
+
         <section id="contact">
             <h2>Contact</h2>
-            <p>Department of Information Systems and Security</p>
-            <p>College of Information Technology (CIT)</p>
-            <p>United Arab Emirates University</p>
-            <p>Al Ain, UAE</p>
-            <p>Email: deepak.puthal@ieee.org</p>
-            <p>Phone: +971 (0) 3 713 5554</p>
+            <div id="contact-grid">
+                <div class="contact-col">
+                    <p><strong>Address:</strong><br>
+                    Department of Information Systems and Security<br>
+                    College of Information Technology (CIT)<br>
+                    United Arab Emirates University, Al Ain, UAE</p>
+                </div>
+                <div class="contact-col">
+                    <p><strong>Direct:</strong><br>
+                    Email: deepak.puthal@ieee.org<br>
+                    Phone: +971 (0) 3 713 5554</p>
+                </div>
+            </div>
         </section>
 
-
-<table>
-  <tr>
-      
-    <td>
-    <h3>Let's see where everyone is visiting this homepage from.</h3>
-   <div class="center-text">
-       <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=OGnGdundYHszl2Dxpj4UKiSUTz2iJ_ShlUvIjCvO97M&cl=ffffff&w=a" width="150" height="150"></script>                 
-    </td>
-
-  </tr>
-</table>
-
-
-        
+        <div class="center-text" style="margin-top: 40px;">
+            <h3>Visitor Map</h3>
+            <div class="map-container">
+                <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=OGnGdundYHszl2Dxpj4UKiSUTz2iJ_ShlUvIjCvO97M&cl=ffffff&w=a"></script>                  
+            </div>
+        </div>
     </main>
+
     <footer>
-        &copy; 2023 Deepak Puthal 
+        &copy; 2025 Dr. Deepak Puthal | Refined Research Portal
     </footer>
 </body>
 </html>
