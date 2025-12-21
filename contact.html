@@ -6,7 +6,7 @@
     <title>Deepak Puthal - Personal Website</title>
     <style>
         :root {
-            --primary: #1a365d; /* Academic Deep Blue */
+            --primary: #1a365d; 
             --accent: #2b6cb0;
             --bg-light: #F0F4F8;
             --text-dark: #2d3748;
@@ -18,12 +18,12 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            background-color: var(--bg-light); /* Set the background color to a specific color using its hex code */
+            background-color: var(--bg-light); 
             color: var(--text-dark);
         }
 
         header {
-            background-color: var(--primary); /* Updated from #333 for better academic feel */
+            background-color: var(--primary); 
             color: #fff;
             padding: 40px 20px;
             text-align: center;
@@ -68,7 +68,6 @@
             border-radius: 8px;
         }
 
-        /* Profile Layout Restructuring */
         .container {
             display: flex;
             gap: 40px;
@@ -84,12 +83,11 @@
         .column-info { flex: 1; }
 
         .round-image {
-            border-radius: 12px; /* Changed from 70% to modern rounded for academic headshots */
+            border-radius: 12px; 
             box-shadow: 0 10px 15px rgba(0,0,0,0.1);
             object-fit: cover;
         }
 
-        /* Animation & Alerts */
         .blink {
             animation: blinkAnimation 2s infinite; 
             color: red;
@@ -121,7 +119,7 @@
         }
 
         .blue-paragraph {
-            color: var(--accent); /* Updated for readability */
+            color: var(--accent); 
             margin: 0;
         }
 
@@ -129,17 +127,17 @@
 
         .center-text, .center-align { text-align: center; }
 
-        /* Contact & Footer */
-        #contact {
+        /* Updated Contact Section Styling */
+        #contact-grid {
             background: #f8fafc;
             padding: 25px;
             border-radius: 8px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
         }
         
-        #contact h2 { grid-column: 1 / -1; margin-top: 0; }
+        .contact-col { flex: 1; white-space: nowrap; }
 
         footer {
             background-color: var(--primary);
@@ -149,11 +147,19 @@
             margin-top: 50px;
         }
 
-        table { width: 100%; margin-top: 40px; border-top: 1px solid #eee; }
+        /* Resized Map Container */
+        .map-container {
+            width: 200px;
+            margin: 20px auto;
+            border: 1px solid #eee;
+            padding: 10px;
+            border-radius: 8px;
+        }
 
-        @media (max-width: 768px) {
+        @media (max-width: 850px) {
             .container { flex-direction: column; align-items: center; }
-            .column-image { flex: 1 1 auto; }
+            #contact-grid { flex-direction: column; gap: 20px; }
+            .contact-col { white-space: normal; }
         }
     </style>
 </head>
@@ -207,30 +213,27 @@
 
         <section id="contact">
             <h2>Contact</h2>
-            <div>
-                <p><strong>Address:</strong><br>
-                Department of Information Systems and Security<br>
-                College of Information Technology (CIT)<br>
-                United Arab Emirates University<br>
-                Al Ain, UAE</p>
-            </div>
-            <div>
-                <p><strong>Direct:</strong><br>
-                Email: deepak.puthal@ieee.org<br>
-                Phone: +971 (0) 3 713 5554</p>
+            <div id="contact-grid">
+                <div class="contact-col">
+                    <p><strong>Address:</strong><br>
+                    Department of Information Systems and Security<br>
+                    College of Information Technology (CIT)<br>
+                    United Arab Emirates University, Al Ain, UAE</p>
+                </div>
+                <div class="contact-col">
+                    <p><strong>Direct:</strong><br>
+                    Email: deepak.puthal@ieee.org<br>
+                    Phone: +971 (0) 3 713 5554</p>
+                </div>
             </div>
         </section>
 
-        <table>
-            <tr>
-                <td>
-                    <h3 class="center-text">Visitor Map</h3>
-                    <div class="center-text">
-                        <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=OGnGdundYHszl2Dxpj4UKiSUTz2iJ_ShlUvIjCvO97M&cl=ffffff&w=a"></script>                  
-                    </div>
-                </td>
-            </tr>
-        </table>
+        <div class="center-text" style="margin-top: 40px;">
+            <h3>Visitor Map</h3>
+            <div class="map-container">
+                <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=OGnGdundYHszl2Dxpj4UKiSUTz2iJ_ShlUvIjCvO97M&cl=ffffff&w=a"></script>                  
+            </div>
+        </div>
     </main>
 
     <footer>
