@@ -3,188 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SN Computer Science - Section: CCDT</title>  
+    <title>SN Computer Science - Section: CCDT</title>
     <style>
-        /* Add your custom CSS styles here */
+        /* MODERN TECH DESIGN SYSTEM */
+        :root {
+            --primary-slate: #1e293b;   /* Deep Slate */
+            --accent-teal: #0d9488;    /* Professional Teal */
+            --bg-body: #f1f5f9;        /* Cool Gray background */
+            --text-main: #0f172a;      /* Almost Black */
+            --text-muted: #475569;     /* Gray Blue */
+            --white: #ffffff;
+            --border: #cbd5e1;
+            --success-green: #059669;  /* For Q1 Status */
+            --deadline-indigo: #4f46e5; /* For Deadline Status */
+            --journal-red: #be123c;    /* For Journal Name Branding */
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
         }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
+
+        /* HEADER SECTION */
+        header.site-header {
+            background-color: var(--primary-slate);
+            color: var(--white);
+            padding: 60px 20px;
             text-align: center;
+            border-bottom: 5px solid var(--accent-teal);
         }
-        h1 {
+
+        header.site-header h1 {
+            font-size: 2.4rem;
             margin: 0;
+            font-weight: 800;
+            letter-spacing: -0.025em;
         }
-        nav ul {
+
+        /* MAIN CONTENT CONTAINER */
+        main {
+            max-width: 1100px;
+            margin: -30px auto 40px auto; /* Overlaps header slightly for modern look */
+            background: var(--white);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        /* HERO SECTION (LOGO & TITLES) */
+        .journal-hero {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 40px;
+        }
+
+        .journal-logo-box { flex: 1; text-align: center; }
+        .journal-logo-box img { max-width: 100%; height: auto; border-radius: 4px; }
+
+        .journal-info-box { flex: 1.5; }
+        .journal-info-box h1 { color: var(--journal-red); margin: 0 0 10px 0; font-size: 1.8rem; font-weight: 800; }
+        .journal-info-box h2 { color: var(--accent-teal); font-size: 1.4rem; margin-bottom: 25px; font-weight: 600; }
+
+        /* EDITOR CONTACT CARDS */
+        .editor-tag {
+            background: #f8fafc;
+            padding: 12px 15px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            border-left: 4px solid var(--accent-teal);
+            display: block;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        /* STATUS BADGES */
+        .status-container {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .q1-badge {
+            background: var(--success-green);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .deadline-badge {
+            background: var(--deadline-indigo);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* TOPICS SECTION */
+        section h3 {
+            color: var(--primary-slate);
+            font-size: 1.5rem;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        section h3::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+            margin-left: 20px;
+        }
+
+        .topics-grid {
+            columns: 2;
+            column-gap: 40px;
             list-style: none;
             padding: 0;
             margin: 0;
-            display: flex;
-            justify-content: center;
-            background-color: #f4f4f4;
-            padding: 10px;
-        }
-        nav ul li {
-            margin-right: 10px;
-        }
-        main {
-            padding: 20px;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        body {
-            background-color: #ffffff; /* Set the background color to a specific color using its hex code */
-        }
-        
-       .center-align {
-            text-align: center;
-        }
-        .blue-paragraph {
-            color: blue;
-        }
-        
-        .blink {
-            animation: blinkAnimation 2s infinite; 
-            color: red;
-        }
-        
-        @keyframes blinkAnimation {
-            0% {
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-       
-        .container {
-            display: flex;
-        }
-        
-        .column {
-            flex: 1;
-            padding: 20px;
-        }
-        .round-image {
-            border-radius: 70%;
         }
 
-        
+        .topics-grid li {
+            break-inside: avoid;
+            background: #ffffff;
+            margin-bottom: 12px;
+            padding: 14px 18px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .topics-grid li:hover {
+            border-color: var(--accent-teal);
+            background: #f0fdfa; /* Light teal tint */
+            transform: translateY(-2px);
+        }
+
+        /* GUIDELINES CARD */
+        .instructions-card {
+            background: var(--primary-slate);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 50px;
+        }
+
+        .instructions-card h2 { margin-top: 0; color: var(--accent-teal); font-size: 1.6rem; }
+        .instructions-card p { margin: 15px 0; }
+        .instructions-card a { color: #5eead4; font-weight: 600; text-decoration: none; }
+        .instructions-card a:hover { text-decoration: underline; }
+
+        .submission-note {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px dashed var(--accent-teal);
+            margin-top: 25px;
+            font-size: 1rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            padding: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 850px) {
+            .journal-hero { flex-direction: column; text-align: center; }
+            .topics-grid { columns: 1; }
+            .status-container { justify-content: center; }
+            main { padding: 25px; margin: 10px; }
+        }
     </style>
-    <style>
-  .center-text {
-    text-align: center;
-  }
-</style>
 </head>
 <body>
-    <header>
+
+    <header class="site-header">
         <h1>Springer Nature Computer Science</h1>
     </header>
     
-    
     <main>
-        
-       
-
-          
-           
-<!--            <div class="image-paragraph">  -->
-<!--         <img src="deepak-1.jpg" alt="DEEPS" width="200" height="200">  -->       
-<!--        <img src="deepak-2.jpg" alt="DEEPS" width="200" height="300">   -->
-<!--        <img src="deepak-3.jpeg" alt="DEEPS" width="200" height="250">  -->                     
+        <div class="journal-hero">
+            <div class="journal-logo-box">
+                <img src="sncs_logo_2.png" alt="SNCS Journal Logo">
+            </div>
+            <div class="journal-info-box">
+                <h1>Springer Nature Computer Science</h1>
+                <h2>Section: Cognitive Computing and Digital Twin</h2>
                 
-<!--      </div>   -->
-            
-            
-    <div class="container">
-        <div class="column">
-            <img src="sncs_logo_2.png" alt="DEEPS" width="450" height="290">
+                <div class="editor-tag"><strong>Deepak Puthal</strong>, UAE University (deepak.puthal@ieee.org)</div>
+                <div class="editor-tag"><strong>Amit Kumar Mishra</strong>, University West (amit.kumar-mishra@hv.se)</div>
+                <div class="editor-tag"><strong>Antonella Longo</strong>, University of Salento (antonella.longo@unisalento.it)</div>
+                <div class="editor-tag"><strong>Chin-Teng Lin</strong>, University of Technology Sydney (Chin-Teng.Lin@uts.edu.au)</div>
+
+                <div class="status-container">
+                    <span class="q1-badge">Scopus: Q1</span>
+                    <span class="deadline-badge">Submission Deadline: OPEN</span>
+                </div>
+            </div>
         </div>
-        <div class="column">
 
-
-
-<h1><FONT COLOR="#ff0000"> Springer Nature Computer Science</FONT> </h1>
-<h2> <FONT COLOR="#0000ff"> <b>Section:</b> <u>Cognitive Computing and Digital Twin</u> </FONT> </h2>           
-
-            
-            
-            
-<h3><b>Section Editors</b></h3>   
-
-            <p><b>Deepak Puthal, UAE University;</b> Email: <u>deepak.puthal@ieee.org</u></p>
-            <p><b>Amit Kumar Mishra, University West;</b> Email: <u>akmishra@ieee.org</u></p>
-            <p><b>Antonella Longo, University of Salento;</b> Email: <u>antonella.longo@unisalento.it</u></p>
-            <p><b>Chin-Teng Lin, University of Technology Sydney;</b> Email: <u>Chin-Teng.Lin@uts.edu.au</u></p>
-
-            
-<h3><FONT COLOR="#046307">Deadline: OPEN</FONT></h3>              
-<p> <b> Raked: Q1 - Scopus </b></p>
-
-        </div>
-    </div>
-
-
-<p>Cognitive Computing simulates human thought,
-enabling systems to learn, reason, and selfcorrect from
-unstructured data using AI. Digital Twins are real-time virtual
-replicas of physical systems, providing monitoring, simulation, and
-optimization. The powerful convergence creates "Cognitive Digital
-Twins," where virtual models gain intelligence to autonomously
-learn, predict failures, and self-optimize their physical counterparts.
-This synergy is crucial for next-generation infrastructures, driving
-innovation in Smart Cities, digital health (Digital Human Twins),
-Industrial IoT, and agriculture. A dedicated journal section is vital to
-consolidate research in this rapidly evolving interdisciplinary field.</p>
-
-<p>The topics of this section include but are not limited to:</p>        
-            <ul>
-                <li> Architectures and frameworks for cognitive digital twins.</li>
-                <li>AI/ML for predictive modeling and optimization in digital twins.</li>
-                <li>Real-time data integration and sensor fusion for digital twin updates.</li>
-                <li>Edge AI for localized cognitive processing in digital twins.</li>
-                <li>Security, privacy, and trust in cognitive digital twin ecosystems.</li>
-                <li>Smart city digital twins for urban planning and resource management.</li>
-                <li>Performance evaluation and metrics for cognitive digital twin systems.</li>
-                <li>Ethical considerations and explainable AI (XAI) in digital twin deployment.</li>
-                <li>ML and DL for advanced pattern recognition and decision-making in cognitive systems.</li>
-                <li>Reinforcement learning for autonomous learning and control in cognitive systems.</li>
-                <li>NLP and speech recognition for human-like interaction in cognitive systems.</li>
-                <li>Knowledge representation, reasoning, and semantic technologies in cognitive computing.</li>
-                <li>Cognitive robotics and autonomous systems.</li>
-                <li>Digital twin architectures, platforms, and interoperability standards.</li>
-                <li>Data management, storage, and security for digital twin ecosystems.</li>
-                <li>Lifecycle management of digital twins (design, deployment, operation, etc.)</li>
-            </ul>
-
-        
-        <section id="contact">
-            <h2>Important Instructions</h2>
-            <p><b>Journal Homepage:</b> <a href="https://link.springer.com/journal/42979"> https://link.springer.com/journal/42979</a></p>
-            <p><b>Submission Link:</b> <a href="https://www.editorialmanager.com/sncs/default2.aspx"> https://www.editorialmanager.com/sncs/default2.aspx</a></p>
-            <p><b>Submission Guidelines:</b> <a href="https://www.springer.com/journal/42979/submission-guidelines"> https://www.springer.com/journal/42979/submission-guidelines</a></p>
-            <p><b>Submission Note:</b> Select the "<u>Cognitive Computing and Digital Twin</u>" under the "<u>General Information</u>" section while submitting.</p>
+        <section id="description">
+            <p>Cognitive Computing simulates human thought, enabling systems to learn, reason, and self-correct from unstructured data using AI. Digital Twins are real-time virtual replicas of physical systems, providing monitoring, simulation, and optimization. The powerful convergence creates <strong>"Cognitive Digital Twins,"</strong> where virtual models gain intelligence to autonomously learn, predict failures, and self-optimize their physical counterparts.</p>
         </section>
 
+        <section id="topics">
+            <h3>Scope and Key Topics</h3>
+            <ul class="topics-grid">
+                <li>Architectures and frameworks for cognitive digital twins</li>
+                <li>AI/ML for predictive modeling and optimization</li>
+                <li>Real-time data integration and sensor fusion</li>
+                <li>Edge AI for localized cognitive processing</li>
+                <li>Security, privacy, and trust in twin ecosystems</li>
+                <li>Smart city digital twins for urban planning</li>
+                <li>Performance evaluation and systems metrics</li>
+                <li>Ethical considerations and Explainable AI (XAI)</li>
+                <li>ML and DL for advanced pattern recognition</li>
+                <li>Reinforcement learning for autonomous control</li>
+                <li>NLP and speech recognition for human interaction</li>
+                <li>Knowledge representation and reasoning</li>
+                <li>Cognitive robotics and autonomous systems</li>
+                <li>Interoperability standards for digital twins</li>
+                <li>Data management and lifecycle operation</li>
+                <li>Storage and security for twin ecosystems</li>
+            </ul>
+        </section>
 
-
-
-        
+        <section class="instructions-card">
+            <h2>Submission Guidelines</h2>
+            <p><strong>Journal Homepage:</strong> <a href="https://link.springer.com/journal/42979" target="_blank">link.springer.com/journal/42979</a></p>
+            <p><strong>Submission Portal:</strong> <a href="https://www.editorialmanager.com/sncs/default2.aspx" target="_blank">editorialmanager.com/sncs/default2.aspx</a></p>
+            <p><strong>Author Guidelines:</strong> <a href="https://www.springer.com/journal/42979/submission-guidelines" target="_blank">springer.com/journal/42979/submission-guidelines</a></p>
+            
+            <div class="submission-note">
+                <strong>Important Note:</strong> While submitting your manuscript, please ensure you select <u>"Cognitive Computing and Digital Twin"</u> from the dropdown menu under the "General Information" section.
+            </div>
+        </section>
     </main>
+
+    <footer>
+        ...
+    </footer>
 
 </body>
 </html>
-
