@@ -1,20 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deepak Puthal - Research</title>
+    <title>Deepak Puthal - Recognitions</title>
     <style>
-        /* MODERN ACADEMIC DESIGN SYSTEM - RESEARCH PAGE */
+        /* MODERN ACADEMIC DESIGN SYSTEM - RECOGNITIONS PAGE */
         :root {
-            --primary-navy: #0f172a;   
-            --accent-azure: #0ea5e9;   
+            --primary-navy: #0f172a;   /* Professional Deep Navy */
+            --accent-azure: #0ea5e9;   /* Technical Blue */
             --bg-light: #f8fafc;
             --text-main: #1e293b;
             --text-muted: #475569;
             --white: #ffffff;
             --border: #e2e8f0;
-            --gold: #ca8a04;
         }
 
         body {
@@ -41,6 +41,7 @@
             letter-spacing: -0.025em;
         }
 
+        /* Nav Consistency */
         nav {
             background: var(--white);
             position: sticky;
@@ -68,7 +69,9 @@
             transition: color 0.2s ease;
         }
 
-        nav ul li a:hover { color: var(--accent-azure); }
+        nav ul li a:hover {
+            color: var(--accent-azure);
+        }
 
         main {
             max-width: 1000px;
@@ -79,6 +82,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
+        /* Secondary Header for Content Section */
         main > header {
             background: transparent;
             color: var(--primary-navy);
@@ -88,107 +92,48 @@
             margin-bottom: 40px;
         }
 
-        main > header h1 { font-size: 1.8rem; color: var(--primary-navy); }
-
-        h2 {
-            font-size: 1.5rem;
+        main > header h1 {
+            font-size: 1.8rem;
             color: var(--primary-navy);
-            margin-top: 50px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
         }
 
-        h2::before {
-            content: "";
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            background: var(--accent-azure);
-            margin-right: 15px;
-            border-radius: 2px;
-        }
-
-        /* UPDATED RESEARCH INTEREST LIST */
-        .interest-list {
+        /* List Styling */
+        ul {
             list-style: none;
-            padding: 0;
-            margin: 20px 0;
+            padding-left: 0;
         }
 
-        .interest-list li {
+        li {
+            margin-bottom: 2.5rem;
             position: relative;
-            padding: 12px 15px 12px 40px;
-            margin-bottom: 10px;
-            background: var(--bg-light);
-            border-radius: 8px;
-            font-weight: 600;
+        }
+
+        .sublist {
+            margin-top: 10px;
+            padding-left: 20px;
+            border-left: 3px solid var(--border);
+        }
+
+        .sublist li {
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            border: none;
+        }
+
+        strong {
             color: var(--primary-navy);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .interest-list li:hover {
-            transform: translateX(5px);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            background: #fff;
-        }
-
-        .interest-list li::before {
-            content: "•";
-            position: absolute;
-            left: 15px;
-            color: var(--accent-azure);
-            font-size: 1.5rem;
-            line-height: 1;
-        }
-
-        /* Publication Links */
-        .pub-grid {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin: 20px 0;
-        }
-
-        .pub-btn {
-            padding: 10px 20px;
-            background: var(--bg-light);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            text-decoration: none;
-            color: var(--primary-navy);
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.2s ease;
-        }
-
-        .pub-btn:hover {
-            background: var(--accent-azure);
-            color: white;
-            border-color: var(--accent-azure);
-        }
-
-        /* Best Paper Awards Styling */
-        .award-item {
-            background: #fffdf5;
-            border-left: 4px solid var(--gold);
-            padding: 15px 20px;
-            margin-bottom: 15px;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .award-tag {
-            color: var(--gold);
-            font-weight: 800;
-            font-size: 0.75rem;
-            text-transform: uppercase;
+            font-size: 1.1rem;
             display: block;
-            margin-top: 5px;
+            margin-bottom: 5px;
         }
 
-        ul { padding-left: 20px; }
-        li { margin-bottom: 0.8rem; }
-        b { color: var(--primary-navy); }
+        /* Year/Badge Accent */
+        strong::before {
+            content: "🏆";
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
 
         footer {
             background: var(--primary-navy);
@@ -222,102 +167,233 @@
     
     <main>
         <header>
-            <h1>Research Interest and Outcomes</h1>
+            <h1>Research Impact and Recognitions</h1>
         </header>
 
-        <section id="Research Interest">
-            <h2>Research Interest</h2>
-            <ul class="interest-list">
-                <li>Cyber Security</li>
-                <li>Blockchain</li>
-                <li>Federated Adversarial Learning</li>
-                <li>Generative Adversarial Networks</li>
-                <li>Internet of Things (IoT)</li>
-                <li>Distributed Computing</li>
+        <section id="ImpactList">
+            <ul>
+                <li>
+                    <strong>2025 Elected as a Fellow of IETE (The Institution of Electronics and Telecommunication Engineers)</strong>
+                    <ul class="sublist">
+                        <li>The IETE Fellow achievement is awarded to distinguished researchers in Computer, Electrical, and Electronics Engineering who have made significant, notable contributions to the field and attained a position of high responsibility. It recognizes outstanding professional distinction and technical leadership over a sustained period. </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>2025 Listed as Highly ranked Scholar – Lifetime & Prior Five Years (top 0.05% researcher)</strong>
+                    <ul class="sublist">
+                        <li>As per ScholarGPS, I am listed as a top 0.05% researcher out of 30 million researchers in both categories: Lifetime and Prior Five Years. </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>2023-2025 Listed as Best Computer Scientist in UAE</strong>
+                    <ul class="sublist">
+                        <li>As per Research.com, I am ranked as the 23rd Best Computer Scientist in the UAE with a D-index of 40+ and a global ranking of 7870. Additionally, I am recognized as a Rising Star (for 2023 - Now), holding the 8th position nationally and ranking 770 globally. </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>2020-2025 Listed among the top 2% of scientists worldwide for Career-long & Single-year Ranking</strong>
+                    <ul class="sublist">
+                        <li>Stanford University releases a list of top scientists annually in October, using Scopus data for its compilation. The list features two categories: Single-Year Ranking for the most recent year's performance and Career-Long Ranking for those consistently at the top of their field. I've been honored to be included in both categories since 2020.</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>2021-2024 IEEE Distinguished Speaker (Rock Star)</strong>
+                    <ul class="sublist">
+                        <li>IEEE Consumer Electronics Society selects a few distinguished researchers to become a speaker to deliver lectures on their topic of interest. I have been selected for the topic of Cyber Security and Blockchain. </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>2023 IEEE Computer Society Smart Computing STC (Middle Career Researcher award)</strong>
+                    <ul class="sublist">
+                        <li>This Technical Committee selects only one middle-career scientist worldwide every year who has contributed in an outstanding way to the research in the field of Smart Computing, and I am the winner for 2023. </li>
+                    </ul>
+                </li>
+            
+                <li>
+                    <strong>2023 IEEE Bio-inspired Computing STC Outstanding Leadership Award</strong> 
+                    <ul class="sublist">
+                        <li>For outstanding contribution to the Bio-inspired Computing domain and co-leading in establishing the Bio-inspired Computing STC. </li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <strong>2023 IFIP IoT Conference Best Paper Award </strong>
+                    <ul class="sublist">
+                        <li>Our paper with title "Role-Based Access Control in Private Blockchain for IoT Integrated Smart Contract" received the best paper award.</li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <strong>2022 IEEE HITC Award for Excellence in Hyper-Intelligence Systems (Middle Career Researcher award)</strong>
+                    <ul class="sublist">
+                        <li>IEEE Technical Committee on Hyper-Intelligence selects up to three mid-career scientists worldwide every year who have contributed in an outstanding way to the research in the field of Hyper-Intelligence.</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>2022 IEEE/ OITS OCIT Outstanding Paper Awards</strong>
+                    <ul class="sublist">
+                        <li>Two out of three best paper awards received by our contributions on blockchain with following titles. These are "AI-based Block Identification and Classification in the Blockchain Integrated IoT" and "PharmaChain 3.0: Blockchain Integrated Efficient QR Code Mechanism for Pharmaceutical Supply Chain"</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>2022 IEEE Bio-Inspired Computing STC Best Paper Award </strong>
+                    <ul class="sublist">
+                        <li>Our paper “Decision tree based user-centric security solution for critical IoT infrastructure.' Computers and Electrical Engineering, Volume 99, 2022” received the best paper awards for 2023 from IEEE Bio-Inspired Computing STC. </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>2022 IEEE Computer Society Executive Committee Board Member</strong>
+                    <ul class="sublist">
+                        <li> In 2022, elected as the IEEE STC executive committee board member</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>2021-2023 IEEE Distinguished Speaker (Rock Star)</strong>
+                    <ul class="sublist">
+                        <li>IEEE Consumer Electronics Society selects a few distinguished researchers to become a speaker to deliver lectures on their topic of interest. I have been selected for the topic of Cyber Security and Blockchain.</li>
+                    </ul>
+                </li>
+                    
+                <li>
+                    <strong>2021 IEEE Smart Computing STC Best Early Career Researcher</strong>
+                    <ul class="sublist">
+                        <li>This Technical Committee selects only one young scientist worldwide every year who has contributed in an outstanding way to the research in the field of Smart Computing, and I am the winner for 2021.</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>2021 IEEE TEMS TC on Blockchain and Distributed Ledger Technologies (runner-up)</strong>
+                    <ul class="sublist">
+                        <li>This Technical Committee selects only 1-2 young scientists worldwide every year who has contributed in an outstanding way to the research in the field of Blockchain and Distributed Ledger Technologies.</li>
+                    </ul>
+                </li>
+                   
+                <li>
+                    <strong>2021 IEEE iSES Outstanding Paper Award</strong>
+                    <ul class="sublist">
+                        <li>Our contribution to data classification at the edge node received best paper awards in the IEEE iSES (an IEEE Computer Society sponsored conference).</li>
+                    </ul>
+                </li>
+                                
+                <li>
+                    <strong>2021-2023 Chair of IEEE Bio-inspired Computing Special Technical Community</strong>
+                    <ul class="sublist">
+                        <li>The IEEE Computer Society supports the IEEE Bio-inspired Computing STC to organize events and activities related to Bio-inspired Computing and honor the outstanding researchers in the domain.</li>
+                    </ul>
+                </li>
+                
+                 <li>
+                    <strong>2021 Technical Board Member of IEEE Hyper-Intelligence Technical Committee</strong>
+                    <ul class="sublist">
+                        <li>The IEEE Systems Council supports the IEEE Technical Committee on Hyper-Intelligence to organize events and activities related to hyper-intelligence and honor the outstanding researchers in the domain.</li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <strong>2020 IEEE Consumer Technology Society Best Paper Award</strong>
+                    <ul class="sublist">
+                        <li>Recognizing the top three papers published by IEEE Consumer Electronics Magazine in 2020, where this paper appears as the second in the list out of three best papers (DOI: 10.1109/MCE.2019.2953758). This paper proposed the first ever blockchain solution to secure the data along with devices.</li>
+                    </ul>
+                </li>
+                
+                 <li>
+                    <strong>2020 IEEE Distinguished Service Award</strong>
+                    <ul class="sublist">
+                        <li>This award is received for the outstanding & dedicated work for the IEEE CCCI 2020 Conference’s success by serving as the Programme Committee Chair for the conference.</li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <strong>2019 Best IEEE ComSoc Young Researcher Award (For Europe, Middle East, and Africa Region)</strong>
+                    <ul class="sublist">
+                        <li>This award honors a best researcher every year for outstanding research contributions over the last five years.</li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <strong>2019 Elevated to IEEE Senior Member Grade</strong>
+                    <ul class="sublist">
+                        <li>IEEE Senior Membership is an honor bestowed only to those who have made significant contributions to the profession.</li>
+                    </ul>
+                </li>
+                
+                 <li>
+                    <strong>2018 IEEE TCSC Award for Excellence in Scalable Computing (Early Career Researcher)</strong>
+                    <ul class="sublist">
+                        <li>Recognizing the top three papers published by IEEE Consumer Electronics Magazine in 2018, where this paper appears as the first in the list (DOI: 10.1109/MCE.2017.2776459). This paper gives a firsthand experience to use blockchain for distributed security.</li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <strong>2018 IEEE Consumer Electronics Society Best Paper Award (Best Paper)</strong>
+                    <ul class="sublist">
+                        <li>The IEEE Computer Society supports the IEEE Bio-inspired Computing STC to organize events and activities related to Bio-inspired Computing and honor the outstanding researchers in the domain.</li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <strong>2018 IEEE Consumer Electronics Society Best Paper Award (Second Best Paper)</strong>
+                    <ul class="sublist">
+                        <li>Recognizing the top three papers published by IEEE Consumer Electronics Magazine in 2018, where this paper appears as the second in the list (DOI: 10.1109/MCE.2018.2816299). This paper covers overall technical concepts and applications of blockchain.</li>
+                    </ul>
+                </li>
+                
+                 <li>
+                    <strong>2018 IETE Best Research Award</strong>
+                    <ul class="sublist">
+                        <li>Recognizing the top three professionals in India who have made major innovations in Engineering and IT that year. This award is based on our contribution to green cloud computing (https://doi.org/10.1007/s11227-017-2133-4).</li>
+                    </ul>
+                </li>
+               
+                 <li>
+                    <strong>2017 IEEE Distinguished Doctoral Dissertation Award (awarded by IEEE Computer Society and STC on Smart Computing)</strong>
+                    <ul class="sublist">
+                        <li>Recognizing only two individuals for outstanding contributions to the smart computing domain during PhD candidature. Criteria: excellence in publications, citations and doctoral thesis.</li>
+                    </ul>
+                </li>
+                 
+                 <li>
+                    <strong>2017 Best Paper Finalist</strong>
+                    <ul class="sublist">
+                        <li>For 'A synchronized shared key generation method for maintaining end-to-end security of big data streams', 50th Hawaii International Conference on System Sciences.</li>
+                    </ul>
+                </li>
+                                
+                <li>
+                    <strong>2016 UTS: FEIT HDR Award (For excellence in research and high-quality publications)</strong>
+                    <ul class="sublist">
+                        <li>This award is given to selected students from the Engineering and IT HDR cohort, who have made excellent contributions in research and published in high-quality journals (CORE A*/A).</li>
+                    </ul>
+                </li>
+                     
+                <li>
+                    <strong>2014-2017 CSIRO Postgraduate Research Scholarship Award</strong>
+                    <ul class="sublist">
+                        <li>CSIRO attracts top quality postgraduate research students from Australia and internationally. There is always a limited number of scholarships for international candidates.</li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <strong>2014-2017 International Research Scholarship Award</strong>
+                    <ul class="sublist">
+                        <li>University of Technology Sydney provides this scholarship to outstanding PhD students for their candidature in University.</li>
+                    </ul>
+                </li>
             </ul>
         </section>
-
-        <section id="Notable Contributions">
-            <h2>Notable Contributions</h2>
-            <ul>
-                <li><b>Software Defined Perimeter:</b> AI based security model with user demands and device specifications</li>
-                <li><b>CryptoCliqIn:</b> Graph-theoretic Cryptography using Clique Injection (A paradigm shift research)</li>
-                <li><b>Proof of Authentication (PoAh):</b> Blockchain consensus for IoT</li>
-                <li><b>PUFChain:</b> Hardware assisted Blockchain</li>
-            </ul>
-        </section>        
-  
-        <section id="Open Source Simulator">
-            <h2>Open Source Simulator</h2>
-            <ul>
-                <li><b>IoTSim-Edge:</b> Simulator to simulate the IoT and edge environment.</li>
-                <li><b>IoTSim-SDWAN:</b> Simulator to simulate Distributed Datacenters over Software-Defined Wide Area Network</li>
-            </ul>
-        </section>        
-        
-        <section id="Publications">
-            <h2>Publications (h-index: 52+)</h2>
-            <p>To access a complete list of my publications, please refer to the following scholarly platforms:</p>
-            <div class="pub-grid">
-                <a href="https://scholar.google.com/citations?hl=en&user=-USAlD8AAAAJ" class="pub-btn" target="_blank">Google Scholar</a>
-                <a href="https://www.scopus.com/authid/detail.uri?authorId=56151401500" class="pub-btn" target="_blank">Scopus</a>
-                <a href="https://dblp.org/pid/154/0895.html" class="pub-btn" target="_blank">DBLP</a>
-            </div>
-            <p style="font-size: 0.9rem; color: var(--text-muted);">These platforms provide comprehensive records of my publications and research impact.</p>
-        </section>        
-        
-        <section id="patents">
-            <h2>Patents</h2>
-            <ul style="list-style: none; padding-left: 0;">
-                <li><i style="color: var(--accent-azure);">■</i> P. Panda, A. Mishra and D. Puthal, "Military Operation Inspired Integrated Graph Traversal Algorithm." Indian Patent, Filling Date: 29/06/2022, Application Number: 202231037328.</li>
-            </ul>
-        </section>        
-               
-        <section id="Best Paper Awards">
-            <h2>Best Paper Award List</h2>
-            <div style="list-style: none; padding-left: 0;">
-                <div class="award-item">
-                    D. Al Neyadi, D. Puthal, J. Dutta, and E. Damiani. 'Role-Based Access Control in Private Blockchain for IoT Integrated Smart Contract' 6th IFIP International Internet of Things Conference (IFIP-IoT 2023), 2023.
-                    <span class="award-tag">Best Paper Award</span>
-                </div>
-                <div class="award-item">
-                    D. Puthal, S. Wilson, A. Nanda, M. Liu, S. Swain, B. Sahoo, K. Yelamarthi, P. Pillai, H. El-Sayed, and M. Prasad. 'Decision tree based user-centric security solution for critical IoT infrastructure.' Computers and Electrical Engineering, 2022.
-                    <span class="award-tag">IEEE Bio-Inspired Computing STC Best Paper Award</span>
-                </div>
-                <div class="award-item">
-                    S. P. Mohanty, V. P. Yanambaka, E. Kougianos, and D. Puthal. 'PUFchain: Hardware-Assisted Blockchain for Sustainable Simultaneous Device and Data Security.' IEEE Consumer Electronics Magazine, 2020.
-                    <span class="award-tag">IEEE CTSoc Best Paper Award</span>
-                </div>
-                <div class="award-item">
-                    D. Puthal, N. Malik, S. P. Mohanty, E. Kougianos, and G. Das, 'Everything you wanted to Know about Blockchain.' IEEE Consumer Electronics Magazine, 2018.
-                    <span class="award-tag">IEEE CTSoc Best Paper Award</span>
-                </div>
-                <div class="award-item">
-                    D. Puthal, N. Malik, S. Mohanty, P. Nanda, and E. Kougianos, 'The Blockchain a Decentralized Security Framework.' IEEE Consumer Electronics Magazine, 2018.
-                    <span class="award-tag">IEEE CTSoc Best Paper Award</span>
-                </div>
-                <div class="award-item">
-                    J. Dutta, D. Puthal and E. Damiani, ‘AI-based Block Identification and Classification in the Blockchain Integrated IoT’ IEEE/ OITS International Conference on Information Technology (OCIT 2022), 2022.
-                    <span class="award-tag">Best Paper Award</span>
-                </div>
-                <div class="award-item">
-                    A. Bapatla, S. Mohanty, E. Kougianos, D. Puthal. ‘PharmaChain 3.0: Blockchain Integrated Efficient QR Code Mechanism for Pharmaceutical Supply Chain’ IEEE/ OITS (OCIT 2022), 2022.
-                    <span class="award-tag">Best Paper Award</span>
-                </div>
-                <div class="award-item">
-                    A. V. Chandak, N. K. Ray, and D. Puthal, ‘Performance analysis of classifier techniques at the edge node.’ IEEE International Symposium on Smart Electronic Systems (IEEE iSES), 2021.
-                    <span class="award-tag">Best Paper Award</span>
-                </div>
-                <div class="award-item">
-                    S. Mishra, D. Puthal, B. Sahoo, S. Jena, and M. S. Obaidat, 'An Adaptive Task Allocation Technique for Green Cloud Computing.' Journal of Supercomputing, 2018.
-                    <span class="award-tag">2018 IETE Best Research Award</span>
-                </div>
-            </div>
-        </section>        
     </main>
 
     <footer>
-        &copy; 2025 Dr. Deepak Puthal. | United Arab Emirates University
+        &copy; 2025 Dr. Deepak Puthal. | Recognitions and Professional Impact
     </footer>
 </body>
 </html>
