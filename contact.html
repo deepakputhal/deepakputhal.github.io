@@ -5,58 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SN Computer Science - Section: CCDT</title>
     <style>
-        /* STANDALONE JOURNAL DESIGN SYSTEM */
+        /* MODERN TECH DESIGN SYSTEM */
         :root {
-            --primary-navy: #0f172a;   
-            --accent-azure: #0ea5e9;   
-            --bg-light: #f8fafc;
-            --text-main: #1e293b;
-            --text-muted: #475569;
+            --primary-slate: #1e293b;   /* Deep Slate */
+            --accent-teal: #0d9488;    /* Professional Teal */
+            --bg-body: #f1f5f9;        /* Cool Gray background */
+            --text-main: #0f172a;      /* Almost Black */
+            --text-muted: #475569;     /* Gray Blue */
             --white: #ffffff;
-            --border: #e2e8f0;
-            --success-green: #10b981; /* For Scopus Q1 */
-            --deadline-indigo: #6366f1; /* For Deadline: OPEN */
-            --warning-red: #ef4444;
+            --border: #cbd5e1;
+            --success-green: #059669;  /* For Q1 Status */
+            --deadline-indigo: #4f46e5; /* For Deadline Status */
+            --journal-red: #be123c;    /* For Journal Name Branding */
         }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--bg-light);
+            background-color: var(--bg-body);
             color: var(--text-main);
             line-height: 1.7;
         }
 
-        /* HEADER */
+        /* HEADER SECTION */
         header.site-header {
-            background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
-            color: #fff;
-            padding: 50px 20px;
+            background-color: var(--primary-slate);
+            color: var(--white);
+            padding: 60px 20px;
             text-align: center;
-            border-bottom: 4px solid var(--accent-azure);
+            border-bottom: 5px solid var(--accent-teal);
         }
 
         header.site-header h1 {
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             margin: 0;
             font-weight: 800;
             letter-spacing: -0.025em;
         }
 
-        /* FOCUSED MAIN CONTAINER */
+        /* MAIN CONTENT CONTAINER */
         main {
             max-width: 1100px;
-            margin: 40px auto;
+            margin: -30px auto 40px auto; /* Overlaps header slightly for modern look */
             background: var(--white);
             padding: 50px;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
+        /* HERO SECTION (LOGO & TITLES) */
         .journal-hero {
             display: flex;
-            gap: 40px;
+            gap: 50px;
             align-items: center;
             margin-bottom: 40px;
             border-bottom: 1px solid var(--border);
@@ -64,114 +66,134 @@
         }
 
         .journal-logo-box { flex: 1; text-align: center; }
-        .journal-logo-box img { max-width: 100%; height: auto; border-radius: 8px; }
+        .journal-logo-box img { max-width: 100%; height: auto; border-radius: 4px; }
 
         .journal-info-box { flex: 1.5; }
+        .journal-info-box h1 { color: var(--journal-red); margin: 0 0 10px 0; font-size: 1.8rem; font-weight: 800; }
+        .journal-info-box h2 { color: var(--accent-teal); font-size: 1.4rem; margin-bottom: 25px; font-weight: 600; }
 
-        .journal-info-box h1 { color: var(--warning-red); margin: 0 0 10px 0; font-size: 1.8rem; }
-        .journal-info-box h2 { color: var(--accent-azure); font-size: 1.3rem; margin-bottom: 20px; font-weight: 700; }
-
+        /* EDITOR CONTACT CARDS */
         .editor-tag {
-            background: var(--bg-light);
-            padding: 12px;
+            background: #f8fafc;
+            padding: 12px 15px;
             border-radius: 6px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-size: 0.95rem;
-            border-left: 4px solid var(--accent-azure);
+            border-left: 4px solid var(--accent-teal);
+            display: block;
+            text-decoration: none;
+            color: var(--text-main);
         }
 
+        /* STATUS BADGES */
         .status-container {
-            margin-top: 25px;
+            margin-top: 30px;
             display: flex;
-            gap: 12px;
-        }
-
-        .deadline-badge {
-            background: var(--deadline-indigo);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2);
+            gap: 15px;
         }
 
         .q1-badge {
             background: var(--success-green);
             color: white;
-            padding: 8px 20px;
-            border-radius: 6px;
+            padding: 10px 24px;
+            border-radius: 50px;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
         }
 
-        /* SCOPE SECTION */
+        .deadline-badge {
+            background: var(--deadline-indigo);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* TOPICS SECTION */
         section h3 {
-            color: var(--primary-navy);
-            font-size: 1.4rem;
-            border-left: 4px solid var(--accent-azure);
-            padding-left: 15px;
-            margin-bottom: 20px;
+            color: var(--primary-slate);
+            font-size: 1.5rem;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        section h3::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+            margin-left: 20px;
         }
 
         .topics-grid {
             columns: 2;
-            column-gap: 30px;
+            column-gap: 40px;
             list-style: none;
             padding: 0;
-            margin: 25px 0;
+            margin: 0;
         }
 
         .topics-grid li {
             break-inside: avoid;
-            background: var(--bg-light);
+            background: #ffffff;
             margin-bottom: 12px;
-            padding: 12px 15px;
+            padding: 14px 18px;
             border-radius: 8px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             border: 1px solid var(--border);
+            transition: all 0.2s ease;
         }
 
-        /* INSTRUCTIONS CARD */
+        .topics-grid li:hover {
+            border-color: var(--accent-teal);
+            background: #f0fdfa; /* Light teal tint */
+            transform: translateY(-2px);
+        }
+
+        /* GUIDELINES CARD */
         .instructions-card {
-            background: #f0f9ff;
-            border: 1px solid #bae6fd;
-            padding: 30px;
+            background: var(--primary-slate);
+            color: var(--white);
+            padding: 40px;
             border-radius: 12px;
-            margin-top: 40px;
+            margin-top: 50px;
         }
 
-        .instructions-card h2 { margin-top: 0; color: var(--primary-navy); font-size: 1.5rem; }
-        .instructions-card a { color: var(--accent-azure); font-weight: 600; text-decoration: none; }
-        
+        .instructions-card h2 { margin-top: 0; color: var(--accent-teal); font-size: 1.6rem; }
+        .instructions-card p { margin: 15px 0; }
+        .instructions-card a { color: #5eead4; font-weight: 600; text-decoration: none; }
+        .instructions-card a:hover { text-decoration: underline; }
+
         .submission-note {
-            background: var(--white);
-            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
             border-radius: 8px;
-            border: 1px dashed var(--accent-azure);
-            margin-top: 15px;
-            font-weight: 500;
+            border: 1px dashed var(--accent-teal);
+            margin-top: 25px;
+            font-size: 1rem;
         }
 
         /* FOOTER */
         footer {
-            background: var(--primary-navy);
+            background-color: #0f172a;
             color: #94a3b8;
             padding: 40px;
             text-align: center;
             font-size: 0.9rem;
-            margin-top: 60px;
         }
 
         @media (max-width: 850px) {
             .journal-hero { flex-direction: column; text-align: center; }
             .topics-grid { columns: 1; }
-            .status-container { justify-content: center; flex-wrap: wrap; }
+            .status-container { justify-content: center; }
+            main { padding: 25px; margin: 10px; }
         }
     </style>
 </head>
@@ -190,10 +212,10 @@
                 <h1>Springer Nature Computer Science</h1>
                 <h2>Section: Cognitive Computing and Digital Twin</h2>
                 
-                <div class="editor-tag"><b>Deepak Puthal</b>, UAE University (deepak.puthal@ieee.org)</div>
-                <div class="editor-tag"><b>Amit Kumar Mishra</b>, University West (akmishra@ieee.org)</div>
-                <div class="editor-tag"><b>Antonella Longo</b>, University of Salento (antonella.longo@unisalento.it)</div>
-                <div class="editor-tag"><b>Chin-Teng Lin</b>, UTS (Chin-Teng.Lin@uts.edu.au)</div>
+                <div class="editor-tag"><strong>Deepak Puthal</strong>, UAE University (deepak.puthal@ieee.org)</div>
+                <div class="editor-tag"><strong>Amit Kumar Mishra</strong>, University West (akmishra@ieee.org)</div>
+                <div class="editor-tag"><strong>Antonella Longo</strong>, University of Salento (antonella.longo@unisalento.it)</div>
+                <div class="editor-tag"><strong>Chin-Teng Lin</strong>, UTS (Chin-Teng.Lin@uts.edu.au)</div>
 
                 <div class="status-container">
                     <span class="q1-badge">Scopus: Q1</span>
@@ -203,11 +225,11 @@
         </div>
 
         <section id="description">
-            <p>Cognitive Computing simulates human thought, enabling systems to learn, reason, and self-correct from unstructured data using AI. Digital Twins are real-time virtual replicas of physical systems, providing monitoring, simulation, and optimization. The powerful convergence creates <b>"Cognitive Digital Twins,"</b> where virtual models gain intelligence to autonomously learn, predict failures, and self-optimize their physical counterparts.</p>
+            <p>Cognitive Computing simulates human thought, enabling systems to learn, reason, and self-correct from unstructured data using AI. Digital Twins are real-time virtual replicas of physical systems, providing monitoring, simulation, and optimization. The powerful convergence creates <strong>"Cognitive Digital Twins,"</strong> where virtual models gain intelligence to autonomously learn, predict failures, and self-optimize their physical counterparts.</p>
         </section>
 
         <section id="topics">
-            <h3>Scope and Topics</h3>
+            <h3>Scope and Key Topics</h3>
             <ul class="topics-grid">
                 <li>Architectures and frameworks for cognitive digital twins</li>
                 <li>AI/ML for predictive modeling and optimization</li>
@@ -230,12 +252,12 @@
 
         <section class="instructions-card">
             <h2>Submission Guidelines</h2>
-            <p><b>Journal Homepage:</b> <a href="https://link.springer.com/journal/42979" target="_blank">link.springer.com/journal/42979</a></p>
-            <p><b>Submission Portal:</b> <a href="https://www.editorialmanager.com/sncs/default2.aspx" target="_blank">editorialmanager.com/sncs/default2.aspx</a></p>
-            <p><b>Author Guidelines:</b> <a href="https://www.springer.com/journal/42979/submission-guidelines" target="_blank">springer.com/journal/42979/submission-guidelines</a></p>
+            <p><strong>Journal Homepage:</strong> <a href="https://link.springer.com/journal/42979" target="_blank">link.springer.com/journal/42979</a></p>
+            <p><strong>Submission Portal:</strong> <a href="https://www.editorialmanager.com/sncs/default2.aspx" target="_blank">editorialmanager.com/sncs/default2.aspx</a></p>
+            <p><strong>Author Guidelines:</strong> <a href="https://www.springer.com/journal/42979/submission-guidelines" target="_blank">springer.com/journal/42979/submission-guidelines</a></p>
             
             <div class="submission-note">
-                <b>Important Note:</b> While submitting your manuscript, please ensure you select <u>"Cognitive Computing and Digital Twin"</u> from the dropdown menu under the General Information section.
+                <strong>Important Note:</strong> While submitting your manuscript, please ensure you select <u>"Cognitive Computing and Digital Twin"</u> from the dropdown menu under the "General Information" section.
             </div>
         </section>
     </main>
