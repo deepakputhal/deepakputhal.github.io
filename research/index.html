@@ -360,24 +360,52 @@
             margin-top: 3rem;
         }
 
-        /* Collaboration Grid Styles */
-        .collab-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+        /* Rolling Logo Styles */
+        .logo-roller {
+            overflow: hidden;
+            background: white;
+            padding: 2rem 0;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            position: relative;
         }
 
-        .collab-card {
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-top: 4px solid var(--secondary-blue);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        .logo-track {
+            display: flex;
+            width: calc(250px * 12); /* Double the items for seamless loop */
+            animation: scroll 30s linear infinite;
         }
 
-        .collab-card h4 {
-            margin-top: 0;
-            color: var(--primary-blue);
+        .logo-track:hover {
+            animation-play-state: paused;
+        }
+
+        .logo-item {
+            width: 250px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+        }
+
+        .logo-item img {
+            max-width: 150px;
+            max-height: 60px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .logo-item img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-250px * 6)); }
         }
 
         /* Back to Top Button Styles */
@@ -550,18 +578,21 @@
 
             <h3 style="color: var(--secondary-blue); margin-bottom: 1rem;">Collaboration & Industry Impact</h3>
             <p style="margin-bottom: 2rem;">The MAYA Research Group targets high-impact applications by bridging the gap between hardware layers and high-level AI algorithms.</p>
-            <div class="collab-grid">
-                <div class="collab-card">
-                    <h4>Critical Infrastructure</h4>
-                    <p>Securing Smart Grids and Industry 4.0 automation systems.</p>
-                </div>
-                <div class="collab-card">
-                    <h4>Autonomous Mobility</h4>
-                    <p>Ensuring the integrity of V2X (Vehicle-to-Everything) communications.</p>
-                </div>
-                <div class="collab-card">
-                    <h4>Digital Health</h4>
-                    <p>Protecting patient data processed at the network edge via secure AI.</p>
+            
+            <div class="logo-roller">
+                <div class="logo-track">
+                    <div class="logo-item"><img src="logo_instasafe.png" alt="InstaSafe"></div>
+                    <div class="logo-item"><img src="logo_samsung.png" alt="Samsung"></div>
+                    <div class="logo-item"><img src="logo_nokia.png" alt="Nokia"></div>
+                    <div class="logo-item"><img src="logo_hcl.png" alt="HCL Tech"></div>
+                    <div class="logo-item"><img src="logo_sap.png" alt="SAP"></div>
+                    <div class="logo-item"><img src="logo_siemens.png" alt="Siemens"></div>
+                    <div class="logo-item"><img src="logo_instasafe.png" alt="InstaSafe"></div>
+                    <div class="logo-item"><img src="logo_samsung.png" alt="Samsung"></div>
+                    <div class="logo-item"><img src="logo_nokia.png" alt="Nokia"></div>
+                    <div class="logo-item"><img src="logo_hcl.png" alt="HCL Tech"></div>
+                    <div class="logo-item"><img src="logo_sap.png" alt="SAP"></div>
+                    <div class="logo-item"><img src="logo_siemens.png" alt="Siemens"></div>
                 </div>
             </div>
         </section>
@@ -661,23 +692,23 @@
                 <div class="student-grid">
                     <div class="pillar-item" style="padding: 1.5rem;">
                         <strong>Hussa Alamire</strong><br>
-                        <small>Project: Privacy Preserving Edge AI</small>
+                        <small>Project: Privacy Preserving Explainable Edge AI</small>
                     </div>
                     <div class="pillar-item" style="padding: 1.5rem;">
                         <strong>Fatima Alhammami</strong><br>
-                        <small>Project: Privacy Preserving Edge AI</small>
+                        <small>Project: Privacy Preserving Explainable Edge AI</small>
                     </div>
                     <div class="pillar-item" style="padding: 1.5rem;">
                         <strong>Shouq Alkatheeri</strong><br>
-                        <small>Project: Privacy Preserving Edge AI</small>
+                        <small>Project: Privacy Preserving Explainable Edge AI</small>
                     </div>
                     <div class="pillar-item" style="padding: 1.5rem;">
                         <strong>Hind Alneyadi</strong><br>
-                        <small>Project: Privacy Preserving Edge AI</small>
+                        <small>Project: Privacy Preserving Explainable Edge AI</small>
                     </div>
                     <div class="pillar-item" style="padding: 1.5rem;">
                         <strong>Rawdha Alhosani</strong><br>
-                        <small>Project: Privacy Preserving Edge AI</small>
+                        <small>Project: Privacy Preserving Explainable Edge AI</small>
                     </div>                        
                 </div>
             </div>
@@ -741,46 +772,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="alumni-section" id="collaborations-section">
-                <h3 style="color: var(--primary-blue); border-bottom: 2px solid var(--secondary-blue); padding-bottom: 10px; font-size: 1.5rem;">Collaborations</h3>
-                
-                <div class="student-grid">
-                    <div class="member-card">
-                        <h4 style="color: var(--secondary-blue); margin-top: 0;">Universities</h4>
-                        <ul style="list-style: none; padding: 0; font-size: 0.95rem;">
-                            <li style="margin-bottom: 8px;">University of North Texas</li>
-                            <li style="margin-bottom: 8px;">Macquarie University</li>
-                            <li style="margin-bottom: 8px;">University of Aberdeen</li>
-                            <li style="margin-bottom: 8px;">Huazhong University of Science and Technology</li>
-                            <li style="margin-bottom: 8px;">University of Manchester</li>
-                            <li style="margin-bottom: 8px;">University of Technology Sydney</li>
-                            <li style="margin-bottom: 8px;">University of Sydney</li>
-                            <li style="margin-bottom: 8px;">University of Adelaide</li>
-                            <li style="margin-bottom: 8px;">University West</li>
-                            <li style="margin-bottom: 8px;">AGH University</li>
-                            <li style="margin-bottom: 8px;">University of Salento</li>
-                            <li style="margin-bottom: 8px;">University of Tennessee at Chattanooga</li>
-                            <li style="margin-bottom: 8px;">University of Milan</li>
-                            <li style="margin-bottom: 8px;">Khalifa University</li>
-                            <li style="margin-bottom: 8px;">Indian Institute of Technology Delhi</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="member-card">
-                        <h4 style="color: var(--secondary-blue); margin-top: 0;">Industries</h4>
-                        <ul style="list-style: none; padding: 0; font-size: 0.95rem;">
-                            <li style="margin-bottom: 8px;">SAP Lab</li>
-                            <li style="margin-bottom: 8px;">HCLTech India</li>
-                            <li style="margin-bottom: 8px;">Nokia</li>
-                            <li style="margin-bottom: 8px;">Samsung Research</li>
-                            <li style="margin-bottom: 8px;">Siemens Global</li>
-                            <li style="margin-bottom: 8px;">InstaSafe: Zero Trust Security</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
         </section>
     </div>
 
@@ -790,16 +781,5 @@
 
     <a href="#" id="backToTop" title="Go to top">↑</a>
 
-    <script>
-        // Back to Top Button script
-        window.onscroll = function() {scrollFunction()};
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementById("backToTop").style.display = "flex";
-            } else {
-                document.getElementById("backToTop").style.display = "none";
-            }
-        }
-    </script>
 </body>
 </html>
