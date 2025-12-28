@@ -364,74 +364,39 @@
         .logo-roller {
             overflow: hidden;
             background: white;
-            padding: 2rem 0;
+            padding: 2.5rem 0;
+            margin-top: 1rem;
             border-radius: 12px;
             border: 1px solid var(--border-color);
-            position: relative;
+            white-space: nowrap;
         }
 
         .logo-track {
-            display: flex;
-            width: calc(250px * 12); /* Double the items for seamless loop */
-            animation: scroll 30s linear infinite;
-        }
-
-        .logo-track:hover {
-            animation-play-state: paused;
+            display: inline-flex;
+            animation: scroll 25s linear infinite;
         }
 
         .logo-item {
             width: 250px;
-            height: 80px;
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 0 20px;
         }
 
         .logo-item img {
-            max-width: 150px;
-            max-height: 60px;
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: all 0.3s ease;
+            max-width: 160px;
+            max-height: 70px;
+            transition: transform 0.3s;
         }
 
         .logo-item img:hover {
-            filter: grayscale(0%);
-            opacity: 1;
             transform: scale(1.1);
         }
 
         @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-250px * 6)); }
-        }
-
-        /* Back to Top Button Styles */
-        #backToTop {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--primary-blue);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 2000;
-            transition: background 0.3s;
-            font-size: 20px;
-            text-decoration: none;
-        }
-
-        #backToTop:hover {
-            background: var(--tech-accent);
+            100% { transform: translateX(-50%); }
         }
 
         footer {
@@ -439,60 +404,6 @@
             color: #94a3b8;
             padding: 3rem 10%;
             text-align: center;
-        }
-
-        /* --- MOBILE RESPONSIVENESS --- */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                padding: 1rem;
-            }
-
-            .logo-container {
-                margin-bottom: 1rem;
-            }
-
-            .nav-menu {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-            }
-
-            .dropdown-content {
-                position: static;
-                width: 100%;
-                box-shadow: none;
-                border: none;
-            }
-
-            .container { 
-                width: 92%; 
-            }
-
-            .hero {
-                padding: 3rem 5%;
-            }
-
-            .hero h1 { 
-                font-size: 2rem; 
-            }
-
-            .hero p.tagline {
-                font-size: 1rem;
-            }
-
-            .pillar-item, .member-card {
-                padding: 1.5rem;
-            }
-
-            .student-grid {
-                grid-template-columns: 1fr; /* Stack items on mobile */
-            }
-
-            .news-label {
-                padding: 0 10px;
-                font-size: 0.7rem;
-            }
         }
     </style>
 </head>
@@ -576,23 +487,20 @@
                 </div>
             </div>
 
-            <h3 style="color: var(--secondary-blue); margin-bottom: 1rem;">Collaboration & Industry Impact</h3>
+            <h3 style="color: var(--secondary-blue); margin-bottom: 1rem;">Industry Impact</h3>
             <p style="margin-bottom: 2rem;">The MAYA Research Group targets high-impact applications by bridging the gap between hardware layers and high-level AI algorithms.</p>
-            
-            <div class="logo-roller">
-                <div class="logo-track">
-                    <div class="logo-item"><img src="logo_instasafe.png" alt="InstaSafe"></div>
-                    <div class="logo-item"><img src="logo_samsung.png" alt="Samsung"></div>
-                    <div class="logo-item"><img src="logo_nokia.png" alt="Nokia"></div>
-                    <div class="logo-item"><img src="logo_hcl.png" alt="HCL Tech"></div>
-                    <div class="logo-item"><img src="logo_sap.png" alt="SAP"></div>
-                    <div class="logo-item"><img src="logo_siemens.png" alt="Siemens"></div>
-                    <div class="logo-item"><img src="logo_instasafe.png" alt="InstaSafe"></div>
-                    <div class="logo-item"><img src="logo_samsung.png" alt="Samsung"></div>
-                    <div class="logo-item"><img src="logo_nokia.png" alt="Nokia"></div>
-                    <div class="logo-item"><img src="logo_hcl.png" alt="HCL Tech"></div>
-                    <div class="logo-item"><img src="logo_sap.png" alt="SAP"></div>
-                    <div class="logo-item"><img src="logo_siemens.png" alt="Siemens"></div>
+            <div class="student-grid">
+                <div class="pillar-item" style="padding: 1.5rem;">
+                    <h4>Critical Infrastructure</h4>
+                    <p>Securing Smart Grids and Industry 4.0 automation systems.</p>
+                </div>
+                <div class="pillar-item" style="padding: 1.5rem;">
+                    <h4>Autonomous Mobility</h4>
+                    <p>Ensuring the integrity of V2X (Vehicle-to-Everything) communications.</p>
+                </div>
+                <div class="pillar-item" style="padding: 1.5rem;">
+                    <h4>Digital Health</h4>
+                    <p>Protecting patient data processed at the network edge via secure AI.</p>
                 </div>
             </div>
         </section>
@@ -664,112 +572,32 @@
             </div>
 
             <div class="student-category">
-                <h4>Post-Doctoral Fellows</h4>
-                <div class="student-grid">
-                    <div class="pillar-item" style="padding: 1.5rem;">
-                        <strong>[Name Placeholder]</strong><br>
-                        <small>Research Focus: Adversarial Machine Learning</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="student-category">
                 <h4>PhD Students</h4>
                 <div class="student-grid">
                     <div class="pillar-item" style="padding: 1.5rem;">
                         <strong>[Name Placeholder]</strong><br>
                         <small>Topic: Autonomous Remediation in IoT</small>
                     </div>
-                    <div class="pillar-item" style="padding: 1.5rem;">
-                        <strong>[Name Placeholder]</strong><br>
-                        <small>Topic: Blockchain-based Identity Management</small>
-                    </div>
                 </div>
             </div>
+            </section>
 
-            <div class="student-category">
-                <h4>Undergraduate Students</h4>
-                <div class="student-grid">
-                    <div class="pillar-item" style="padding: 1.5rem;">
-                        <strong>Hussa Alamire</strong><br>
-                        <small>Project: Privacy Preserving Explainable Edge AI</small>
-                    </div>
-                    <div class="pillar-item" style="padding: 1.5rem;">
-                        <strong>Fatima Alhammami</strong><br>
-                        <small>Project: Privacy Preserving Explainable Edge AI</small>
-                    </div>
-                    <div class="pillar-item" style="padding: 1.5rem;">
-                        <strong>Shouq Alkatheeri</strong><br>
-                        <small>Project: Privacy Preserving Explainable Edge AI</small>
-                    </div>
-                    <div class="pillar-item" style="padding: 1.5rem;">
-                        <strong>Hind Alneyadi</strong><br>
-                        <small>Project: Privacy Preserving Explainable Edge AI</small>
-                    </div>
-                    <div class="pillar-item" style="padding: 1.5rem;">
-                        <strong>Rawdha Alhosani</strong><br>
-                        <small>Project: Privacy Preserving Explainable Edge AI</small>
-                    </div>                        
-                </div>
-            </div>
-
-            <div class="alumni-section" id="alumni-section">
-                <h3 style="color: var(--primary-blue); border-bottom: 2px solid var(--secondary-blue); padding-bottom: 10px; font-size: 1.5rem;">Alumni</h3>
-                
-                <div class="student-category">
-                    <h4>Post-Doctoral Fellows</h4>
-                    <div class="student-grid">
-                        <div class="pillar-item" style="padding: 1.2rem;">
-                            <strong>Joy Dutta</strong><br>
-                            <small>Khalifa University</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="student-category">
-                    <h4>PhD</h4>
-                    <div class="student-grid">
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Yuhang Guo</strong><br><small>Khalifa University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Xiaochen Fan</strong><br><small>University of Technology Sydney</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Ahmad Alsharidah</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Wise Ponsly Selvaraj</strong><br><small>University of Technology Sydney</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Rayan Soqati</strong><br><small>University of Technology Sydney</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Ashish Virendra Chandak</strong><br><small>KIIT University, India</small></div>
-                    </div>
-                </div>
-
-                <div class="student-category">
-                    <h4>Masters</h4>
-                    <div class="student-grid">
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Mansour Saif Alkaabi</strong><br><small>Khalifa University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Shamma Alshebli</strong><br><small>Khalifa University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Shouq Alabdouli</strong><br><small>Khalifa University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Saeed Alqubaisi</strong><br><small>Khalifa University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Darwish AlNeyadi</strong><br><small>Khalifa University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Tan Chee Shuan Tan</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Abdullah Alhoshan</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Jeff Kung</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Ashok Stephen Sampath Kumar</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Airavati Subramonia</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Stanly Palathingal</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Yulun Wu</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Zhao Liangkun</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Jing Gou Tingtao</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Mo Dino</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Syed Khawaja Raziuddin</strong><br><small>University of Technology Sydney</small></div>
-                    </div>
-                </div>
-
-                <div class="student-category">
-                    <h4>Undergraduate </h4>
-                    <div class="student-grid">
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Sultan Abdulla Hasan AlmullaAlmansoori</strong><br><small>Khalifa University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Mohamed Saqer Mohamed SaifAlzaabi</strong><br><small>Khalifa University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Mohamed Ali Mohamed Almulla AlRayssi</strong><br><small>Khalifa University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Aaron Aina</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Ben Farmer</strong><br><small>Newcastle University</small></div>
-                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Ethan Lewis</strong><br><small>Newcastle University</small></div>
-                    </div>
+        <section id="collaborations">
+            <h2>Our Global Collaborations</h2>
+            <div class="logo-roller">
+                <div class="logo-track">
+                    <div class="logo-item"><img src="instasafe.png" alt="InstaSafe"></div>
+                    <div class="logo-item"><img src="samsung.png" alt="Samsung"></div>
+                    <div class="logo-item"><img src="nokia.png" alt="Nokia"></div>
+                    <div class="logo-item"><img src="hcl.png" alt="HCL"></div>
+                    <div class="logo-item"><img src="sap.png" alt="SAP"></div>
+                    <div class="logo-item"><img src="siemens.png" alt="Siemens"></div>
+                    <div class="logo-item"><img src="instasafe.png" alt="InstaSafe"></div>
+                    <div class="logo-item"><img src="samsung.png" alt="Samsung"></div>
+                    <div class="logo-item"><img src="nokia.png" alt="Nokia"></div>
+                    <div class="logo-item"><img src="hcl.png" alt="HCL"></div>
+                    <div class="logo-item"><img src="sap.png" alt="SAP"></div>
+                    <div class="logo-item"><img src="siemens.png" alt="Siemens"></div>
                 </div>
             </div>
         </section>
@@ -778,8 +606,6 @@
     <footer>
         <p>&copy; 2025 MAYA Research Group | United Arab Emirates University</p>
     </footer>
-
-    <a href="#" id="backToTop" title="Go to top">↑</a>
 
 </body>
 </html>
