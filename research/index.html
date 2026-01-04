@@ -1,38 +1,102 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-<style>
-  .icon-container {
-    display: flex;
-    gap: 15px;
-  }
-  .icon-btn {
-    text-decoration: none;
-    color: #5f6368;
-    font-size: 24px;
-    transition: transform 0.2s, color 0.2s;
-  }
-  .icon-btn:hover {
-    color: #1a73e8;
-    transform: scale(1.1);
-  }
-</style>
-
-<div class="icon-container">
-  <a href="#" class="icon-btn" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-  <a href="#" class="icon-btn" title="ORCID"><i class="fab fa-orcid"></i></a>
-  <a href="#" class="icon-btn" title="Institutional Profile"><i class="fas fa-external-link-alt"></i></a>
+<div class="hiring-banner">
+    <div class="hiring-content">
+        <span class="hiring-tag">WE ARE HIRING</span>
+        <span class="hiring-text">Join the MAYA Research Group! Openings for <strong>1 Research Assistant</strong> & <strong>1 Postdoctoral Researcher</strong></span>
+        <a href="#members" class="apply-btn">View Positions</a>
+    </div>
 </div>
 
+<div class="news-ticker-container">
+    ```
 
+### Updated CSS (Add this into your `<style>` section)
 
-<p>
-  <strong>Research Profile:</strong> 
-  <a href="https://scholar.google.com" target="_blank" style="text-decoration:none; color:#1a73e8;">
-    🎓 View Profile &#10148;
-  </a>
-</p>
+```css
+/* Flashy Hiring Banner Styles */
+.hiring-banner {
+    background: linear-gradient(90deg, #001a35 0%, #002b5c 50%, #001a35 100%);
+    padding: 12px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+    z-index: 1200;
+}
 
+/* Moving light streak effect */
+.hiring-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.2), transparent);
+    animation: shine-sweep 4s infinite;
+}
 
-<p>
-  <strong>Research Profile:</strong> <a href="https://scholar.google.com" target="_blank" style="text-decoration:none; color:#1a73e8;"> View Profile &#10148</a>
-</p>
+@keyframes shine-sweep {
+    0% { left: -100%; }
+    100% { left: 200%; }
+}
+
+.hiring-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hiring-tag {
+    background: #ff0055;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-weight: 900;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.5);
+    animation: glow-pulse 2s infinite;
+}
+
+@keyframes glow-pulse {
+    0% { box-shadow: 0 0 5px rgba(255, 0, 85, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(255, 0, 85, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(255, 0, 85, 0.5); }
+}
+
+.hiring-text {
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.hiring-text strong {
+    color: var(--tech-accent);
+}
+
+.apply-btn {
+    background: transparent;
+    border: 1px solid var(--tech-accent);
+    color: var(--tech-accent);
+    padding: 5px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.apply-btn:hover {
+    background: var(--tech-accent);
+    color: var(--primary-blue);
+    box-shadow: 0 0 15px var(--tech-accent);
+    transform: scale(1.05);
+}
+
+/* Ensure ticker stays below the new banner */
+.news-ticker-container {
+    top: 0; 
+}
