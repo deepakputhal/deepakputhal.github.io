@@ -3,260 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deepak Puthal - Personal Website</title>
+    <title>SN Computer Science - Section: CCDT</title>
     <style>
-        /* MODERN ACADEMIC DESIGN SYSTEM */
+        /* MODERN TECH DESIGN SYSTEM */
         :root {
-            --primary-navy: #0f172a;   /* Professional Deep Navy */
-            --accent-azure: #0ea5e9;   /* Technical Blue */
-            --hiring-blue: #f0f9ff;
-            --text-dark: #1e293b;
-            --border-light: #e2e8f0;
+            --primary-slate: #1e293b;   /* Deep Slate */
+            --accent-teal: #0d9488;    /* Professional Teal */
+            --bg-body: #f1f5f9;        /* Cool Gray background */
+            --text-main: #0f172a;      /* Almost Black */
+            --text-muted: #475569;     /* Gray Blue */
+            --white: #ffffff;
+            --border: #cbd5e1;
+            --success-green: #059669;  /* For Q1 Status */
+            --deadline-indigo: #4f46e5; /* For Deadline Status */
+            --journal-red: #be123c;    /* For Journal Name Branding */
         }
 
         body {
-            font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8fafc;
-            color: var(--text-dark);
-            line-height: 1.8;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
         }
 
-        header {
-            background-color: var(--primary-navy);
-            color: #fff;
-            padding: 50px 20px;
+        /* HEADER SECTION */
+        header.site-header {
+            background-color: var(--primary-slate);
+            color: var(--white);
+            padding: 60px 20px;
             text-align: center;
-            border-bottom: 4px solid var(--accent-azure);
+            border-bottom: 5px solid var(--accent-teal);
         }
 
-        header h1 {
+        header.site-header h1 {
+            font-size: 2.4rem;
             margin: 0;
             font-weight: 800;
             letter-spacing: -0.025em;
-            font-size: 2.4rem;
         }
 
-        nav {
-            background-color: #ffffff;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            background-color: #ffffff;
-            padding: 12px;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--primary-navy);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: var(--accent-azure);
-        }
-
+        /* MAIN CONTENT CONTAINER */
         main {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 40px;
-            background: #ffffff;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            max-width: 1100px;
+            margin: -30px auto 40px auto; /* Overlaps header slightly for modern look */
+            background: var(--white);
+            padding: 50px;
             border-radius: 12px;
-        }
-
-        /* MODERNIZED INTERACTIVE BADGE */
-        .hiring-container {
-            background: var(--hiring-blue);
-            border: 1px solid #bae6fd;
-            border-radius: 12px;
-            padding: 25px;
-            margin: 20px 0;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
             position: relative;
         }
 
-        .new-badge {
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-            color: white;
-            padding: 4px 14px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 900;
+        /* HERO SECTION (LOGO & TITLES) */
+        .journal-hero {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 40px;
+        }
+
+        .journal-logo-box { flex: 1; text-align: center; }
+        .journal-logo-box img { max-width: 100%; height: auto; border-radius: 4px; }
+
+        .journal-info-box { flex: 1.5; }
+        .journal-info-box h1 { color: var(--journal-red); margin: 0 0 10px 0; font-size: 1.8rem; font-weight: 800; }
+        .journal-info-box h2 { color: var(--accent-teal); font-size: 1.4rem; margin-bottom: 25px; font-weight: 600; }
+
+        /* CO-LEAD EDITORS SECTION DESIGN */
+        .editors-label {
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            display: inline-block;
-            margin-bottom: 12px;
-            box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
-            animation: pulse-glow 2s infinite ease-in-out;
-        }
-
-        @keyframes pulse-glow {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
-        }
-
-        .container {
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: 10px;
             display: flex;
-            gap: 40px;
-            align-items: flex-start;
-            margin-bottom: 30px;
+            align-items: center;
+            gap: 8px;
         }
 
-        .column-image img {
-            border-radius: 16px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            object-fit: cover;
+        .editors-label::after {
+            content: "";
+            height: 1px;
+            background: var(--border);
+            flex-grow: 1;
         }
 
-        h2 { 
-            border-left: 5px solid var(--accent-azure);
-            padding-left: 15px;
-            color: var(--primary-navy);
+        /* EDITOR CONTACT CARDS */
+        .editor-tag {
+            background: #f8fafc;
+            padding: 12px 15px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            border-left: 4px solid var(--accent-teal);
+            display: block;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        /* STATUS BADGES */
+        .status-container {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .q1-badge {
+            background: var(--success-green);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .deadline-badge {
+            background: var(--deadline-indigo);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* TOPICS SECTION */
+        section h3 {
+            color: var(--primary-slate);
+            font-size: 1.5rem;
             margin-top: 40px;
-            font-size: 1.8rem;
-        }
-
-        .quote-style {
-            text-align: center;
-            font-weight: 500;
-            color: #475569;
-            padding: 25px;
-            border-top: 1px solid var(--border-light);
-            border-bottom: 1px solid var(--border-light);
-            margin: 30px 0;
-            font-style: italic;
-        }
-
-        p { text-align: justify; margin-bottom: 1.5rem; }
-
-        /* CONTACT RESTRUCTURE */
-        #contact-section {
-            background: #f1f5f9;
-            padding: 30px;
-            border-radius: 12px;
+            margin-bottom: 25px;
             display: flex;
-            justify-content: space-between;
-            gap: 40px;
+            align-items: center;
         }
 
-        .contact-box { flex: 1; }
-        .contact-box p { margin-bottom: 0.5rem; text-align: left; }
+        section h3::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+            margin-left: 20px;
+        }
 
-        .map-wrapper {
-            width: 220px;
-            margin: 40px auto;
-            padding: 10px;
-            background: white;
+        .topics-grid {
+            columns: 2;
+            column-gap: 40px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .topics-grid li {
+            break-inside: avoid;
+            background: #ffffff;
+            margin-bottom: 12px;
+            padding: 14px 18px;
             border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
         }
 
+        .topics-grid li:hover {
+            border-color: var(--accent-teal);
+            background: #f0fdfa; /* Light teal tint */
+            transform: translateY(-2px);
+        }
+
+        /* GUIDELINES CARD */
+        .instructions-card {
+            background: var(--primary-slate);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 50px;
+        }
+
+        .instructions-card h2 { margin-top: 0; color: var(--accent-teal); font-size: 1.6rem; }
+        .instructions-card p { margin: 15px 0; }
+        .instructions-card a { color: #5eead4; font-weight: 600; text-decoration: none; }
+        .instructions-card a:hover { text-decoration: underline; }
+
+        .submission-note {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px dashed var(--accent-teal);
+            margin-top: 25px;
+            font-size: 1rem;
+        }
+
+        /* FOOTER */
         footer {
-            background-color: var(--primary-navy);
+            background-color: #0f172a;
             color: #94a3b8;
             padding: 40px;
             text-align: center;
-            margin-top: 60px;
+            font-size: 0.9rem;
         }
 
         @media (max-width: 850px) {
-            .container, #contact-section { flex-direction: column; }
-            .column-image { text-align: center; width: 100%; }
+            .journal-hero { flex-direction: column; text-align: center; }
+            .topics-grid { columns: 1; }
+            .status-container { justify-content: center; }
+            main { padding: 25px; margin: 10px; }
+            .editors-label::after { display: none; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Dr. Deepak Puthal (Ph.D.)</h1>
+
+    <header class="site-header">
+        <h1>Springer Nature Computer Science</h1>
     </header>
-
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="professional.html">Professional</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="recognitions.html">Recognitions</a></li>
-            <li><a href="supervision.html">Supervision</a></li>
-            <li><a href="teaching.html">Teaching</a></li> 
-        </ul>
-    </nav>
-  
+    
     <main>
-        <h1>About</h1>
-
-        <div class="container">
-            <div class="column-image">
-                <img src="deepak-3.jpeg" alt="DEEPS" width="250" height="300">
+        <div class="journal-hero">
+            <div class="journal-logo-box">
+                <img src="sncs_logo_2.png" alt="SNCS Journal Logo">
             </div>
-            <div class="column-info">
-                <div class="hiring-container">
-                    <span class="new-badge">New</span>
-                    <p style="color: #0369a1; margin: 0; font-weight: 700;">
-                        Looking for highly motivated research students (Postdoc, PhD and Master by Research) to work in cybersecurity, Applied AI and/or IoT domain.
-                    </p>
-                    <ul style="margin-top: 15px; padding-left: 20px; font-size: 0.9rem; color: #334155;">
-                        <li>Fellow of IETE [2025]</li>
-                        <li>Chair of IEEE Bio-inspired Computing STC [2021-2023]</li>
-                        <li>IEEE Distinguished Speaker of Cyber Security [2021-2023]</li>
-                        <li>IEEE Computer Society STC Board Member [2022]</li> 
-                    </ul>
+            <div class="journal-info-box">
+                <h1>Springer Nature Computer Science</h1>
+                <h2>Section: Cognitive Computing and Digital Twin</h2>
+                
+                <!-- Added Design-Compliant Header Section Label -->
+                <div class="editors-label">Co-Lead Editors</div>
+
+                <div class="editor-tag"><strong>Amit Kumar Mishra</strong>, University West (amit.kumar-mishra@hv.se)</div>
+                <div class="editor-tag"><strong>Antonella Longo</strong>, University of Salento (antonella.longo@unisalento.it)</div>
+                <div class="editor-tag"><strong>Chin-Teng Lin</strong>, University of Technology Sydney (Chin-Teng.Lin@uts.edu.au)</div>
+                <div class="editor-tag"><strong>Deepak Puthal</strong>, UAE University (deepak.puthal@ieee.org)</div>
+
+                <div class="status-container">
+                    <span class="q1-badge">Scopus: Q1</span>
+                    <span class="deadline-badge">Submission Deadline: OPEN</span>
                 </div>
             </div>
         </div>
 
-        <div class="quote-style">
-            "AI is the most powerful weapon we have, and the most dangerous threat we face, in cybersecurity."
-        </div>            
-        
-        <h2>Biography Summary</h2>   
-        <p>Deepak Puthal is a mid-career researcher specializing in the field of Cyber Security, Blockchain, Edge Computing, the Internet of Things, and Generative Adversarial Networks (with over 150 scientific publications (h-index: 50+), including 30 in IEEE/ACM Transactions journals). His groundbreaking contributions in these areas have garnered him numerous prestigious international accolades. These include the 2023 IEEE Computer Society Smart Computing STC Middle-Career Award, the 2022 IEEE HITC Award for Excellence in Hyper-Intelligence Systems (Middle Career Researcher award), the 2021 IEEE Computer Society Smart Computing STC Early-Career Award, the runner-up position in the 2021 IEEE TEMS TC on Blockchain and Distributed Ledger Technologies, the 2019 Best IEEE ComSoc Young Researcher Award for the Europe, Middle East, and Africa Region, the 2018 IEEE TCSC Award for Excellence in Scalable Computing as an Early Career Researcher, and the 2018 IETE Best Research Award. Additionally, he has received nine Best Paper Awards and holds the title of IEEE Distinguished Speaker (IEEE CTSoc). He has secured over $2.5 Million in the form of competitive research grants to support his research from both public and private agencies. </p>
-        
-        <p>Deepak is currently an Associate Professor in the College of Information Technology at the United Arab Emirates University (UAE), and a Visiting Associate Professor at Aberystwyth University, UK. Previously, he served as an Associate Professor at IIM Bodh Gaya, India; an Affiliate Professor in Cybersecurity at University West, Sweden; and an Assistant Professor at Khalifa University in the UAE, Newcastle University in the UK, and the University of Technology Sydney (UTS), Australia. He earned his Ph.D. from the Faculty of Engineering and IT at UTS, Australia, where his exceptional doctoral dissertation was recognized with the prestigious IEEE Distinguished Doctoral Dissertation Award, granted by the IEEE Computer Society Smart Computing Technical Committee. He maintains his association with UTS as an Honorary Fellow.</p>
-        
-        <p>Deepak is actively engaged in various leadership roles within the IEEE community, including serving on the IEEE Computer Society STC ExCom, chairing the IEEE Bio-inspired Computing STC, and contributing to the editorial boards of esteemed publications such as IEEE Transactions on Big Data, IEEE Transactions on Computational Social Systems, IEEE Consumer Electronics Magazine, International Journal of Communication Systems, and Section Editor of Springer Nature Computer Science Journal.</p>
-        
-        <p>Deepak's remarkable achievements and contributions have significantly advanced the fields of research in which he specializes, making him a distinguished figure in academia and beyond.</p>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <div id="contact-section">
-                <div class="contact-box">
-                    <strong>Mailing Address</strong>
-                    <p>Dept. of Information Systems and Security<br>
-                    College of Information Technology (CIT)<br>
-                    United Arab Emirates University, Al Ain, UAE</p>
-                </div>
-                <div class="contact-box">
-                    <strong>Direct Contact</strong>
-                    <p>Email: deepak.puthal@ieee.org<br>
-                    Phone: +971 (0) 3 713 5554</p>
-                </div>
-            </div>
+        <section id="description"> 
+            <p>Cognitive Computing simulates human thought, enabling systems to learn, reason, and self-correct from unstructured data using AI. Digital Twins are real-time virtual replicas of physical systems, providing monitoring, simulation, and optimization. The <i>Cognitive Computing and Digital Twin Section</i> is dedicated to the evolution of intelligent virtual representation and autonomous reasoning. We invite original research, review articles, and case studies that explore Cognitive Computing as a driver for human-like intelligence, Digital Twin technology as the backbone of physical-virtual synchronization, and the Convergence of these two domains. This section focuses on the transition from 'Passive Twins' to 'Cognitive Twins', systems that do not merely mirror physical reality but perceive, learn, and reason about it to provide proactive interventions. By integrating sensory perception with deep reasoning, we aim to redefine how complex systems are monitored, managed, and optimized across global industries.</p>
+            <p>The scope of this section is defined by, but not limited to, the following technical pillars; we warmly welcome submissions of all original research and review articles that address broader innovations and emerging trends related to these domains.</p>
         </section>
 
-        <div class="map-wrapper">
-            <h3 style="font-size: 0.9rem; text-align: center; margin-top: 0;">Visitor Map</h3>
-            <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=OGnGdundYHszl2Dxpj4UKiSUTz2iJ_ShlUvIjCvO97M&cl=ffffff&w=a"></script>                  
-        </div>
+        <section id="topics">
+            <h3>Scope and Key Topics</h3>
+            <ul class="topics-grid">
+                <li>Architectures and frameworks for cognitive digital twins</li>
+                <li>AI/ML for predictive modeling and optimization</li>
+                <li>Real-time data integration and sensor fusion</li>
+                <li>Edge AI for localized cognitive processing</li>
+                <li>Security, privacy, and trust in twin ecosystems</li>
+                <li>Smart city digital twins for urban planning</li>
+                <li>Performance evaluation and systems metrics</li>
+                <li>Ethical considerations and Explainable AI (XAI)</li>
+                <li>ML and DL for advanced pattern recognition</li>
+                <li>Reinforcement learning for autonomous control</li>
+                <li>NLP and speech recognition for human interaction</li>
+                <li>Knowledge representation and reasoning</li>
+                <li>Cognitive robotics and autonomous systems</li>
+                <li>Interoperability standards for digital twins</li>
+                <li>Data management and lifecycle operation</li>
+                <li>Storage and security for twin ecosystems</li>
+            </ul>
+        </section>
+
+        <section class="instructions-card">
+            <h2>Submission Guidelines</h2>
+            <p><strong>Journal Homepage:</strong> <a href="https://link.springer.com/journal/42979" target="_blank">https://www.link.springer.com/journal/42979</a></p>
+            <p><strong>Submission Portal:</strong> <a href="https://www.editorialmanager.com/sncs/default2.aspx" target="_blank">https://www.editorialmanager.com/sncs/default2.aspx</a></p>          
+            <p><strong>Author Guidelines:</strong> <a href="https://www.springer.com/journal/42979/submission-guidelines" target="_blank">https://www.springer.com/journal/42979/submission-guidelines</a></p>
+            
+            <div class="submission-note">
+                <strong>Important Note:</strong> While submitting your manuscript, please ensure you select <u>"Cognitive Computing and Digital Twin"</u> from the dropdown menu under the "General Information" section.
+            </div>
+        </section>
     </main>
 
     <footer>
-        &copy; 2025 Dr. Deepak Puthal | United Arab Emirates University
+        &copy; 2026 Springer Nature. All rights reserved.
     </footer>
+
 </body>
 </html>
