@@ -5,25 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAYA Research Group | Dr. Deepak Puthal</title>
     <style>
-        /* New Recruitment Banner Styles */
-        .recruitment-banner {
-            background: var(--tech-accent);
-            color: var(--primary-blue);
-            padding: 12px;
-            text-align: center;
-            font-weight: 700;
-            font-family: 'Inter', sans-serif;
-            z-index: 1200;
-            position: relative;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .recruitment-banner a {
-            color: var(--primary-blue);
-            text-decoration: underline;
-            margin-left: 10px;
-        }
-
         /* Flashy News Ticker Styles */
         .news-ticker-container {
             background: #000;
@@ -237,6 +218,26 @@
             margin-top: 10px;
             color: var(--tech-accent);
             font-weight: 500;
+        }
+
+        /* Recruitment Banner Styles */
+        .recruitment-banner {
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+            border-left: 6px solid var(--tech-accent);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .recruitment-banner a {
+            color: var(--tech-accent);
+            text-decoration: underline;
+            margin-left: 8px;
+            font-weight: 700;
         }
 
         /* Department Building Image */
@@ -528,10 +529,6 @@
 </head>
 <body>
 
-    <div class="recruitment-banner">
-        🚀 WE ARE RECRUITING: Join the MAYA Research Group. Exciting opportunities for Researchers and Students. <a href="#members">View Opportunities</a>
-    </div>
-
     <div class="news-ticker-container">
         <div class="news-label"><span class="live-dot"></span>Updates</div>
         <div class="ticker-wrapper">
@@ -577,6 +574,9 @@
     <div class="container">
         
         <section id="about">
+            <div class="recruitment-banner">
+                🚀 WE ARE RECRUITING: We are actively seeking Postdoctoral Researchers & Research Associates to join our team! <a href="#members">Learn More & Apply</a>
+            </div>
             <div class="building-container">
                 <img src="department-building.jpg" alt="Department Building" class="building-img">
             </div>
