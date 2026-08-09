@@ -7,21 +7,23 @@
     <style>
         /* Recruitment Banner Styles */
         .recruitment-banner {
-            background: #ff0055;
+            background: linear-gradient(90deg, #ff0055, #ff5500);
             color: white;
             text-align: center;
-            padding: 10px;
+            padding: 12px 20px;
             font-weight: 700;
             font-family: 'Inter', sans-serif;
-            font-size: 0.95rem;
-            z-index: 1200;
-            position: relative;
+            font-size: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         .recruitment-banner a {
-            color: white;
+            color: #fff;
             text-decoration: underline;
             margin-left: 10px;
+            font-weight: 600;
         }
 
         /* Flashy News Ticker Styles */
@@ -379,11 +381,6 @@
             margin-top: 3rem;
         }
 
-
-
-
-
-
         /* Rolling Logo Styles */
         .logo-roller {
             overflow: hidden;
@@ -423,8 +420,6 @@
             100% { transform: translateX(-50%); }
         }
 
-
-        
         /* Collaboration Grid Styles */
         .collab-grid {
             display: grid;
@@ -535,10 +530,6 @@
 </head>
 <body>
 
-    <div class="recruitment-banner">
-        WE ARE RECRUITING: Join our research team! <a href="#members">View Openings</a>
-    </div>
-
     <div class="news-ticker-container">
         <div class="news-label"><span class="live-dot"></span>Updates</div>
         <div class="ticker-wrapper">
@@ -584,6 +575,10 @@
     <div class="container">
         
         <section id="about">
+            <div class="recruitment-banner">
+                WE ARE RECRUITING: Join our research team! <a href="#members">View Openings</a>
+            </div>
+
             <div class="building-container">
                 <img src="department-building.jpg" alt="Department Building" class="building-img">
             </div>
@@ -622,7 +617,6 @@
             </div>
 
             <h3 style="color: var(--secondary-blue); margin-top: 2rem;">Funded Projects: Ongoing</h3>
-
 
             <div style="display: flex; flex-direction: column; gap: 2rem;">
                 <div class="pillar-item" style="padding: 1.5rem; border-top: 4px solid #002366;">
@@ -665,9 +659,6 @@
                 </div>
             </div> 
         </section> 
-
-
-        
 
         <section id="honors">
             <h2>Resources & Honors</h2>
@@ -752,7 +743,6 @@
                
             </div>
 
-            
             <div class="student-category">
                 <h4>Research Assistant</h4>
                 <div class="student-grid">
@@ -767,7 +757,6 @@
                 </div>
             </div>
 
-            
             <div class="student-category">
                 <h4>Undergraduate Students</h4>
                 <div class="student-grid">
@@ -789,6 +778,8 @@
                     </div>
                 </div>
             </div>
+        </section>
+    </div>
 
     <footer>
         <p>&copy; 2026 MAYA Research Group </p>
