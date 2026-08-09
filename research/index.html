@@ -92,6 +92,7 @@
             --light-bg: #f8fafc;
             --text-dark: #1e293b;
             --border-color: #e2e8f0;
+            --recruiting-glow: #ff0055;
         }
 
         body {
@@ -220,29 +221,67 @@
             font-weight: 500;
         }
 
-        /* Recruitment Banner Styles */
-        .recruitment-banner {
-            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            text-align: center;
-            font-weight: 600;
-            border-left: 6px solid var(--tech-accent);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        /* Vibrant Eye-Catching Recruitment Banner Above Banner Image */
+        .recruitment-callout {
+            background: linear-gradient(135deg, #002b5c 0%, #001f3f 100%);
+            border: 2px solid var(--tech-accent);
+            border-left: 8px solid var(--recruiting-glow);
+            border-radius: 12px;
+            padding: 1.25rem 2rem;
+            margin: 2rem 0 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.15);
+            animation: pulse-border 3s infinite alternate;
         }
 
-        .recruitment-banner a {
-            color: var(--tech-accent);
-            text-decoration: underline;
-            margin-left: 8px;
+        @keyframes pulse-border {
+            0% { box-shadow: 0 4px 15px rgba(255, 0, 85, 0.2); }
+            100% { box-shadow: 0 8px 30px rgba(0, 212, 255, 0.4); }
+        }
+
+        .recruitment-callout .banner-badge {
+            background: linear-gradient(90deg, #ff0055, #ff5500);
+            color: white;
+            padding: 6px 14px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 6px;
+        }
+
+        .recruitment-callout .banner-text {
+            color: white;
+            font-size: 1.2rem;
             font-weight: 700;
+            margin: 0;
+        }
+
+        .recruitment-callout .banner-btn {
+            background: var(--tech-accent);
+            color: var(--primary-blue);
+            font-weight: 800;
+            padding: 10px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            box-shadow: 0 4px 12px rgba(0,212,255,0.3);
+        }
+
+        .recruitment-callout .banner-btn:hover {
+            transform: translateY(-2px);
+            background: #ffffff;
+            box-shadow: 0 6px 18px rgba(255,255,255,0.4);
         }
 
         /* Department Building Image */
         .building-container {
-            margin: 2rem 0;
+            margin: 1rem 0 2rem 0;
             text-align: center;
         }
 
@@ -252,6 +291,67 @@
             height: auto;
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* Openings Cards */
+        .openings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .opening-card {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            border-top: 5px solid var(--tech-accent);
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .opening-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+        }
+
+        .opening-card h3 {
+            color: var(--primary-blue);
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        .opening-badge {
+            display: inline-block;
+            background: #e0f7fa;
+            color: var(--secondary-blue);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 12px;
+            margin-bottom: 0.75rem;
+        }
+
+        .apply-btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            background: var(--primary-blue);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: center;
+            transition: background 0.2s;
+        }
+
+        .apply-btn:hover {
+            background: var(--secondary-blue);
         }
 
         /* Mission Statement Box */
@@ -512,6 +612,12 @@
                 font-size: 1rem;
             }
 
+            .recruitment-callout {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
             .pillar-item, .member-card {
                 padding: 1.5rem;
             }
@@ -557,6 +663,7 @@
             </button>
             <div class="dropdown-content">
                 <a href="#about">Overview</a>
+                <a href="#openings">Current Openings</a>
                 <a href="#research">Research & Funding</a>
                 <a href="#honors">Resources & Honors</a>
                 <a href="#members">Members</a>
@@ -574,9 +681,15 @@
     <div class="container">
         
         <section id="about">
-            <div class="recruitment-banner">
-                🚀 WE ARE RECRUITING: We are actively seeking Postdoctoral Researchers & Research Associates to join our team! <a href="#members">Learn More & Apply</a>
+            <!-- Eye-Catching Banner Above Image Banner -->
+            <div class="recruitment-callout">
+                <div>
+                    <span class="banner-badge">🔥 WE ARE RECRUITING</span>
+                    <p class="banner-text">Join MAYA Research Group — Positions Open for Postdoc & Research Associate!</p>
+                </div>
+                <a href="#openings" class="banner-btn">View Openings →</a>
             </div>
+
             <div class="building-container">
                 <img src="department-building.jpg" alt="Department Building" class="building-img">
             </div>
@@ -586,6 +699,34 @@
             
             <div class="mission-box">
                 "To engineer autonomous, intelligence-driven computing systems that embed security at the core of distributed architectures, ensuring adaptive resilience, mission continuity, and data integrity in dynamic and adversarial environments."
+            </div>
+        </section>
+
+        <!-- Dedicated Section for Current Openings -->
+        <section id="openings">
+            <h2>Current Openings</h2>
+            <p>We are actively seeking motivated researchers to join our cutting-edge projects in AI, cybersecurity, and edge-cloud computing.</p>
+            
+            <div class="openings-grid">
+                <div class="opening-card">
+                    <div>
+                        <span class="opening-badge">Full-Time</span>
+                        <h3>Postdoctoral Researcher</h3>
+                        <p><strong>Focus:</strong> Cognitive Resilience & Decentralized Threat Mitigation</p>
+                        <p>Join our team working on AI-Blockchain fusion with adversarial simulation. Strong publication record in cybersecurity or applied AI preferred.</p>
+                    </div>
+                    <a href="mailto:deepak.puthal@uaeu.ac.ae?subject=Application:%20Postdoctoral%20Researcher" class="apply-btn">Apply Now</a>
+                </div>
+
+                <div class="opening-card">
+                    <div>
+                        <span class="opening-badge">Full-Time / Part-Time</span>
+                        <h3>Research Associate / Assistant</h3>
+                        <p><strong>Focus:</strong> Edge-Cloud IoT Systems & Urban Growth Modelling</p>
+                        <p>Opportunity for researchers with backgrounds in IoT, machine learning, and software implementation to work on funded international projects.</p>
+                    </div>
+                    <a href="mailto:deepak.puthal@uaeu.ac.ae?subject=Application:%20Research%20Associate" class="apply-btn">Apply Now</a>
+                </div>
             </div>
         </section>
 
