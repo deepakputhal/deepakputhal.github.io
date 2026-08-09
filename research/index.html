@@ -5,25 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAYA Research Group | Dr. Deepak Puthal</title>
     <style>
-        /* Recruitment Banner Styles */
+        /* New Recruitment Banner Styles */
         .recruitment-banner {
-            background: linear-gradient(90deg, #ff0055, #ff5500);
-            color: white;
+            background: var(--tech-accent);
+            color: var(--primary-blue);
+            padding: 12px;
             text-align: center;
-            padding: 12px 20px;
             font-weight: 700;
             font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 1200;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-
+        
         .recruitment-banner a {
-            color: #fff;
+            color: var(--primary-blue);
             text-decoration: underline;
             margin-left: 10px;
-            font-weight: 600;
         }
 
         /* Flashy News Ticker Styles */
@@ -530,6 +528,10 @@
 </head>
 <body>
 
+    <div class="recruitment-banner">
+        🚀 WE ARE RECRUITING: Join the MAYA Research Group. Exciting opportunities for Researchers and Students. <a href="#members">View Opportunities</a>
+    </div>
+
     <div class="news-ticker-container">
         <div class="news-label"><span class="live-dot"></span>Updates</div>
         <div class="ticker-wrapper">
@@ -575,10 +577,6 @@
     <div class="container">
         
         <section id="about">
-            <div class="recruitment-banner">
-                WE ARE RECRUITING: Join our research team! <a href="#members">View Openings</a>
-            </div>
-
             <div class="building-container">
                 <img src="department-building.jpg" alt="Department Building" class="building-img">
             </div>
@@ -618,6 +616,7 @@
 
             <h3 style="color: var(--secondary-blue); margin-top: 2rem;">Funded Projects: Ongoing</h3>
 
+
             <div style="display: flex; flex-direction: column; gap: 2rem;">
                 <div class="pillar-item" style="padding: 1.5rem; border-top: 4px solid #002366;">
                 <strong>2026-2027:</strong> “Land Use Transformation and Urban Sprawl Dynamics for Sustainable Urban Growth Modelling”, <em>UAEU-IITB Collaborative SDGs Research Program, United Arab Emirates University (UAEU).</em> [AED 40,000] 
@@ -642,7 +641,7 @@
                 <strong>2025-2027:</strong> “Securing the Future: A Blockchain and AI-Powered Solution for Child Safety and Identification”, <em>Department of Science & Technology (DST), India.</em> [₹45,25,088]
                 <p><strong>Partner Institute:</strong> IIM Bodh Gaya, India</p>
                 </div>
-            </div>             
+            </div>           
 
             <div style="display: flex; flex-direction: column; gap: 2rem;">
                 <div class="pillar-item" style="padding: 1.5rem; border-top: 4px solid #002366;">
@@ -743,6 +742,7 @@
                
             </div>
 
+            
             <div class="student-category">
                 <h4>Research Assistant</h4>
                 <div class="student-grid">
@@ -757,6 +757,7 @@
                 </div>
             </div>
 
+            
             <div class="student-category">
                 <h4>Undergraduate Students</h4>
                 <div class="student-grid">
@@ -778,7 +779,111 @@
                     </div>
                 </div>
             </div>
+
+            <div class="alumni-section" id="alumni-section">
+                <h3 style="color: var(--primary-blue); border-bottom: 2px solid var(--secondary-blue); padding-bottom: 10px; font-size: 1.5rem;">Alumni</h3>
+                
+                <div class="student-category">
+                    <h4>Post-Doctoral Fellows</h4>
+                    <div class="student-grid">
+                    <div class="pillar-item" style="padding: 1.2rem;"><strong>Joy Dutta</strong><br><small>Khalifa University</small></div>
+                    <div class="pillar-item" style="padding: 1.2rem;"><strong>Sambit Kumar Mishra</strong><br><small>UAE University</small></div>
+                    </div>
+                </div>
+
+                <div class="student-category">
+                    <h4>PhD</h4>
+                    <div class="student-grid">
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Yuhang Guo</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Xiaochen Fan</strong><br><small>University of Technology Sydney</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Ahmad Alsharidah</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Wise Ponsly Selvaraj</strong><br><small>University of Technology Sydney</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Rayan Soqati</strong><br><small>University of Technology Sydney</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Ashish Virendra Chandak</strong><br><small>KIIT University, India</small></div>
+                    </div>
+                </div>
+
+                <div class="student-category">
+                    <h4>Masters</h4>
+                    <div class="student-grid">
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Mansour Saif Alkaabi</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Shamma Alshebli</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Shouq Alabdouli</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Saeed Alqubaisi</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Darwish AlNeyadi</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Tan Chee Shuan Tan</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Abdullah Alhoshan</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Jeff Kung</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Ashok Stephen Sampath Kumar</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Airavati Subramonia</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Stanly Palathingal</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Yulun Wu</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Zhao Liangkun</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Jing Gou Tingtao</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Mo Dino</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Syed Khawaja Raziuddin</strong><br><small>University of Technology Sydney</small></div>
+                    </div>
+                </div>
+
+                <div class="student-category">
+                    <h4>Undergraduate </h4>
+                    <div class="student-grid">
+                        <div class="pillar-item" style="padding: 1.5rem;"><strong>Hussa Alamire</strong><br><small>UAE University</small></div>
+                        <div class="pillar-item" style="padding: 1.5rem;"><strong>Fatima Alhammami</strong><br><small>UAE University</small></div>
+                        <div class="pillar-item" style="padding: 1.5rem;"><strong>Shouq Alkatheeri</strong><br><small>UAE University</small></div>
+                        <div class="pillar-item" style="padding: 1.5rem;"><strong>Hind Alneyadi</strong><br><small>UAE University</small></div>
+                        <div class="pillar-item" style="padding: 1.5rem;"><strong>Rawdha Alhosani</strong><br><small>UAE University</small></div>    
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Sultan Abdulla Hasan AlmullaAlmansoori</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Mohamed Saqer Mohamed SaifAlzaabi</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Mohamed Ali Mohamed Almulla AlRayssi</strong><br><small>Khalifa University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Aaron Aina</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Ben Farmer</strong><br><small>Newcastle University</small></div>
+                        <div class="pillar-item" style="padding: 1.2rem;"><strong>Ethan Lewis</strong><br><small>Newcastle University</small></div>
+                    </div>
+                </div>
+            </div>
+
         </section>
+
+        <section id="collaborations">
+            <h2>Our Global Collaborations</h2>
+            <h3 style="color: var(--secondary-blue); margin-top: 3rem;">ACADEMIA</h3>
+
+            <div class="logo-roller">
+                <div class="logo-track">
+                    <div class="logo-item"><img src="logo_unt.png" alt="UNT"></div>
+                    <div class="logo-item"><img src="logo_macquarie.png" alt="Macquarie Uni"></div>
+                    <div class="logo-item"><img src="logo_aberdeen.png" alt="Aberdeen Uni"></div>
+                    <div class="logo-item"><img src="logo_manchester.png" alt="Manchester Uni"></div>
+                    <div class="logo-item"><img src="logo_uts.png" alt="UTS"></div>
+                    <div class="logo-item"><img src="logo_adelaide.png" alt="Adelaide"></div>
+                    <div class="logo-item"><img src="logo_UniSalento.png" alt="UniSalento"></div>
+                    <div class="logo-item"><img src="logo_chattanooga.png" alt="UT Chattanooga"></div>
+                    <div class="logo-item"><img src="logo_milan.png" alt="Milan Uni"></div>      
+                    <div class="logo-item"><img src="logo_syd.png" alt="Sydney Uni"></div>
+                    <div class="logo-item"><img src="logo_ku.png" alt="KU"></div>
+                    <div class="logo-item"><img src="logo_agh.png" alt="AGH"></div>
+                    <div class="logo-item"><img src="logo_iitd.png" alt="IIT Delhi"></div>   
+                    <div class="logo-item"><img src="logo_hv.png" alt="HV"></div>
+
+                </div>
+            </div>
+
+            <h3 style="color: var(--secondary-blue); margin-top: 3rem;">INDUSTRY</h3>
+
+            <div class="logo-roller">
+                <div class="logo-track">
+                    <div class="logo-item"><img src="logo_instasafe.png" alt="InstaSafe"></div>
+                    <div class="logo-item"><img src="logo_nokia.png" alt="Nokia"></div>
+                    <div class="logo-item"><img src="logo_hcl.png" alt="HCL"></div>
+                    <div class="logo-item"><img src="logo_sap.png" alt="SAP"></div>
+                    <div class="logo-item"><img src="logo_siemens.png" alt="Siemens"></div>      
+                    <div class="logo-item"><img src="logo_samsung.png" alt="Samsung"></div>
+                </div>
+            </div>
+
+        </section>
+    
     </div>
 
     <footer>
